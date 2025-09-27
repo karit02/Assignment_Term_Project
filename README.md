@@ -1,2 +1,2 @@
-# Term-Project_py
-Borrow and return library books
+# Assignment Term Project
+ระบบการจัดการข้อมูลโครงงานพิเศษ และโครงงานสหกิจ ของนักศึกษาภาควิชาเทคโนโลยีสารสนเทศ ทุกสาขาวิชา IT ITI INE INET ITT
