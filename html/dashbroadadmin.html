@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>ระบบจัดการโครงงาน - ผู้ดูแลระบบ</title>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">F</div>
+                <div class="user-name">Final Devil</div>
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="/">หน้าแรก</a></li>
+                <li class="nav-item"><a href="/user-management">จัดการผู้ใช้</a></li>
+                <li class="nav-item"><a href="/project-management">จัดการโครงงาน</a></li>
+                <li class="nav-item"><a href="/system-reports">รายงานระบบ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - ผู้ดูแลระบบ
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/" class="active">
+                    <div class="icon"></div>
+                    แดชบอร์ดระบบ
+                </a></li>
+                <li><a href="/user-management">
+                    <div class="icon"></div>
+                    จัดการผู้ใช้
+                </a></li>
+                <li><a href="/project-management">
+                    <div class="icon"></div>
+                    จัดการโครงงานทั้งหมด
+                </a></li>
+                <li><a href="/advisor-assignment">
+                    <div class="icon"></div>
+                    มอบหมายอาจารย์ที่ปรึกษา
+                </a></li>
+                <li><a href="/committee-assignment">
+                    <div class="icon"></div>
+                    จัดการกรรมการสอบ
+                </a></li>
+                <li><a href="/exam-scheduling">
+                    <div class="icon"></div>
+                    จัดตารางสอบ
+                </a></li>
+                <li><a href="/system-reports">
+                    <div class="icon"></div>
+                    รายงานระบบ
+                </a></li>
+                <li><a href="/system-settings">
+                    <div class="icon"></div>
+                    ตั้งค่าระบบ
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="content-header">
+                <h2>แดชบอร์ด - ผู้ดูแลระบบ</h2>
+                <div class="breadcrumb">หน้าแรก > แดชบอร์ดระบบ</div>
+            </div>
+            <div class="content-body">
+                <!-- Status Cards -->
+                <div class="status-cards">
+                    <div class="status-card">
+                        <div class="number">156</div>
+                        <div class="label">โครงงานทั้งหมดในระบบ</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="number">89</div>
+                        <div class="label">นักศึกษาในระบบ</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="number">25</div>
+                        <div class="label">อาจารย์ในระบบ</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="number">99.2%</div>
+                        <div class="label">ประสิทธิภาพระบบ</div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="project-actions">
+                    <a href="/user-management" class="btn">
+                        <span>👥</span>
+                        จัดการผู้ใช้
+                    </a>
+                    <a href="/project-management" class="btn">
+                        <span>📊</span>
+                        จัดการโครงงาน
+                    </a>
+                    <a href="/system-reports" class="btn">
+                        <span>📈</span>
+                        รายงานระบบ
+                    </a>
+                </div>
+
+                <!-- Information Section -->
+                <div class="info-section">
+                    <h3>ข้อมูลการจัดการระบบ</h3>
+                    <p>
+                        หน้านี้แสดงข้อมูลภาพรวมของระบบจัดการโครงงาน รวมถึงจำนวนโครงงาน นักศึกษา และอาจารย์ในระบบ 
+                        ประสิทธิภาพการทำงานของระบบ และการจัดการต่างๆ คุณสามารถใช้เมนูด้านซ้าย
+                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การจัดการผู้ใช้ การมอบหมายอาจารย์ที่ปรึกษา 
+                        การจัดตารางสอบ และการตั้งค่าระบบ
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะวิทยาศาสตร์ประยุกต์</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="/help">ช่วยเหลือ</a>
+            <a href="/contact">ติดต่อ</a>
+            <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+</body>
+</html>
