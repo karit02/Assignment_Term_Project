@@ -20,11 +20,10 @@
             <div class="banner-user">
                 <div class="user-avatar">F</div>
                 <div class="user-name">Final Devil</div>
-                <button class="logout-btn">ออกจากระบบ</button>
+                <a href="login.html" class="logout-btn">ออกจากระบบ</a>
             </div>
         </div>
     </div>
-
 
     <!-- Main Container -->
     <div class="main-container">
@@ -68,15 +67,36 @@
                 <h2>เสนอหัวข้อโครงงาน</h2>
             </div>
             <div class="content-body">
-                <label for="topic">หัวข้อเรื่อง : </label>
-                <input type="text" name="topic" placeholder="ตัวอย่าง ระบบยืมคุรุภัณฑ์">
+                <label for="topic">หัวข้อโครงงาน : </label>
+                <input type="text" name="topic" placeholder="ระบบยืม-คืนคุรุภัณฑ์">
                 <label for="details">รายละเอียดโครงงาน : </label>
                 <textarea name="details" rows="10"></textarea>
+                <div class="student-row">
+                    <div>
+                        <label for="namestd1">รายชื่อนักศึกษา คนที่ 1 :</label>
+                        <input type="text" name="namestd1" id="namestd1" placeholder="นางสาวไรบีนา มะเก๊ะ">
+                    </div>
+                    <div>
+                        <label for="namestd2">รายชื่อนักศึกษา คนที่ 2 :</label>
+                        <input type="text" name="namestd2" id="namestd2" placeholder="นายคฤษฐ์ เสือเดช">
+                    </div>
+                </div>
+
+                <div class="student-row">
+                    <div>
+                        <label for="namestd3">รายชื่อนักศึกษา คนที่ 3 :</label>
+                        <input type="text" name="namestd3" id="namestd3" placeholder="นางสาวชาลิสา ยิ้มลำไย">
+                    </div>
+                    <div>
+                        <label for="namestd4">รายชื่อนักศึกษา คนที่ 4 :</label>
+                        <input type="text" name="namestd4" id="namestd4">
+                    </div>
+                </div>
                 <div class="dropdown-row">
                     <div>
                         <label for="advisor">อาจารย์ที่ปรึกษา : </label>
                         <select name="advisor" id="advisor">
-                            <option value="">-- กรุณาเลือก --</option>
+                            <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                             <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                             <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                             <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -94,7 +114,6 @@
                             <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
                             <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
                             <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
-                            <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                             <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
                             <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
                             <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
@@ -132,7 +151,6 @@
                         </select>
                     </div>
                 </div>
-
                 <label for="ter-file">แนบไฟล์เอกสาร :</label>
                 <div class="file-input-wrapper">
                     <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
