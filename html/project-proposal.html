@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>ระบบจัดการโครงงาน - นักศึกษา</title>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">F</div>
+                <div class="user-name">Final Devil</div>
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - นักศึกษา
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashbroadstd.html">
+                    <div class="icon"></div>
+                    แดชบอร์ด
+                </a></li>
+                <li><a href="project-proposal.html" class="active">
+                    <div class="icon"></div>
+                    เสนอ/แก้ไข 
+                    <br>รายละเอียดโครงงาน
+                </a></li>
+                <li><a href="weekly-progress.html">
+                    <div class="icon"></div>
+                    รายงานความก้าวหน้า
+                </a></li>
+                <li><a href="topic-exam-request.html">
+                    <div class="icon"></div>
+                    ยื่นสอบหัวข้อ
+                </a></li>
+                <li><a href="final-exam-request.html">
+                    <div class="icon"></div>
+                    ยื่นสอบจบ
+                </a></li>
+                <li><a href="document-upload.html">
+                    <div class="icon"></div>
+                    อัปโหลดเอกสาร
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="content-header">
+                <h2>เสนอหัวข้อโครงงาน</h2>
+            </div>
+            <div class="content-body">
+                <label for="topic">หัวข้อเรื่อง : </label>
+                <input type="text" name="topic" placeholder="ตัวอย่าง ระบบยืมคุรุภัณฑ์">
+                <label for="details">รายละเอียดโครงงาน : </label>
+                <textarea name="details" rows="10"></textarea>
+                <div class="dropdown-row">
+                    <div>
+                        <label for="advisor">อาจารย์ที่ปรึกษา : </label>
+                        <select name="advisor" id="advisor">
+                            <option value="">-- กรุณาเลือก --</option>
+                            <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                            <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                            <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                            <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                            <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                            <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                            <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                            <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                            <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                            <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                            <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                            <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                            <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                            <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                            <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                            <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                            <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                            <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                            <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                            <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                            <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                            <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                            <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="advisor-plus">อาจารย์ที่ปรึกษาร่วม : </label>
+                        <select name="advisor-plus" id="advisor-plus">
+                            <option value="">-- กรุณาเลือก --</option>
+                            <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                            <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                            <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                            <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                            <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                            <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                            <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                            <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                            <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                            <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                            <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                            <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                            <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                            <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                            <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                            <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                            <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                            <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                            <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                            <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                            <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                            <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                            <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="ter-file">แนบไฟล์เอกสาร :</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                    <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
+                    <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
+                </div>
+                <div class="ter-btn">
+                    <button type="submit">บันทึก</button>
+                    <button type="reset">ยกเลิก</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="/help">ช่วยเหลือ</a>
+            <a href="/contact">ติดต่อ</a>
+            <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+</body>
+</html>

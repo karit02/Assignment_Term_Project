@@ -228,6 +228,172 @@ body {
     padding: 30px;
 }
 
+.content-body label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: 600;
+    color: #1e40af; /* น้ำเงิน */
+}
+
+.content-body input[type="text"],
+.content-body textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.content-body input[type="text"]:focus,
+.content-body textarea:focus {
+    border-color: #0b2357; /* ฟ้า */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Wrapper สำหรับสอง dropdown */
+.dropdown-row {
+    display: flex;
+    gap: 20px; /* ระยะห่างระหว่าง dropdown */
+    flex-wrap: wrap; /* รองรับมือถือ */
+}
+
+/* แต่ละ dropdown ให้ครึ่งหนึ่งของความกว้าง */
+.dropdown-row > div {
+    flex: 1 1 100%; /* เริ่มต้นเต็มความกว้าง */
+    min-width: 250px; /* กำหนดขั้นต่ำ */
+}
+
+/* บนจอใหญ่ ให้แบ่งครึ่ง */
+@media (min-width: 768px) {
+    .dropdown-row > div {
+        flex: 1; /* ครึ่งต่อครึ่ง */
+    }
+}
+
+/* ปรับ label */
+.dropdown-row label {
+    display: block;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+/* ปรับ select ให้เต็มความกว้าง */
+.dropdown-row select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* โฟกัส */
+.dropdown-row select:focus {
+    border-color: #0b2357;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* ลูกศร custom */
+.dropdown-row select::-ms-expand {
+    display: none;
+}
+
+.dropdown-row select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'12'%20height%3D'8'%20viewBox%3D'0%200%2012%208'%20fill%3D'none'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M1%201L6%207L11%201'%20stroke%3D'%236674ea'%20stroke-width%3D'2'%20/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+}
+
+
+/* Wrapper สำหรับไฟล์ */
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* ช่อง textbox แสดงชื่อไฟล์ */
+.file-input-wrapper .file-name {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #334155;
+    background-color: #fff;
+    font-style: italic;
+}
+
+/* ปุ่มเลือกไฟล์ */
+.file-input-wrapper button {
+    padding: 14px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.file-input-wrapper button:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}
+
+/* ซ่อน input จริง */
+.file-input-wrapper input[type="file"] {
+    display: none;
+}
+
+/* ปุ่ม */
+.ter-btn {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content:flex-end;
+}
+
+.ter-btn button {
+    flex: initial; 
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ter-btn button[type="submit"] {
+    background: #2563eb; /* ฟ้า */
+    color: white;
+}
+
+.ter-btn button[type="submit"]:hover {
+    background: #1e40af; /* น้ำเงินเข้ม */
+}
+
+.ter-btn button[type="reset"] {
+    background: #e5e7eb; /* เทาอ่อน */
+    color: #374151;
+}
+
+.ter-btn button[type="reset"]:hover {
+    background: #bbbec3; /* เทากลาง */
+}
+
 /* Status Cards */
 .status-cards {
     display: grid;

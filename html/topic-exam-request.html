@@ -34,7 +34,7 @@
                 เมนู - นักศึกษา
             </div>
             <ul class="sidebar-menu">
-                <li><a href="/" class="active">
+                <li><a href="dashbroadstd.html">
                     <div class="icon"></div>
                     แดชบอร์ด
                 </a></li>
@@ -47,7 +47,7 @@
                     <div class="icon"></div>
                     รายงานความก้าวหน้า
                 </a></li>
-                <li><a href="topic-exam-request.html">
+                <li><a href="topic-exam-request.html" class="active">
                     <div class="icon"></div>
                     ยื่นสอบหัวข้อ
                 </a></li>
@@ -65,55 +65,22 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>แดชบอร์ด - นักศึกษา</h2>
-                <div class="breadcrumb">หน้าแรก > แดชบอร์ดนักศึกษา</div>
+                <h2>ยื่นสอบหัวข้อ</h2>
             </div>
             <div class="content-body">
-                <!-- Status Cards -->
-                <div class="status-cards">
-                    <div class="status-card">
-                        <div class="number">1</div>
-                        <div class="label">โครงงานที่กำลังดำเนินการ</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">65%</div>
-                        <div class="label">ความก้าวหน้าโดยรวม</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">8</div>
-                        <div class="label">สัปดาห์ที่รายงานแล้ว</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">รอ</div>
-                        <div class="label">สถานะการสอบหัวข้อ</div>
-                    </div>
+                <label for="topic">หัวข้อเรื่อง : </label>
+                <input type="text" name="topic" placeholder="ตัวอย่าง ระบบยืมคุรุภัณฑ์">
+                <label for="details">รายละเอียดโครงงาน : </label>
+                <textarea name="details" rows="10"></textarea>
+                <label for="ter-file">แนบไฟล์เอกสาร :</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                    <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
+                    <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
                 </div>
-
-                <!-- Quick Actions -->
-                <div class="project-actions">
-                    <a href="/project-proposal" class="btn">
-                        <span>📝</span>
-                        เสนอหัวข้อโครงงานใหม่
-                    </a>
-                    <a href="/weekly-progress" class="btn">
-                        <span>📊</span>
-                        รายงานความก้าวหน้า
-                    </a>
-                    <a href="/document-upload" class="btn">
-                        <span>📁</span>
-                        อัปโลดเอกสาร
-                    </a>
-                </div>
-
-                <!-- Information Section -->
-                <div class="info-section">
-                    <h3>ข้อมูลโครงงานปัจจุบัน</h3>
-                    <p>
-                        หน้านี้แสดงสถานะโครงงานของคุณ รวมถึงความก้าวหน้าในการทำโครงงาน 
-                        การรายงานรายสัปดาห์ และสถานะการสอบต่างๆ คุณสามารถใช้เมนูด้านซ้าย
-                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การเสนอหัวข้อ การรายงานความก้าวหน้า 
-                        และการยื่นขอสอบ
-                    </p>
+                <div class="ter-btn">
+                    <button type="submit">บันทึก</button>
+                    <button type="reset">ยกเลิก</button>
                 </div>
             </div>
         </main>
