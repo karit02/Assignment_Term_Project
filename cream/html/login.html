@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+
+            <!-- ***** 1. ส่วนซ้าย: ภาพประกอบ (Image Section) ***** -->
+            <!-- ส่วนนี้จะถูกจัดวางที่คอลัมน์ซ้ายตาม grid-template-columns: 4fr 6fr; -->
+            <div class="image-side">
+                <img src="../images/logo.png" alt="logo" class="login-header-image"><br>
+                <img src="../images/kmutnb.png" alt="logo" class="login-header-image">
+            </div>
+
+            <!-- ***** 2. ส่วนขวา: ฟอร์มทั้งหมด (Form Section) ***** -->
+            <!-- ส่วนนี้จะถูกจัดวางที่คอลัมน์ขวา -->
+            <div class="form-content">
+            <h1>เข้าสู่ระบบ</h1>
+            
+            <form action="#" method="POST">
+                
+                <div class="input-group">
+                    <label for="username">อีเมล / ชื่อผู้ใช้</label>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="ป้อนอีเมล / ชื่อผู้ใช้ของคุณ" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <!-- Input รหัสผ่าน: เปลี่ยนเป็น type="text" เพื่อให้ CSS ควบคุมการซ่อนได้ -->
+                        <input type="password" id="password" name="password" placeholder="ป้อนรหัสผ่านของคุณ" required>
+                    </div>
+                </div>
+
+                <a href="#" class="forgot-password">ลืมรหัสผ่าน</a>
+
+                <button type="submit" class="gradient-button">เข้าสู่ระบบ</button>
+            </form><br>
+
+            <div class="separator sign-up-text">
+                <a>ยังไม่ได้สร้างบัญชีใช่ไหม?
+                <a href="signup.html" class="sign-up-link" target="_blank"> คลิ๊กที่นี่เพื่อลงทะเบียน</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
