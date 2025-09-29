@@ -204,9 +204,9 @@ body {
 }
 
 /* ตั้งค่าให้สีของตัวเลือกที่เลือกเป็นสีดำ (เมื่อไม่ใช่ placeholder) */
-.status-dropdown:valid {
+/* .status-dropdown:valid {
     color: #000;
-}
+} */
 
 /* * Gradient Button (ปุ่มหลัก ลงทะเบียน)
  * * ให้ปุ่มเต็มความกว้าง (75%) ของ Form Section */

@@ -253,6 +253,22 @@ body {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
+.project-actions{
+    display: flex; /* เปิดใช้งาน Flexbox */
+    gap: 10px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+.project-actions a {
+    /* กำหนดระยะห่างที่คุณต้องการ */
+    text-underline-offset: 5px; /* ปรับค่า 5px เป็นระยะห่างที่คุณต้องการ */
+}
+
+.project-actions a:hover {
+    color: #ff0000;
+}
+
 .student-row {
     display: flex;
     gap: 20px; /* ระยะห่างระหว่างช่อง */

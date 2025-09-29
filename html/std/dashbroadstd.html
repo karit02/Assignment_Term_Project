@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <title>ระบบจัดการโครงงาน - กรรมการ</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <title>ระบบจัดการโครงงาน - นักศึกษา</title>
 </head>
 <body>
     <!-- Banner Header -->
@@ -20,46 +20,44 @@
             <div class="banner-user">
                 <div class="user-avatar">F</div>
                 <div class="user-name">Final Devil</div>
-                <button class="logout-btn">ออกจากระบบ</button>
+                <a href="login.html" class="logout-btn">ออกจากระบบ</a>
             </div>
         </div>
     </div>
+
 
     <!-- Main Container -->
     <div class="main-container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                เมนู - กรรมการ
+                เมนู - นักศึกษา
             </div>
             <ul class="sidebar-menu">
                 <li><a href="/" class="active">
                     <div class="icon"></div>
                     แดชบอร์ด
                 </a></li>
-                <li><a href="/exam-schedule">
+                <li><a href="project-proposal.html">
                     <div class="icon"></div>
-                    ตารางสอบ
+                    เสนอ/แก้ไข 
+                    <br>รายละเอียดโครงงาน
                 </a></li>
-                <li><a href="/topic-evaluation">
+                <li><a href="weekly-progress.html">
                     <div class="icon"></div>
-                    ประเมินหัวข้อโครงงาน
+                    รายงานความก้าวหน้า
                 </a></li>
-                <li><a href="/final-evaluation">
+                <li><a href="topic-exam-request.html">
                     <div class="icon"></div>
-                    ประเมินการสอบจบ
+                    ยื่นสอบหัวข้อ
                 </a></li>
-                <li><a href="/project-review">
+                <li><a href="final-exam-request.html">
                     <div class="icon"></div>
-                    ตรวจเล่มโครงงาน
+                    ยื่นสอบจบ
                 </a></li>
-                <li><a href="/exam-results">
+                <li><a href="document-upload.html">
                     <div class="icon"></div>
-                    บันทึกผลการสอบ
-                </a></li>
-                <li><a href="/signature-approval">
-                    <div class="icon"></div>
-                    ลงนามอนุมัติ
+                    อัปโหลดเอกสาร
                 </a></li>
             </ul>
         </aside>
@@ -67,40 +65,49 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>แดชบอร์ด - กรรมการ</h2>
-                <div class="breadcrumb">หน้าแรก > แดชบอร์ดกรรมการ</div>
+                <h2>แดชบอร์ด</h2>
             </div>
             <div class="content-body">
                 <!-- Status Cards -->
                 <div class="status-cards">
                     <div class="status-card">
-                        <div class="number">6</div>
-                        <div class="label">การสอบที่ได้รับมอบหมาย</div>
+                        <div class="number">100%</div>
+                        <div class="label">ความก้าวหน้าโดยรวม</div>
                     </div>
                     <div class="status-card">
-                        <div class="number">4</div>
-                        <div class="label">รอการประเมิน</div>
+                        <div class="number">ผ่าน</div>
+                        <div class="label">สถานะการสอบจบ</div>
                     </div>
-                    <div class="status-card">
-                        <div class="number">2</div>
-                        <div class="label">รอลงนาม</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">1</div>
-                        <div class="label">การสอบวันนี้</div>
-                    </div>
+                </div>
+
+                <!-- Exam Schedule Section -->
+                <div class="exam-section-timeline">
+                    <h3>📅 กำหนดการสอบ</h3>
+                    <ul class="timeline">
+                        <li>
+                            <span class="date">10 ตุลาคม 2568</span>
+                            <span class="event">สอบหัวข้อ - 09:00 น.</span>
+                        </li>
+                        <li>
+                            <span class="date">20 ธันวาคม 2568</span>
+                            <span class="event">สอบจบ - 13:30 น.</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Information Section -->
                 <div class="info-section">
-                    <h3>ข้อมูลการทำหน้าที่กรรมการ</h3>
-                    <p>
-                        หน้านี้แสดงข้อมูลภาพรวมของการทำหน้าที่กรรมการสอบโครงงาน รวมถึงการสอบที่ได้รับมอบหมาย 
-                        การประเมินที่ต้องดำเนินการ และการลงนามอนุมัติที่รอดำเนินการ คุณสามารถใช้เมนูด้านซ้าย
-                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การประเมินหัวข้อ การตรวจเล่มโครงงาน 
-                        และการบันทึกผลการสอบ
-                    </p>
+                    <h3>ข้อมูลโครงงาน</h3>
+                        <div class="info-item">
+                            <label for="topic">หัวข้อโครงงาน : </label>
+                            <span>ระบบยืม-คืนคุรุภัณฑ์</span><br>
+                            <label for="member">ผู้จัดทำ : </label>
+                            <span>นางสาวไรบีนา มะเก๊ะ, นายคฤษฐ์ เสือเดช, นางสาวชาลิสา ยิ้มลำไย</span><br>
+                            <label for="advisor">อาจารย์ที่ปรึกษา : </label>
+                            <span>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</span>
+                        </div>
                 </div>
+
             </div>
         </main>
     </div>

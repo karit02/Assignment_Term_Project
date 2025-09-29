@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>ระบบจัดการโครงงาน - นักศึกษา</title>
 </head>
 <body>
@@ -43,11 +43,11 @@
                     เสนอ/แก้ไข 
                     <br>รายละเอียดโครงงาน
                 </a></li>
-                <li><a href="weekly-progress.html" class="active">
+                <li><a href="weekly-progress.html">
                     <div class="icon"></div>
                     รายงานความก้าวหน้า
                 </a></li>
-                <li><a href="topic-exam-request.html">
+                <li><a href="topic-exam-request.html" class="active">
                     <div class="icon"></div>
                     ยื่นสอบหัวข้อ
                 </a></li>
@@ -65,10 +65,12 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>รายงานความก้าวหน้า</h2>
+                <h2>ยื่นสอบหัวข้อ</h2>
             </div>
             <div class="content-body">
-                <label for="details">รายละเอียด : </label>
+                <label for="topic">หัวข้อโครงงาน : </label>
+                <input type="text" name="topic" placeholder="ระบบยืม-คืนคุรุภัณฑ์">
+                <label for="details">รายละเอียดโครงงาน : </label>
                 <textarea name="details" rows="10"></textarea>
                 <label for="ter-file">แนบไฟล์เอกสาร :</label>
                 <div class="file-input-wrapper">
