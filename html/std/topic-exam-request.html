@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>ระบบจัดการโครงงาน - นักศึกษา</title>
 </head>
 <body>
@@ -47,11 +47,11 @@
                     <div class="icon"></div>
                     รายงานความก้าวหน้า
                 </a></li>
-                <li><a href="topic-exam-request.html">
+                <li><a href="topic-exam-request.html" class="active">
                     <div class="icon"></div>
                     ยื่นสอบหัวข้อ
                 </a></li>
-                <li><a href="final-exam-request.html" class="active">
+                <li><a href="final-exam-request.html">
                     <div class="icon"></div>
                     ยื่นสอบจบ
                 </a></li>
@@ -65,23 +65,19 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>ยื่นสอบจบ</h2>
+                <h2>ยื่นสอบหัวข้อ</h2>
             </div>
             <div class="content-body">
-                <label for="fer-file">แนบไฟล์เล่มโปรเจค :</label>
+                <label for="topic">หัวข้อโครงงาน : </label>
+                <input type="text" name="topic" placeholder="ระบบยืม-คืนคุรุภัณฑ์">
+                <label for="details">รายละเอียดโครงงาน : </label>
+                <textarea name="details" rows="10"></textarea>
+                <label for="ter-file">แนบไฟล์เอกสาร :</label>
                 <div class="file-input-wrapper">
-                    <input type="file" id="fer-file" name="fer-file" onchange="document.getElementById('file-name1').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
-                    <button type="button" onclick="document.getElementById('fer-file').click()">เลือกไฟล์</button>
-                    <div class="file-name" id="file-name1">ยังไม่ได้เลือกไฟล์</div>
+                    <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                    <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
+                    <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
                 </div>
-
-                <label for="present-file">แนบไฟล์นำเสนอ :</label>
-                <div class="file-input-wrapper">
-                    <input type="file" id="present-file" name="present-file" onchange="document.getElementById('file-name2').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
-                    <button type="button" onclick="document.getElementById('present-file').click()">เลือกไฟล์</button>
-                    <div class="file-name" id="file-name2">ยังไม่ได้เลือกไฟล์</div>
-                </div>
-
                 <div class="ter-btn">
                     <button type="submit">บันทึก</button>
                     <button type="reset">ยกเลิก</button>

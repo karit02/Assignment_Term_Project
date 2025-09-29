@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>ระบบจัดการโครงงาน - นักศึกษา</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
                 เมนู - นักศึกษา
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashbroadstd.html">
+                <li><a href="/" class="active">
                     <div class="icon"></div>
                     แดชบอร์ด
                 </a></li>
@@ -43,7 +43,7 @@
                     เสนอ/แก้ไข 
                     <br>รายละเอียดโครงงาน
                 </a></li>
-                <li><a href="weekly-progress.html" class="active">
+                <li><a href="weekly-progress.html">
                     <div class="icon"></div>
                     รายงานความก้าวหน้า
                 </a></li>
@@ -65,21 +65,49 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>รายงานความก้าวหน้า</h2>
+                <h2>แดชบอร์ด</h2>
             </div>
             <div class="content-body">
-                <label for="details">รายละเอียด : </label>
-                <textarea name="details" rows="10"></textarea>
-                <label for="ter-file">แนบไฟล์เอกสาร :</label>
-                <div class="file-input-wrapper">
-                    <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
-                    <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
-                    <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
+                <!-- Status Cards -->
+                <div class="status-cards">
+                    <div class="status-card">
+                        <div class="number">100%</div>
+                        <div class="label">ความก้าวหน้าโดยรวม</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="number">ผ่าน</div>
+                        <div class="label">สถานะการสอบจบ</div>
+                    </div>
                 </div>
-                <div class="ter-btn">
-                    <button type="submit">บันทึก</button>
-                    <button type="reset">ยกเลิก</button>
+
+                <!-- Exam Schedule Section -->
+                <div class="exam-section-timeline">
+                    <h3>📅 กำหนดการสอบ</h3>
+                    <ul class="timeline">
+                        <li>
+                            <span class="date">10 ตุลาคม 2568</span>
+                            <span class="event">สอบหัวข้อ - 09:00 น.</span>
+                        </li>
+                        <li>
+                            <span class="date">20 ธันวาคม 2568</span>
+                            <span class="event">สอบจบ - 13:30 น.</span>
+                        </li>
+                    </ul>
                 </div>
+
+                <!-- Information Section -->
+                <div class="info-section">
+                    <h3>ข้อมูลโครงงาน</h3>
+                        <div class="info-item">
+                            <label for="topic">หัวข้อโครงงาน : </label>
+                            <span>ระบบยืม-คืนคุรุภัณฑ์</span><br>
+                            <label for="member">ผู้จัดทำ : </label>
+                            <span>นางสาวไรบีนา มะเก๊ะ, นายคฤษฐ์ เสือเดช, นางสาวชาลิสา ยิ้มลำไย</span><br>
+                            <label for="advisor">อาจารย์ที่ปรึกษา : </label>
+                            <span>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</span>
+                        </div>
+                </div>
+
             </div>
         </main>
     </div>
