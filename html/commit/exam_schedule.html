@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>ระบบจัดการโครงงาน - กรรมการ</title>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">F</div>
+                <div class="user-name">Final Devil</div>
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - กรรมการ
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="dashbroadcommit.html">
+                    <div class="icon"></div>
+                    แดชบอร์ด
+                </a></li>
+                <li><a href="exam_schedule.html" class="active">
+                    <div class="icon"></div>
+                    ตารางสอบ
+                </a></li>
+                <li><a href="/topic-evaluation">
+                    <div class="icon"></div>
+                    รายละเอียดโครงงาน
+                </a></li>
+                <li><a href="/project-review">
+                    <div class="icon"></div>
+                    บันทึกผลการสอบหัวข้อ
+                </a></li>
+                <li><a href="/exam-results">
+                    <div class="icon"></div>
+                    บันทึกผลการสอบจบ
+                </a></li>
+                <li><a href="/signature-approval">
+                    <div class="icon"></div>
+                    ลงนามอนุมัติ
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="content-header">
+                <h2>ตารางสอบ</h2>
+                <div class="breadcrumb">หน้าแรก > ตารางสอบ</div>
+            </div>
+
+            <div class="schedule-container">
+                <div class="controls-bar">
+                    <div class="filter-area">
+                        <label for="committee-year" class="filter-label">ปีการศึกษา</label>
+                        <select id="committee-year" class="year-selector">
+                            <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                            <option value="2560">2560</option>
+                            <option value="2561">2561</option>
+                            <option value="2562">2562</option>
+                            <option value="2563">2563</option>
+                            <option value="2564">2564</option>
+                            <option value="2565">2565</option>
+                            <option value="2566">2566</option>
+                            <option value="2567">2567</option>
+                            <option value="2568">2568</option>
+                        </select>
+
+                        <label for="project-type" class="filter-label">ประเภทโครงงาน</label>
+                        <select id="project-type" class="project-selector" style="min-width: 180px;">
+                            <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                            <option value="project-1">โครงงาน 1</option>
+                            <option value="project-2">โครงงาน 2</option>
+                            <option value="coop">โครงงานสหกิจ</option>
+                            <option value="coop">โครงงานพิเศษ</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            <div class="table-content-wrapper"> 
+                <table class="graduation-schedule-table" id="schedule-table-body">
+                    <thead>
+                        <tr>
+                            <th>รหัสโครงงาน</th>
+                            <th>ชื่อโครงงาน</th>
+                            <th>รหัสนักศึกษา</th>
+                            <th>อาจารย์ที่ปรึกษา</th>
+                            <th>วันที่เสนอสอบ</th>
+                            <th>หมายเหตุ</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            <td>T0001</td>
+                            <td>อร่อยดี</td>
+                            <td>6806022510xxx</td>
+                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
+                            <td>24 กันยายน 2568</td>
+                            <td>-</td>
+                    </tbody>
+
+                    <tbody>
+                            <td>T0002</td>
+                            <td>เหมือนไม่อร่อย</td>
+                            <td>6806022510xxx</td>
+                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
+                            <td>25 กันยายน 2568</td>
+                            <td>-</td>
+                    </tbody>
+
+                    <tbody>
+                            <td>T0003</td>
+                            <td>หวานไปป่ะ อยากกินเผ็ด</td>
+                            <td>6806022510xxx</td>
+                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
+                            <td>29 กันยายน 2568</td>
+                            <td>-</td>
+                    </tbody>
+                </table>
+            
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link" data-page="2">2</a>
+                    <a href="#" class="page-link" data-page="3">3</a>
+                    <a href="#" class="page-link" data-page="4">4</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
+                </div>
+            </div>
+            
+        </div> 
+        </div>
+</main>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="/help">ช่วยเหลือ</a>
+            <a href="/contact">ติดต่อ</a>
+            <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+</body>
+</html>

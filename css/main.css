@@ -189,8 +189,8 @@ body {
 .sidebar-menu a:hover,
 .sidebar-menu a.active {
     background: #f8fafc;
-    color: #667eea;
-    border-left-color: #667eea;
+    color: #5d77ec;
+    border-left-color: #5d77ec;
 }
 
 .sidebar-menu .icon {
@@ -218,6 +218,214 @@ body {
     font-size: 28px;
     margin-bottom: 10px;
     font-weight: 600;
+}
+
+.schedule-container {
+    max-width: 1500px; /* กำหนดความกว้างสูงสุดที่ต้องการ */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางแนวนอน */
+
+    /* โค้ดเดิมอื่นๆ */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* CSS สำคัญที่ทำให้เกิดการจัดเรียง */
+.controls-bar {
+    display: flex;
+    justify-content: space-between; /* ดันกลุ่มซ้าย/ขวาออกจากกัน */
+    align-items: center;
+    padding: 10px 0; 
+}
+
+/* กลุ่ม Dropdown ที่ต้องการให้อยู่ชิดขวา */
+.filter-group-right {
+    display: flex;
+    gap: 20px; /* ระยะห่างระหว่าง Dropdown เลือกปีและประเภท */
+    margin-left: auto; /* ดันกลุ่มนี้ไปชิดขวาของ controls-bar */
+}
+
+/* ================================================= */
+/* สไตล์ Dropdown Selector */
+/* ================================================= */
+
+.filter-area {
+    /* จัดองค์ประกอบให้อยู่ในแนวนอนและมีช่องไฟ */
+    display: flex; 
+    align-items: center;
+    gap: 10px; /* ระยะห่างระหว่าง Label กับ Select */
+    margin-bottom: 20px;
+    padding: 0 20px; /* จัดให้อยู่ในแนวเดียวกับส่วนของตาราง */
+}
+
+.filter-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057; /* สีเทาเข้ม */
+}
+
+.year-selector {
+    padding: 10px 15px;
+    border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
+    border-radius: 6px;
+    min-width: 100px; /* กำหนดความกว้างขั้นต่ำ */
+    background-color: white;
+    font-size: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
+    
+    /* สไตล์เพิ่มเติมเพื่อให้ดูสะอาดตา */
+    -webkit-appearance: none; /* ลบการแสดงผลเริ่มต้นของเบราว์เซอร์ */
+    -moz-appearance: none;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#6a11cb" d="M287 78.4L146.2 219.2 5.4 78.4h281.6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center; 
+    background-size: 10px;
+}
+
+.project-selector {
+    padding: 10px 15px;
+    border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
+    border-radius: 6px;
+    min-width: 100px; /* กำหนดความกว้างขั้นต่ำ */
+    background-color: white;
+    font-size: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
+    
+    /* สไตล์เพิ่มเติมเพื่อให้ดูสะอาดตา */
+    -webkit-appearance: none; /* ลบการแสดงผลเริ่มต้นของเบราว์เซอร์ */
+    -moz-appearance: none;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#6a11cb" d="M287 78.4L146.2 219.2 5.4 78.4h281.6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center; 
+    background-size: 10px;
+}
+
+/* ================================================= */
+/* จัดรูปแบบตาราง (Graduation Schedule Table) */
+/* ================================================= */
+
+.graduation-schedule-table {
+    width: 100%;
+    border-collapse: separate; /* ใช้ separate เพื่อให้ใช้ border-radius และ box-shadow ได้ */
+    border-spacing: 0;
+    font-size: 14px;
+    /* เพิ่มเงาและมุมโค้งมนให้กับตารางโดยรวม */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    overflow: hidden; /* สำคัญเพื่อซ่อนเส้นขอบที่เกินมา */
+}
+
+/* ส่วนหัวตาราง (Thead) */
+.graduation-schedule-table thead th {
+    /* ใช้สีที่เข้ากับธีมม่วง/น้ำเงิน */
+    background-color: #f0f3ff; 
+    color: #34495e;
+    padding: 15px 18px; 
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 1px solid #667eea; /* เน้นเส้นแบ่งด้วยสีธีม */
+    /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
+    border-right: 1px solid #667eea; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
+    border-left: none; /* ลบขอบซ้ายออกเพื่อไม่ให้ซ้อนทับกับ border ของ table */
+    border-top: none; /* ลบขอบบนออกเพื่อไม่ให้ซ้อนทับกับ border ของ table */
+}
+
+/* ลบคอลัมน์สุดท้ายของส่วนหัว (หมายเหตุ) ไม่ให้มี border-right */
+.graduation-schedule-table thead th:last-child {
+    border-right: none;
+}
+
+/* ส่วนเนื้อหาตาราง (Tbody) */
+.graduation-schedule-table tbody td {
+    padding: 10px 15px;
+    /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
+    border-right: 1px solid #667eea; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
+    border-bottom: 1px solid #e0e0e0; /* เส้นแบ่งแถวเป็นสีเทาอ่อน */
+    border-left: none; /* ลบขอบซ้าย */
+    border-top: none; /* ลบขอบบน */
+    vertical-align: middle;
+    color: #495057;
+    text-align: left;
+}
+
+/* ลบคอลัมน์สุดท้ายของเนื้อหา (หมายเหตุ) ไม่ให้มี border-right */
+.graduation-schedule-table tbody td:last-child {
+    border-right: none;
+}
+
+/* ส่วนสลับสีแถว */
+.graduation-schedule-table tbody tr:nth-child(even) {
+    background-color: #f7f9ff; /* สีฟ้าอ่อน/ม่วงอ่อนเล็กน้อย */
+}
+.graduation-schedule-table tbody tr:hover {
+    background-color: #f7f9ff; 
+    cursor: default;
+}
+
+/* Container ที่ห่อหุ้มตารางและ Pagination */
+.table-content-wrapper {
+    display: flex;
+    flex-direction: column; /* จัดองค์ประกอบให้อยู่ในแนวตั้ง */   
+    /* สำคัญ: กำหนดความสูง เพื่อสร้างพื้นที่ว่างในการดัน Pagination */
+    min-height: 515px; /* ปรับค่านี้ตามความสูงที่ต้องการให้ Card มีพื้นที่ว่าง */
+    background-color: white; /* สมมติว่า Card พื้นหลังเป็นสีขาว */
+    padding: 10px; /* เพิ่ม padding รอบด้าน */
+}
+
+/* Container ที่ห่อหุ้ม Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center; 
+    /* กุญแจสำคัญ: margin-top: auto; จะดัน Pagination ลงไปด้านล่างสุดของ Flex Container */
+     margin-top: auto; 
+    margin-bottom: 0; /* ไม่ต้องมี margin ด้านล่าง เพราะใช้ padding ของ Wrapper แทน */
+    padding-bottom: 0;
+}
+
+/* ตารางหลัก: ตรวจสอบไม่ให้มี margin-bottom มากเกินไป */
+.graduation-schedule-table {
+    /* ... โค้ดเดิม ... */
+    margin-bottom: 10px; /* เว้นระยะห่างเล็กน้อยระหว่างตารางกับ pagination */
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.page-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px; 
+    height: 35px;
+    text-decoration: none;
+    color: #495057; 
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid #ced4da;
+    transition: all 0.2s ease-in-out;
+}
+.page-link.active {
+    background-color: #6a11cb;
+    color: white;
+    border-color: #6a11cb;
+    font-weight: bold;
+}
+.page-link:hover:not(.active) {
+    background-color: #f0f3ff;
+    color: #6a11cb;
+    border-color: #6a11cb;
+}
+.prev-next-link {
+    border: none;
+    font-size: 16px;
+    color: #6a11cb;
+    width: 30px;
+    height: 30px;
 }
 
 .breadcrumb {
