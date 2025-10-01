@@ -689,7 +689,9 @@ body {
 }
 
 .content-body {
-    padding: 30px;
+    padding: 25px;
+    padding-left: 33px;
+    padding-right: 33px;
 }
 
 .content-body label {
@@ -815,6 +817,7 @@ body {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    padding-bottom: 10px;
 }
 
 /* แต่ละ dropdown ให้ครึ่งหนึ่งของความกว้าง */
@@ -891,6 +894,24 @@ body {
     transition: 0.3s;
 }
 
+.ter-btn button[type="submit"] {
+    background: #2563eb; /* ฟ้า */
+    color: white;
+}
+
+.ter-btn button[type="submit"]:hover {
+    background: #1e40af; /* น้ำเงินเข้ม */
+}
+
+.ter-btn button[type="reset"] {
+    background: #e5e7eb; /* เทาอ่อน */
+    color: #374151;
+}
+
+.ter-btn button[type="reset"]:hover {
+    background: #bbbec3; /* เทากลาง */
+}
+
 .ter-btn button[type="solve"] {
     background: #2563eb; /* ฟ้า */
     color: white;
@@ -965,7 +986,7 @@ body {
 }
 
 .status-card .number {
-    font-size: 32px;
+    font-size: 36px; /* เน้นตัวเลข/เปอร์เซ็นต์ให้ใหญ่ขึ้น */
     font-weight: bold;
     color: #667eea;
     margin-bottom: 8px;
@@ -979,38 +1000,82 @@ body {
 
 /* Information Section */
 .info-section {
-    background: #f8fafc;
-    padding: 20px;
+    background: white; 
+    padding: 20px 30px;
     border-radius: 10px;
-    border: 1px solid #e2e8f0;
-    width: 100%;       /* ✅ กำหนดให้เต็มความกว้าง */
-    box-sizing: border-box; /* กัน padding ดันเกิน */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 25px;
+    border: 1px solid #e2e8f0; 
 }
 
 .info-section h3 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #334155;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
 }
 
 .info-item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex; /* ใช้ flexbox */
+    align-items: flex-start;
 }
 
-.info-item label {
-    font-weight: bold;
-    color: #475569;
-    display: inline-block;
-    width: 150px; /* กำหนดความกว้างให้ label เท่ากัน */
+/* **1. ปรับปรุง Container หลัก (info-group)** */
+.info-group {
+    /* เปลี่ยนจาก Grid เป็น Flex เพื่อควบคุมการไหลของข้อมูลทีละรายการ */
+    display: flex;
+    flex-direction: column; /* จัดเรียงรายการลงมาในแนวตั้ง */
+    gap: 0; /* ไม่ต้องมีช่องว่างมากระหว่างรายการ */
 }
 
-.info-item span {
+
+/* **2. สไตล์สำหรับแต่ละแถวข้อมูล (หัวข้อ : ค่า)** */
+.info-row-item {
+    display: flex; /* ใช้งาน Flexbox ภายในแต่ละแถว */
+    align-items: flex-start; /* จัดเรียงให้ Label และ Value อยู่ในแนวเดียวกัน */
+    padding: 10px 0;
+}
+
+.info-row-item:last-child {
+    border-bottom: none; /* ลบเส้นแบ่งตัวสุดท้าย */
+}
+
+/* **3. สไตล์สำหรับ Label (หัวข้อ)** */
+.info-row-item label {
+    font-weight: 700; 
+    color: #1e40af; /* ⬅️ ใช้สีน้ำเงินเข้มเพื่อเน้นหัวข้อ */
+    min-width: 150px; /* ➡️ กำหนดความกว้างคงที่เพื่อให้หัวข้อทั้งหมดตรงกัน */
+    margin-right: 15px; /* ระยะห่างระหว่าง Label และ Value */
+    flex-shrink: 0; /* ป้องกันไม่ให้ Label หดตัว */
+    font-size: 1rem;
+}
+
+/* **4. สไตล์สำหรับ Value (ค่าข้อมูล)** */
+.info-row-item span {
     color: #1e293b;
+    font-weight: 500;
+    line-height: 1.6;
+    flex-grow: 1; /* ให้ค่าข้อมูลขยายเต็มพื้นที่ที่เหลือ */
+    padding-top: 13px;
 }
+
 
 /* Exam Schedule Section */
 .exam-section-timeline {
+    background: white; 
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     margin-top: 25px;
-    padding-left: 0;
+    border: 1px solid #e2e8f0;
+}
+
+.exam-section-timeline h3 {
+    margin-bottom: 20px;
+    color: #334155;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
 }
 
 .timeline {
@@ -1023,16 +1088,16 @@ body {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 12px;
+    left: 14px;
     top: 0;
     width: 3px;
     height: 100%;
-    background-color: #1a73e8;
+    background-color: #1664ca;
     border-radius: 2px;
 }
 
 .timeline li {
-    margin-bottom: 25px;
+    margin-bottom: 30px; 
     position: relative;
     padding-left: 35px; 
 }
@@ -1056,11 +1121,15 @@ body {
     color: #e74c3c;
     display: block;
     margin-bottom: 3px;
+    padding-top: 1px;
+    padding-left: 5px;
 }
 
 .timeline .event {
-    color: #333;
-    font-size: 0.95rem;
+    color: #1e293b;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 5px;
 }
 
 /* Footer */
