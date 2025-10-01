@@ -38,7 +38,7 @@
                     <div class="icon"></div>
                     แดชบอร์ด
                 </a></li>
-                <li><a href="exam_schedule.html" class="active">
+                <li><a href="exam_schedule.html">
                     <div class="icon"></div>
                     ตารางสอบ
                 </a></li>
@@ -50,7 +50,7 @@
                     <div class="icon"></div>
                     บันทึกผลการสอบหัวข้อ
                 </a></li>
-                <li><a href="/exam-results">
+                <li><a href="finished_exam.html" class="active">
                     <div class="icon"></div>
                     บันทึกผลการสอบจบ
                 </a></li>
@@ -64,8 +64,8 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>ตารางสอบ</h2>
-                <div class="breadcrumb">หน้าแรก > ตารางสอบ</div>
+                <h2>บันทึกผลการสอบจบ</h2>
+                <div class="breadcrumb">หน้าแรก > บันทึกผลการสอบจบ</div>
             </div>
 
             <div class="schedule-container">
@@ -98,61 +98,64 @@
                     </div>
                 </div>
 
-
             <div class="table-content-wrapper"> 
-                <table class="graduation-schedule-table" id="schedule-table-body">
-                    <thead>
-                        <tr>
-                            <th>รหัสโครงงาน</th>
-                            <th>ชื่อโครงงาน</th>
-                            <th>รหัสนักศึกษา</th>
-                            <th>อาจารย์ที่ปรึกษา</th>
-                            <th>วัน/เดือน/ปี</th>
-                            <th>เวลา</th>
-                            <th>หมายเหตุ</th>
-                        </tr>
-                    </thead>
+                <div class="card-container"> 
+                    <div class="project-card">
+                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2> 
+                        <div class="info-item">
+                            <span class="label">รหัสโครงงาน :</span>
+                            <span class="value">T0003</span>
+                        </div>
 
-                    <tbody>
-                            <td>T0001</td>
-                            <td>ระบบยืม - คืนคุรุภัณฑ์</td>
-                            <td>6806022510xxx</td>
-                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
-                            <td>24 กันยายน 2568</td>
-                            <td>10:36</td>
-                            <td>-</td>
-                    </tbody>
-
-                    <tbody>
-                            <td>T0002</td>
-                            <td>โปรแกรมแปลภาษามือเป็นข้อความ</td>
-                            <td>6806022530xxx</td>
-                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
-                            <td>25 กันยายน 2568</td>
-                            <td>12:26</td>
-                            <td>-</td>
-                    </tbody>
-
-                    <tbody>
-                            <td>T0003</td>
-                            <td>โปรแกรมแปลภาษาลิง</td>
-                            <td>6806022510xxx</td>
-                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
-                            <td>29 กันยายน 2568</td>
-                            <td>12:30</td>
-                            <td>-</td>
-                    </tbody>
-
-                    <tbody>
-                            <td>T0004</td>
-                            <td>ระบบวิเคราะห์และแปลความรู้สึกจากน้ำเสียง</td>
-                            <td>6806022540xxx</td>
-                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
-                            <td>30 กันยายน 2568</td>
-                            <td>16:30</td>
-                            <td>-</td>
-                    </tbody>
-                </table>
+                        <div class="info-item">
+                            <span class="label">ชื่อนักศึกษา :</span>
+                            <span class="value">นายกฤษนัย โถมสันเทียะ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">รหัสนักศึกษา :</span>
+                            <span class="value">6806022510xxx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">สถานะ :</span>
+                            <span class="value">สอบจบ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ผลสอบ :</span>
+                            <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
+                        </div>
+                        <div class="button-container">
+                            <a href="finished_exam_1.html">
+                            <button class="detail-button">ดูรายละเอียด</button></a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h2 class="card-title">ระบบวิเคราะห์และแปลความรู้สึกจากน้ำเสียง</h2>
+                            <div class="info-item">
+                                <span class="label">รหัสโครงงาน :</span>
+                                <span class="value">T0004</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">ชื่อนักศึกษา :</span>
+                                <span class="value">นายสากุริ มิโคนิ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">รหัสนักศึกษา :</span>
+                                <span class="value">6806022540xxx</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">สถานะ :</span>
+                                <span class="value">สอบจบ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">ผลสอบ :</span>
+                                <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
+                            </div>
+                            <div class="button-container">
+                                <button class="detail-button">ดูรายละเอียด</button>
+                            </div>
+                    </div>
+                </div>
             
             <div class="pagination-container">
                 <div class="pagination">

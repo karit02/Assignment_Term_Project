@@ -934,6 +934,7 @@ body {
 
 .ter-btn button[type="no"]:hover {
     background: #bd2130; /* แดงเข้มขึ้นเมื่อ hover */
+}
 
 /* Status Crads */
 .status-cards {
@@ -1064,68 +1065,104 @@ body {
 
 /* Footer */
 .footer {
-    background: #1e293b;
-    color: white;
-    padding: 30px 40px;
-    margin-top: 50px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     text-align: center;
-}
-
-.footer p {
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-.footer-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    padding: 15px 40px;
+    font-size: 13px;
+    line-height: 1.8;
 }
 
 .footer-links a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    color: #bdc3c7;
+    margin: 0 10px;
+    transition: color 0.2s;
 }
 
 .footer-links a:hover {
-    opacity: 1;
+    color: #ffffff;
 }
 
-/* Responsive Design */
+/* ======================= */
+/* Responsive Tablet/Mobile */
+/* ======================= */
+@media (max-width: 992px) {
+.main-container {
+    grid-template-columns: 1fr; /* Sidebar ลงด้านบน Content ลงด้านล่าง */
+    padding: 20px;
+}
+
+.sidebar {
+    order: -1; /* ย้าย Sidebar ไปอยู่บนสุด */
+}
+
+.card-container {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+}
+
 @media (max-width: 768px) {
-    .banner-content {
-flex-direction: column;
-gap: 20px;
-text-align: center;
+.banner-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.banner-left {
+    flex-direction: column;
+    gap: 10px;
 }
 
 .banner-user {
-width: 100%;
-justify-content: center;
-}
-
-.main-container {
-grid-template-columns: 1fr;
-padding: 20px;
-}
-
-.navbar-content {
-padding: 0 20px;
+    width: 100%;
+    justify-content: center;
 }
 
 .nav-menu {
-flex-wrap: wrap;
-gap: 20px;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.status-cards {
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 15px;
+.filter-area {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.project-actions {
-grid-template-columns: 1fr;
+.filter-group-right {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.schedule-container {
+    padding: 10px;
+    overflow-x: auto; /* เลื่อนแนวนอนได้ */
+}
+
+.graduation-schedule-table {
+    font-size: 12px;
+    min-width: 600px; /* ป้องกันคอลัมน์เบียดกันเกินไป */
+}
+
+.status-card {
+    width: 100%;
+    height: auto; /* ให้สูงตามเนื้อหา */
+    padding: 20px;
+}
+
+.ter-btn {
+    flex-direction: column;
+    width: 100%;
+}
+
+.ter-btn button {
+     width: 100%;
+}
 }

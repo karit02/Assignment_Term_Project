@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css  ">
+    <link rel="stylesheet" href="/css/main.css">
     <title>ระบบจัดการโครงงาน - กรรมการ</title>
 </head>
 <body>
@@ -46,11 +46,11 @@
                     <div class="icon"></div>
                     รายละเอียดโครงงาน
                 </a></li>
-                <li><a href="exam_topic.html" class="active">
+                <li><a href="exam_topic.html">
                     <div class="icon"></div>
                     บันทึกผลการสอบหัวข้อ
                 </a></li>
-                <li><a href="finished_exam.html">
+                <li><a href="finished_exam.html" class="active">
                     <div class="icon"></div>
                     บันทึกผลการสอบจบ
                 </a></li>
@@ -65,7 +65,7 @@
         <main class="content">
             <div class="content-header">
                 <h2>บันทึกผลการสอบหัวข้อ</h2>
-                <div class="breadcrumb">หน้าแรก > บันทึกผลการสอบหัวข้อ > รายละเอียด</div>
+                <div class="breadcrumb">หน้าแรก > บันทึกผลการสอบจบ > รายละเอียด > แก้ไข</div>
             </div>
 
             <div class="content-body">
@@ -76,7 +76,7 @@
                     <div class="data-group info-block">
                         <div class="info-row">
                             <div class="info-label">ชื่อโครงการ :</div>
-                            <div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div>
+                            <div class="info-value">โปรแกรมแปลภาษาลิง</div>
                         </div>
                         <div class="info-row">
                             <div class="info-label">ประเภทโครงงาน :</div>
@@ -101,20 +101,23 @@
                     </div>
                     
                     <div class="project-description-box">
-                        <p>ระบบนี้ถูกออกแบบมาเพื่อจัดการกระบวนการยืมและคืนครุภัณฑ์ของภาควิชา IT โดยใช้เทคโนโลยี QR Code สำหรับการยืนยันตัวตนและการติดตามสถานะ ช่วยลดขั้นตอนเอกสารและเพิ่มความแม่นยำในการจัดการทรัพย์สิน</p>
+                        <p>ในบริบทนี้ "โปรแกรมแปลภาษาลิง" คือความพยายามทางวิทยาศาสตร์ที่ใช้เทคโนโลยี 
+                            โดยเฉพาะอย่างยิ่ง ปัญญาประดิษฐ์ (AI) และการเรียนรู้ของเครื่อง (Machine Learning - ML) 
+                            มาวิเคราะห์และตีความเสียง การเคลื่อนไหว หรือท่าทางของลิง (หรือสัตว์เลี้ยงลูกด้วยนมตระกูลไพรเมตอื่นๆ) 
+                            เพื่อทำความเข้าใจว่าพวกมันกำลัง "พูด" หรือ "สื่อสาร" อะไรกันอยู่</p>
                     </div>
 
 
                     <h3 class="detail-title person-title">รายชื่อผู้จัดทำโครงการ</h3>
                     <div class="person-list data-group">
                         <p>
-                            นางสาวไรบีนา มะเก๊ะ <span class="id-code">6806022510xxx</span>
+                            นายกฤษนัย โถมสันเทียะ<span class="id-code">6806022510xxx</span>
                         </p>
                         <p>
-                            นายคฤษฐ์ เสือเดช <span class="id-code">6806022510xxx</span> 
+                            นายนันทวัฒน์ นันทวิสาร<span class="id-code">6806022510xxx</span> 
                         </p>
                         <p>
-                            นางสาวชาลิสา ยิ้มลำใย <span class="id-code">6806022510xxx</span> 
+                            นางสาวกนกวรรณ ศรีประไชย<span class="id-code">6806022510xxx</span> 
                         </p>
                     </div>
 
@@ -126,8 +129,8 @@
 
                     <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
                     <div class="file-link-section data-group">
-                        <a href="ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
-                            <i class="fas fa-file-pdf"></i> ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf
+                        <a href="ไฟล์โปรแกรมแปลภาษาลิง.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-pdf"></i> ไฟล์โปรแกรมแปลภาษาลิง.pdf
                         </a>
                         <a href="ไฟล์นำเสนอ.pdf" target="_blank" class="file-link">
                             <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
@@ -135,9 +138,10 @@
                     </div>
                 </div>
                 <div class="ter-btn">
-                    <a href="exam_topic_2.html">
-                    <button type="solve">แก้ไข</button></a>
-                    <a href="exam_topic.html">
+                    <button type="pass">ผ่าน</button>
+                    <button type="no">ไม่ผ่าน</button>
+                    <button type="save">บันทึก</button>
+                    <a href="finished_exam_2.html">
                     <button type="back">ย้อนกลับ</button></a>
                 </div>
             </div>
