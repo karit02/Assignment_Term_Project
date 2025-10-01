@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>ระบบจัดการโครงงาน - กรรมการ</title>
 </head>
 <body>
@@ -32,8 +32,9 @@
             <div class="sidebar-header">
                 เมนู - กรรมการ
             </div>
+
             <ul class="sidebar-menu">
-                <li><a href="dashbroadcommit.html" class="active">
+                <li><a href="dashbroadcommit.html">
                     <div class="icon"></div>
                     แดชบอร์ด
                 </a></li>
@@ -45,7 +46,7 @@
                     <div class="icon"></div>
                     รายละเอียดโครงงาน
                 </a></li>
-                <li><a href="exam_topic.html">
+                <li><a href="exam_topic.html" class="active">
                     <div class="icon"></div>
                     บันทึกผลการสอบหัวข้อ
                 </a></li>
@@ -63,59 +64,56 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>แดชบอร์ด - กรรมการ</h2>
-                <div class="breadcrumb">หน้าแรก > แดชบอร์ดกรรมการ</div>
+                <h2>บันทึกผลการสอบหัวข้อ</h2>
+                <div class="breadcrumb">หน้าแรก > บันทึกผลการสอบหัวข้อ</div>
+            </div>
+
+            <div class="schedule-container">
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                            </select>
+
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                                <option value="project-1">โครงงาน 1</option>
+                                <option value="project-2">โครงงาน 2</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link" data-page="2">2</a>
+                    <a href="#" class="page-link" data-page="3">3</a>
+                    <a href="#" class="page-link" data-page="4">4</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
+                </div>
             </div>
             
-            <div class="content-body">
-                <!-- Status Cards -->
-                <div class="status-cards">
-                    <div class="status-card">
-                        <div class="number">6</div>
-                        <div class="label">การสอบที่ได้รับมอบหมาย</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">4</div>
-                        <div class="label">รอการประเมิน</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">2</div>
-                        <div class="label">รอลงนาม</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">1</div>
-                        <div class="label">การสอบวันนี้</div>
-                    </div>
-                </div>
+        </div> 
+        </div>
+</main>
 
-                <!-- Quick Actions -->
-                <div class="project-actions">
-                    <a href="/exam-assignments" class="btn">
-                        <span>📅</span>
-                        ตารางสอบของฉัน
-                    </a>
-                    <a href="/project-review" class="btn">
-                        <span>📖</span>
-                        ตรวจเล่มโครงงาน
-                    </a>
-                    <a href="/exam-results" class="btn">
-                        <span>✏️</span>
-                        บันทึกผลการสอบ
-                    </a>
-                </div>
-
-                <!-- Information Section -->
-                <div class="info-section">
-                    <h3>ข้อมูลการทำหน้าที่กรรมการ</h3>
-                    <p>
-                        หน้านี้แสดงข้อมูลภาพรวมของการทำหน้าที่กรรมการสอบโครงงาน รวมถึงการสอบที่ได้รับมอบหมาย 
-                        การประเมินที่ต้องดำเนินการ และการลงนามอนุมัติที่รอดำเนินการ คุณสามารถใช้เมนูด้านซ้าย
-                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การประเมินหัวข้อ การตรวจเล่มโครงงาน 
-                        และการบันทึกผลการสอบ
-                    </p>
-                </div>
-            </div>
-        </main>
+        </div>
     </div>
 
     <!-- Footer -->

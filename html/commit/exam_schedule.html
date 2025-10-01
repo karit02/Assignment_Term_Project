@@ -42,11 +42,11 @@
                     <div class="icon"></div>
                     ตารางสอบ
                 </a></li>
-                <li><a href="/topic-evaluation">
+                <li><a href="details_project.html">
                     <div class="icon"></div>
                     รายละเอียดโครงงาน
                 </a></li>
-                <li><a href="/project-review">
+                <li><a href="exam_topic.html">
                     <div class="icon"></div>
                     บันทึกผลการสอบหัวข้อ
                 </a></li>
@@ -69,30 +69,32 @@
             </div>
 
             <div class="schedule-container">
-                <div class="controls-bar">
-                    <div class="filter-area">
-                        <label for="committee-year" class="filter-label">ปีการศึกษา</label>
-                        <select id="committee-year" class="year-selector">
-                            <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
-                            <option value="2560">2560</option>
-                            <option value="2561">2561</option>
-                            <option value="2562">2562</option>
-                            <option value="2563">2563</option>
-                            <option value="2564">2564</option>
-                            <option value="2565">2565</option>
-                            <option value="2566">2566</option>
-                            <option value="2567">2567</option>
-                            <option value="2568">2568</option>
-                        </select>
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                            </select>
 
-                        <label for="project-type" class="filter-label">ประเภทโครงงาน</label>
-                        <select id="project-type" class="project-selector" style="min-width: 180px;">
-                            <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
-                            <option value="project-1">โครงงาน 1</option>
-                            <option value="project-2">โครงงาน 2</option>
-                            <option value="coop">โครงงานสหกิจ</option>
-                            <option value="coop">โครงงานพิเศษ</option>
-                        </select>
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                                <option value="project-1">โครงงาน 1</option>
+                                <option value="project-2">โครงงาน 2</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -105,7 +107,8 @@
                             <th>ชื่อโครงงาน</th>
                             <th>รหัสนักศึกษา</th>
                             <th>อาจารย์ที่ปรึกษา</th>
-                            <th>วันที่เสนอสอบ</th>
+                            <th>วัน/เดือน/ปี</th>
+                            <th>เวลา</th>
                             <th>หมายเหตุ</th>
                         </tr>
                     </thead>
@@ -116,6 +119,7 @@
                             <td>6806022510xxx</td>
                             <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
                             <td>24 กันยายน 2568</td>
+                            <td>10:36</td>
                             <td>-</td>
                     </tbody>
 
@@ -125,6 +129,7 @@
                             <td>6806022510xxx</td>
                             <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
                             <td>25 กันยายน 2568</td>
+                            <td>12:26</td>
                             <td>-</td>
                     </tbody>
 
@@ -134,6 +139,17 @@
                             <td>6806022510xxx</td>
                             <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
                             <td>29 กันยายน 2568</td>
+                            <td>12:30</td>
+                            <td>-</td>
+                    </tbody>
+
+                    <tbody>
+                            <td>T0004</td>
+                            <td>ไม่เอากินละ เบื่อ</td>
+                            <td>6806022510xxx</td>
+                            <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
+                            <td>30 กันยายน 2568</td>
+                            <td>16:30</td>
                             <td>-</td>
                     </tbody>
                 </table>

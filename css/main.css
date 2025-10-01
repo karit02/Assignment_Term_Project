@@ -223,9 +223,7 @@ body {
 .schedule-container {
     max-width: 1500px; /* กำหนดความกว้างสูงสุดที่ต้องการ */
     margin: 0 auto; /* จัดให้อยู่กึ่งกลางแนวนอน */
-
-    /* โค้ดเดิมอื่นๆ */
-    padding: 20px;
+    padding: 15px;
     font-family: Arial, sans-serif;
 }
 
@@ -234,7 +232,7 @@ body {
     display: flex;
     justify-content: space-between; /* ดันกลุ่มซ้าย/ขวาออกจากกัน */
     align-items: center;
-    padding: 10px 0; 
+    padding-top: 10px;
 }
 
 /* กลุ่ม Dropdown ที่ต้องการให้อยู่ชิดขวา */
@@ -253,21 +251,30 @@ body {
     display: flex; 
     align-items: center;
     gap: 10px; /* ระยะห่างระหว่าง Label กับ Select */
-    margin-bottom: 20px;
-    padding: 0 20px; /* จัดให้อยู่ในแนวเดียวกับส่วนของตาราง */
+    margin-bottom: 17px;
+    padding: 12px 22px; /* จัดให้อยู่ในแนวเดียวกับส่วนของตาราง */
 }
 
-.filter-label {
+.filter-label-year {
     font-size: 16px;
     font-weight: 500;
     color: #495057; /* สีเทาเข้ม */
+    min-width: 80px
+}
+
+.filter-label-se {
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057; /* สีเทาเข้ม */
+    min-width: 135px;
+    padding-left: 15px;
 }
 
 .year-selector {
     padding: 10px 15px;
     border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
     border-radius: 6px;
-    min-width: 100px; /* กำหนดความกว้างขั้นต่ำ */
+    min-width: 230px; /* กำหนดความกว้างขั้นต่ำ */
     background-color: white;
     font-size: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
@@ -286,7 +293,7 @@ body {
     padding: 10px 15px;
     border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
     border-radius: 6px;
-    min-width: 100px; /* กำหนดความกว้างขั้นต่ำ */
+    min-width: 270px; /* กำหนดความกว้างขั้นต่ำ */
     background-color: white;
     font-size: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
@@ -340,7 +347,7 @@ body {
 
 /* ส่วนเนื้อหาตาราง (Tbody) */
 .graduation-schedule-table tbody td {
-    padding: 10px 15px;
+    padding: 18px 20px;
     /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
     border-right: 1px solid #667eea; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
     border-bottom: 1px solid #e0e0e0; /* เส้นแบ่งแถวเป็นสีเทาอ่อน */
@@ -375,20 +382,118 @@ body {
     padding: 10px; /* เพิ่ม padding รอบด้าน */
 }
 
+/* ตารางหลัก: ตรวจสอบไม่ให้มี margin-bottom มากเกินไป */
+.graduation-schedule-table {
+    margin-bottom: 10   px; /* เว้นระยะห่างเล็กน้อยระหว่างตารางกับ pagination */
+}
+
+/*
+ * *** 1. การปรับปรุงโครงสร้างและการตกแต่งพื้นฐานของ Card ***
+ */
+.project-card {
+    flex: 1 1 calc(33.333% - 20px); /* ปรับให้เป็น 3 คอลัมน์ (1/3 ของพื้นที่) */
+    max-width: calc(33.333% - 20px);
+    
+    background-color: #ffffff; /* พื้นหลังสีขาวบริสุทธิ์ */
+    border-radius: 10px; /* ขอบโค้งมนปานกลาง */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เงาที่ชัดเจนขึ้น ดูมีมิติ */
+    border: 1px solid #e0e0e0; /* เพิ่มขอบบางๆ เพื่อความชัดเจน */
+    padding: 20px;
+    transition: transform 0.3s ease-in-out; /* เพิ่ม Animation เล็กน้อย */
+}
+
+.project-card:hover {
+    transform: translateY(-4px); /* ยก Card ขึ้นเล็กน้อยเมื่อวางเมาส์ (Interactive Effect) */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/*
+ * *** 2. การตกแต่งหัวข้อ (Card Title) ***
+ */
+.card-title {
+    font-size: 1.15em;
+    font-weight: 700; /* เน้นความหนา */
+    color: #4a5568; /* สีเทาเข้มเพื่อให้ดูมืออาชีพ */
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea; /* ใช้สีหลักของเว็บ (สีม่วง/น้ำเงิน) เป็นเส้นแบ่งใต้หัวข้อ */
+    text-align: center; /* จัดหัวข้อให้อยู่ตรงกลาง Card */
+}
+
+/*
+ * *** 3. การปรับปรุงปุ่ม "ดูรายละเอียด" ***
+ */
+.button-container {
+    padding-top: 2px;
+    padding-left: 3px;
+}
+
+.detail-button {
+    background-color: #4c7cff; /* สีฟ้า/น้ำเงินที่สดใสขึ้น (Primary Action Color) */
+    color: white; /* ตัวอักษรสีขาว */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.detail-button:hover {
+    background-color: #3b5cb0; /* สีเข้มขึ้นเมื่อวางเมาส์ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/*
+ * *** 4. การเน้นข้อมูล (Label/Value) ***
+ */
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px; /* ลดระยะห่างระหว่างบรรทัดลงเล็กน้อยเพื่อความกระชับ */
+    padding: 2px 0;
+}
+
+.label {
+    padding-left: 8px;
+    color: #718096; /* สีเทาอ่อนลงเล็กน้อย */
+    font-size: 0.9em; /* ตัวอักษรเล็กลงนิดหน่อย */
+}
+
+.value {
+    padding-right: 8px;
+    font-weight: 600; /* เน้นค่า (Value) ให้หนาขึ้น */
+    color: #2d3748; /* สีดำเข้มขึ้น */
+    text-align: right;
+}
+
+.status.pending {
+    font-weight: 700;
+    color: #ff9800; /* สีส้มที่สว่างขึ้นและดูดีขึ้น */
+}
+
+/*
+ * *** 5. การปรับปรุง Card Container (สำคัญสำหรับการจัดเรียง 3 คอลัมน์) ***
+ */
+.card-container {
+    display: flex;
+    gap: 30px; /* เพิ่มช่องว่างระหว่าง Card ให้มากขึ้น */
+    flex-wrap: wrap; 
+}
+
+
 /* Container ที่ห่อหุ้ม Pagination */
 .pagination-container {
     display: flex;
     justify-content: center; 
     /* กุญแจสำคัญ: margin-top: auto; จะดัน Pagination ลงไปด้านล่างสุดของ Flex Container */
-     margin-top: auto; 
+    margin-top: auto; 
     margin-bottom: 0; /* ไม่ต้องมี margin ด้านล่าง เพราะใช้ padding ของ Wrapper แทน */
     padding-bottom: 0;
-}
-
-/* ตารางหลัก: ตรวจสอบไม่ให้มี margin-bottom มากเกินไป */
-.graduation-schedule-table {
-    /* ... โค้ดเดิม ... */
-    margin-bottom: 10px; /* เว้นระยะห่างเล็กน้อยระหว่างตารางกับ pagination */
+    padding-top: 50px;
 }
 
 .pagination {
