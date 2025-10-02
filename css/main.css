@@ -506,6 +506,19 @@ body {
     color: #ff7b00; 
     border: 1px solid #ffcc80;
 }
+
+.status-badge.pass {
+    background-color: #f0fff0; /* พื้นหลัง: สีเขียวอ่อนมาก (Honeydew) */
+    color: #2e8b57;           /* ข้อความ: สีเขียวเข้ม (Sea Green) อ่านง่าย */
+    border: 1px solid #66bb6a;  /* เส้นขอบ: สีเขียวกลาง (Medium Green) ดูมั่นคง */
+}
+
+.status-badge.no {
+    background-color: #fcebeb; /* พื้นหลัง: สีแดงอ่อนมาก (เกือบขาวอมชมพูอ่อน) */
+    color: #cc0000;           /* ข้อความ: สีแดงเข้ม (Dark Red) เพื่อให้อ่านง่ายและเด่นชัด */
+    border: 1px solid #ff4444;  /* เส้นขอบ: สีแดงกลาง (Vivid Red) */
+}
+
 /* เพิ่มสไตล์สำหรับสถานะอื่นๆ (ถ้ามี) */
 .status-badge.approved {
     background-color: #e6ffed; 
