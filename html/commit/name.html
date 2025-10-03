@@ -42,10 +42,10 @@
                     <div class="icon"></div>
                     ตารางสอบ
                 </a></li>
-                <li><a href="details_project.html">
+                <!-- <li><a href="details_project.html">
                     <div class="icon"></div>
                     รายละเอียดโครงงาน
-                </a></li>
+                </a></li> -->
                 <li><a href="exam_topic.html">
                     <div class="icon"></div>
                     บันทึกผลการสอบหัวข้อ
@@ -57,7 +57,6 @@
                 <li><a href="name.html" class="active">
                     <div class="icon"></div>
                     ลงนามอนุมัติ
-                    
                 </a></li>
             </ul>
         </aside>
@@ -90,11 +89,41 @@
                             <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
                             <select id="project-type" class="project-selector">
                                 <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
-                                <option value="project-1">โครงงาน 1</option>
-                                <option value="project-2">โครงงาน 2</option>
                                 <option value="coop">โครงงานสหกิจ</option>
                                 <option value="coop">โครงงานพิเศษ</option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="table-content-wrapper"> 
+                <div class="card-container"> 
+                    <div class="project-card">
+                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2> 
+                        <div class="info-item">
+                            <span class="label">รหัสโครงงาน :</span>
+                            <span class="value">T0001</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="label">ชื่อนักศึกษา :</span>
+                            <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">รหัสนักศึกษา :</span>
+                            <span class="value">6806022510xxx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">สถานะ :</span>
+                            <span class="value">สอบหัวข้อ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ผลสอบ :</span>
+                            <span class="status pass">ผ่าน</span>
+                        </div>
+                        <div class="button-container">
+                            <a href="#project-details-modal"
+                            class="detail-button">ดูรายละเอียด</a>
                         </div>
                     </div>
                 </div>
@@ -124,5 +153,54 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+
+    <div id="project-details-modal" class="modal">
+                <div class="modal-content">
+                    <a href="#" class="close-btn">&times;</a>
+
+                    <div class="modal-body">
+                        <h3 class="detail-title">รายละเอียดโครงการ</h3>
+                        <div class="data-group info-block">
+                            <div class="info-row"><div class="info-label">ชื่อโครงการ :</div><div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+
+                            <div class="info-row"><div class="info-label">ประเภทโครงงาน :</div><div class="info-value">โครงงานสหกิจ</div></div>
+
+                            <div class="info-row"><div class="info-label">ปีการศึกษา :</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+
+                            <div class="info-row"><div class="info-label">วัน / เวลา / สถานที่สอบ :</div><div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div></div>
+
+                            <div class="info-row"><div class="info-label">สถานะ :</div><div class="info-value">สอบหัวข้อ</div></div>
+
+                            <div class="info-row">
+                                <div class="info-label">ผู้จัดทำ : </div>
+                                
+                                <div class="person-list-detail">
+                                    <div class="person-name">นางสาวไรบีนา มะเก๊ะ 6806022510xxx</div>
+                                    <div class="person-name">นายคฤษฐ์ เสือเดช 6806022510xxx</div>
+                                    <div class="person-name">นางสาวชาลิสา ยิ้มลำใย 6806022510xxx</div>
+                                </div>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">อาจารย์ที่ปรึกษา :</div>
+                                
+                                <div class="person-list-detail">
+                                    <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง อาจารย์ที่ปรึกษา</div>
+                                    <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ อาจารย์ที่ปรึกษาร่วม</div>
+                                </div>
+                            </div>
+
+                            <div class="info-row"><div class="info-label">ไฟล์แนบ :</div>
+                            <a href="ไฟล์โปรแกรมแปลภาษาลิง.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-pdf"></i> โปรแกรมแปลภาษาลิง.pdf</a></div>
+                        </div>
+
+                        <div class="modal-buttons">
+                            <a href="#" class="ter-btn-back">ปิด</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 </body>
 </html>
