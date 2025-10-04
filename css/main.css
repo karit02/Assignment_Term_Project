@@ -867,8 +867,8 @@ body:has(.modal:target) { /* ใช้ .modal:target แทน #project-details-
 }
 
 .close-btn:hover {
-  color: #667eea;
-  cursor: pointer;
+    color: #667eea;
+    cursor: pointer;
 }
 
 /* คอนเทนเนอร์หลักของรายชื่อ ต้องขยายตัวและจัดเรียงแบบคอลัมน์ */
@@ -1186,6 +1186,7 @@ body:has(.modal:target) { /* ใช้ .modal:target แทน #project-details-
 /* Status Crads */
 .status-cards {
     display: flex;
+    text-decoration: none;
     justify-content: center; /* จัดตรงกลางแนวนอน */
     flex-wrap: wrap; /* ถ้าจอเล็กจะขึ้นบรรทัดใหม่ */
     gap: 20px;
@@ -1204,6 +1205,10 @@ body:has(.modal:target) { /* ใช้ .modal:target แทน #project-details-
     border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     text-align: center;
+}
+
+.status-cards a {
+    text-decoration: none;
 }
 
 .status-card:hover {
@@ -1458,6 +1463,68 @@ body:has(.modal:target) { /* ใช้ .modal:target แทน #project-details-
 }
 
 .ter-btn button {
-     width: 100%;
+    width: 100%;
 }
+}
+
+/* Dropdown animation for status card */
+.status-card-dropdown {
+    position: relative;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 8%;
+    top: 96%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 460px;
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 24px 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s, transform 0.35s;
+    z-index: 10;
+}
+
+.status-card-dropdown.active .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-btn {
+    flex: none;
+    width: 125px;
+    min-width: 155px;
+    max-width: 155px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 0;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.dropdown-btn:hover {
+    background: #cecece;
+    color: #2f2f2f;
+    
 }

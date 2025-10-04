@@ -49,7 +49,7 @@
                     <div class="icon"></div>
                     ตรวจสอบการสอบหัวข้อ
                 </a></li>
-                <li><a href="/proposal_approval.html">
+                <li><a href="final_exam_review.html">
                     <div class="icon"></div>
                     ตรวจการสอบจบ
                 </a></li>
@@ -69,33 +69,27 @@
             <div class="content-body">
                 <!-- Status Cards -->
                 <div class="status-cards">
-                    <div class="status-card">
-                        <div class="number">12</div>
-                        <div class="label">นักศึกษาที่ปรึกษา</div>
-                    </div>
-                    <div class="status-card">
+                    <a href="project_advisor.html">
+                        <div class="status-card">
+                            <div class="number">2</div>
+                            <div class="label">โครงงานที่ปรึกษา</div>
+                        </div>
+                    </a>
+                    <div class="status-card status-card-dropdown" id="card-dropdown">
                         <div class="number">8</div>
                         <div class="label">โครงงานที่ต้องตรวจ</div>
+                        <div class="dropdown-menu">
+                            <a href="progress_review.html"><button class="dropdown-btn">ตรวจความก้าวหน้า</button></a>
+                            <a href="proposal_approval.html"><button class="dropdown-btn">ตรวจการสอบหัวข้อ</button></a>
+                            <a href="final_exam_review.html"><button class="dropdown-btn">ตรวจสอบการสอบจบ</button></a>
+                            <a href="document_review.html"><button class="dropdown-btn">ตรวจเอกสาร</button></a>
+                        </div>
                     </div>
-                    <div class="status-card">
-                        <div class="number">3</div>
-                        <div class="label">รอการอนุมัติ</div>
-                    </div>
-                </div>
-
-                <!-- Quick Actions -->
-                <div class="project-actions">
-                    <a href="/progress-review" class="btn">
-                        <span>📋</span>
-                        ตรวจความก้าวหน้า
-                    </a>
-                    <a href="/proposal-approval" class="btn">
-                        <span>✅</span>
-                        อนุมัติหัวข้อ
-                    </a>
-                    <a href="/document-review" class="btn">
-                        <span>📄</span>
-                        ตรวจเอกสาร
+                    <a href="#">
+                        <div class="status-card">
+                            <div class="number">3</div>
+                            <div class="label">รอการอนุมัติ</div>
+                        </div>
                     </a>
                 </div>
 
@@ -123,5 +117,20 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+    <script>
+        document.getElementById('card-dropdown').addEventListener('click', function(e) {
+            // ป้องกันการคลิกปุ่มใน dropdown ไม่ให้ปิดเมนู
+            if (e.target.classList.contains('dropdown-btn')) return;
+            this.classList.toggle('active');
+        });
+
+        // ปิด dropdown เมื่อคลิกนอกเมนู
+        document.addEventListener('click', function(e) {
+            const card = document.getElementById('card-dropdown');
+            if (!card.contains(e.target)) {
+                card.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
