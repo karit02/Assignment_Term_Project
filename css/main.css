@@ -290,6 +290,7 @@ body {
     padding-left: 15px;
 }
 
+
 .major-select, .role-select, .year-selector, .project-selector {
     padding: 10px 15px;
     border: 1px solid #ced4da; 
@@ -307,6 +308,19 @@ body {
     background-position: right 15px center; 
     background-size: 10px;
 }
+
+
+
+/* responsive */
+@media (max-width: 768px) {
+  .student-list {
+    grid-template-columns: 1fr;
+  }
+  .student-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ================================================= */
 /* จัดรูปแบบตาราง (Graduation Schedule Table) */
@@ -428,20 +442,15 @@ body {
     color: #1e293b; 
     margin-top: 30px; 
     padding-bottom: 3px;
-    border-bottom: 3px solid #667eea; /* เส้นแบ่งยังคงอยู่ */
+    border-bottom: 3px solid #667eea;
     
-    /* 1. เปลี่ยน display จาก block เป็น inline-block */
-    /* - ทำให้ความกว้างของกรอบ (รวมถึงเส้นใต้) หดลงเหลือเท่าเนื้อหา */
     display: inline-block; 
-    /* 2. ลบ width: 100%; ออกไป (หรือถ้าเคยมี ให้คอมเมนต์ทิ้ง) */
-    /* width: 100%; */
 }
 
 .detail-title:first-child {
     margin-top: 0;
 }
 
-/* กรอบข้อมูลย่อย (Data Card Look) */
 .data-group {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -449,7 +458,6 @@ body {
     overflow: hidden;
 }
 
-/* แถวข้อมูลแต่ละแถว */
 .info-row {
     display: flex;
     padding: 15px 25px; 
@@ -691,6 +699,7 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
+
 
 /*
  * *** 5. การปรับปรุง Card Container (สำคัญสำหรับการจัดเรียง 3 คอลัมน์) ***
@@ -996,40 +1005,203 @@ body:has(.modal:target) {
     color: #ff0000;
 }
 
-.student-row {
+/* ===== ปรับเฉพาะหน้า project-proposal ===== */
+/* ================================
+   STYLE เฉพาะหน้า project-proposal.html
+   ================================ */
+
+.content-body {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* จัด layout ของแถว dropdown */
+.proposal-row {
     display: flex;
-    gap: 20px; 
-    flex-wrap: wrap; 
-    margin-bottom: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
-.student-row > div {
-    flex: 1;
-    min-width: 250px; 
-}
-
-.student-row label {
-    display: block;
+/* Label */
+.proposal-row label,
+.content-body label {
     font-weight: 600;
     color: #1e40af;
-    margin-bottom: 6px;
+    margin-right: 6px;
+}
+
+.proposal-select,
+.sec-selector,
+.year-selector,
+.term-selector,
+#advisor,
+#advisor-plus,
+#subject-teacher {
+  appearance: none; /* ซ่อนลูกศรปกติของ browser */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: #374151;
+  min-width: 300px;
+
+  /* เพิ่ม icon ลูกศร custom */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%236b7280' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* เมื่อ hover */
+.proposal-select:hover,
+.sec-selector:hover,
+.year-selector:hover,
+.term-selector:hover,
+#advisor:hover,
+#advisor-plus:hover,
+#subject-teacher:hover {
+  border-color: #9ca3af;
+}
+
+/* เมื่อ focus */
+.proposal-select:focus,
+.sec-selector:focus,
+.year-selector:focus,
+.term-selector:focus,
+#advisor:focus,
+#advisor-plus:focus,
+#subject-teacher:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  outline: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%232563eb' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+
+/* Input & Textarea */
+input[type="text"],
+textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    outline: none;
+}
+
+/* Card ของสมาชิก */
+.student-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.student-card {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.student-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.student-row input {
+    flex: 1;
+}
+
+/* File Upload */
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.file-input-wrapper input[type="file"] {
+    display: none;
+}
+
+.file-input-wrapper button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.file-input-wrapper button:hover {
+    background-color: #1e4fd1;
+}
+
+.file-name {
+    color: #374151;
     font-size: 0.95rem;
 }
 
-.student-row input[type="text"] {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 1rem;
-    color: #1e293b;
-    transition: all 0.2s;
+/* ปุ่มท้ายหน้า */
+.ter-btn {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.student-row input[type="text"]:focus {
-    border-color: #0b2357;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+.ter-btn button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ter-btn button[type="reset"] {
+    background-color: #6b7280;
+}
+
+.ter-btn button:hover {
+    opacity: 0.9;
+}
+
+
+/* responsive */
+@media (max-width: 768px) {
+  .proposal-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .proposal-row label {
+    min-width: auto;
+  }
 }
 
 .file-input-wrapper {
@@ -1081,8 +1253,8 @@ body:has(.modal:target) {
 }
 
 .dropdown-row > div {
-    flex: 1 1 100%; /* เริ่มต้นเต็มความกว้าง */
-    min-width: 250px; /* กำหนดขั้นต่ำ */
+    flex: 1 1 100%;
+    min-width: 250px;
 }
 
 .um-content {
@@ -1158,14 +1330,14 @@ body:has(.modal:target) {
   background: white;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  padding: 20px; /* 👈 เพิ่มพื้นที่รอบตาราง */
+  padding: 20px; 
   margin-top: 20px;
 }
 
 .info-section table {
   width: 100%;
   border-collapse: collapse;
-  margin: 10px auto; /* 👈 เว้นรอบนิดหนึ่งให้ไม่ชนขอบ */
+  margin: 10px auto;
   border-radius: 8px;
   overflow: hidden;
 }
