@@ -31,40 +31,47 @@
             <div class="sidebar-header">
                 เมนู - ผู้ดูแลระบบ
             </div>
-            <ul class="sidebar-menu">
-                <li><a href="dashbroadadmin.html">แดชบอร์ดระบบ</a></li>
-                <li><a href="user-management.html" class="active">จัดการผู้ใช้</a></li>
-                <li><a href="project-management.html">จัดการโครงงานทั้งหมด</a></li>
-                <li><a href="committee-assignment.html">จัดการกรรมการสอบ</a></li>
-            </ul>
+                <ul class="sidebar-menu">
+                    <li><a href="dashbroadadmin.html">
+                        <div class="icon"></div>
+                        แดชบอร์ดระบบ
+                    </a></li>
+                    <li><a href="user-management.html" class="active">
+                        <div class="icon"></div>
+                        จัดการผู้ใช้
+                    </a></li>
+                    <li><a href="committee-assignment.html">
+                        <div class="icon"></div>
+                        จัดการกรรมการสอบ
+                    </a></li>
+                </ul>
         </aside>
 
         <main class="content">
             <div class="content-header">
                 <h2>จัดการผู้ใช้</h2>
-                <div class="breadcrumb">หน้าแรก > จัดการผู้ใช้</div>
             </div>
 
             <div class="content-body">
+                <!-- ฟิลเตอร์ -->
                 <div class="project-actions">
-                    <a class="btn" id="addUserBtn"><span>➕</span> เพิ่มผู้ใช้</a>
-                    <div class="filter-box">
+                    <div class="filter-area">
                         <label>สาขา:</label>
                         <select id="filterProgram">
                             <option value="">-- ทั้งหมด --</option>
                             <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
                         </select>
                     </div>
-                    <div class="filter-box">
+                    <div class="filter-area">
                         <label>ประเภท:</label>
                         <select id="filterRole">
                             <option value="">-- ทั้งหมด --</option>
                             <option value="student">นักศึกษา</option>
                             <option value="teacher">อาจารย์</option>
-                            <option value="admin">ผู้ดูแลระบบ</option>
+                            <option value="commit">กรรมการ</option>
                         </select>
                     </div>
-                    <div class="filter-box">
+                    <div class="filter-area">
                         <label>ค้นหา:</label>
                         <input type="text" id="searchInput" placeholder="ค้นหาชื่อหรือรหัส">
                     </div>
@@ -129,27 +136,27 @@
     </div>
 
     <!-- Modal -->
-    <div id="userModal" class="modal">
-        <div class="modal-content">
-            <h3>เพิ่ม / แก้ไข ผู้ใช้</h3>
-            <form id="userForm" name="userForm">
-                <div class="form-grid">
-                    <input name="fullname" placeholder="ชื่อ-สกุล" required />
-                    <input name="username" placeholder="รหัสผู้ใช้ / รหัสนักศึกษา" required />
-                    <select name="role" required>
-                        <option value="student">นักศึกษา</option>
-                        <option value="teacher">อาจารย์</option>
-                        <option value="admin">ผู้ดูแลระบบ</option>
-                    </select>
-                    <select name="program" required>
-                        <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="button" onclick="closeUserModal()">ยกเลิก</button>
-                    <button type="submit">บันทึก</button>
-                </div>
-            </form>
+    <div id="userModal" class="admin-modal">
+        <div class="admin-modal-content">
+        <h3>แก้ไข ผู้ใช้</h3>
+        <form id="userForm" name="userForm">
+            <div class="form-grid">
+            <input name="username" placeholder="รหัสนักศึกษา" required />
+            <input name="fullname" placeholder="ชื่อ-สกุล" required />
+            <select name="role" required>
+                <option value="student">นักศึกษา</option>
+                <option value="teacher">อาจารย์</option>
+                <option value="commit">กรรมการ</option>
+            </select>
+            <select name="program" required>
+                <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
+            </select>
+            </div>
+            <div class="form-actions">
+            <button type="button" onclick="closeUserModal()">ยกเลิก</button>
+            <button type="submit">บันทึก</button>
+            </div>
+        </form>
         </div>
     </div>
 
@@ -164,28 +171,6 @@
         return role;
       }
 
-      function addRow(user) {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${user.fullname}</td>
-          <td>${user.username} / ${roleText(user.role)}</td>
-          <td>${user.program}</td>
-          <td class="status active">${user.status}</td>
-          <td>
-            <button onclick="editUser(this)">แก้ไข</button>
-            <button onclick="toggleStatus(this)">ปิดการใช้งาน</button>
-            <button onclick="deleteUser(this)">ลบ</button>
-          </td>
-        `;
-        userTable.appendChild(tr);
-      }
-
-      document.getElementById('addUserBtn').addEventListener('click', ()=> {
-        editingRow = null;
-        document.getElementById('userForm').reset();
-        document.getElementById('userModal').style.display = 'flex';
-      });
-
       function closeUserModal(){ 
         document.getElementById('userModal').style.display = 'none'; 
       }
@@ -193,17 +178,11 @@
       document.getElementById('userForm').addEventListener('submit', (e)=> {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.target).entries());
-        data.status = 'Active';
         if(editingRow){
-          editingRow.cells[0].textContent = data.fullname;
-          editingRow.cells[1].textContent = `${data.username} / ${roleText(data.role)}`;
-          editingRow.cells[2].textContent = data.program;
-          editingRow.cells[3].textContent = "Active";
-          editingRow.cells[3].className = "status active";
-          editingRow.querySelector("td:last-child button:nth-child(2)").textContent = "ปิดการใช้งาน";
-          editingRow = null;
-        } else {
-          addRow(data);
+          editingRow.cells[0].textContent = data.username;
+          editingRow.cells[1].textContent = data.fullname;
+          editingRow.cells[2].textContent = roleText(data.role);
+          editingRow.cells[3].textContent = data.program;
         }
         closeUserModal();
       });
@@ -211,11 +190,11 @@
       function editUser(btn){
         editingRow = btn.closest('tr');
         const cells = editingRow.cells;
-        document.userForm.fullname.value = cells[0].textContent;
-        document.userForm.username.value = cells[1].textContent.split(" / ")[0];
-        document.userForm.role.value = cells[1].textContent.includes("นักศึกษา") ? "student" :
-                                       cells[1].textContent.includes("อาจารย์") ? "teacher" : "admin";
-        document.userForm.program.value = cells[2].textContent;
+        document.userForm.username.value = cells[0].textContent;
+        document.userForm.fullname.value = cells[1].textContent;
+        document.userForm.role.value = cells[2].textContent === "นักศึกษา" ? "student" :
+                                       cells[2].textContent === "อาจารย์" ? "teacher" : "admin";
+        document.userForm.program.value = cells[3].textContent;
         document.getElementById('userModal').style.display = 'flex';
       }
 
@@ -245,15 +224,15 @@
         const search = document.getElementById('searchInput').value.toLowerCase();
 
         Array.from(userTable.rows).forEach(row=>{
-          const fullname = row.cells[0].textContent.toLowerCase();
-          const usernameRole = row.cells[1].textContent.toLowerCase();
-          const programCell = row.cells[2].textContent;
-          const roleCell = row.cells[1].textContent;
+          const username = row.cells[0].textContent.toLowerCase();
+          const fullname = row.cells[1].textContent.toLowerCase();
+          const roleCell = row.cells[2].textContent;
+          const programCell = row.cells[3].textContent;
 
           let match = true;
           if(program && programCell !== program) match = false;
-          if(role && !roleCell.includes(roleText(role))) match = false;
-          if(search && !fullname.includes(search) && !usernameRole.includes(search)) match = false;
+          if(role && roleCell !== roleText(role)) match = false;
+          if(search && !fullname.includes(search) && !username.includes(search)) match = false;
 
           row.style.display = match ? "" : "none";
         });
