@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>ระบบจัดการโครงงาน - อาจารย์ที่ปรึกษา</title>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">F</div>
+                <div class="user-name">Final Devil</div>
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - อาจารย์ประจำวิชา
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashbroadteacher.html">
+                    <div class="icon"></div>
+                    แดชบอร์ด
+                </a></li>
+                <li><a href="list.html" class="active">
+                    <div class="icon"></div>
+                    รายชื่อโครงงาน
+                </a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="content-header">
+                <h2>รายละเอียดโครงงาน</h2>
+                <div class="breadcrumb">หน้าแรก > รายละเอียดโครงงาน</div>
+            </div>
+
+            <div class="schedule-container">
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                            </select>
+
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-content-wrapper"> 
+                    <div class="card-container"> 
+                        <div class="project-card">
+                            <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2> 
+                            <div class="info-item">
+                                <span class="label">รหัสโครงงาน :</span>
+                                <span class="value">T0001</span>
+                            </div>
+
+                            <div class="info-item">
+                                <span class="label">ชื่อนักศึกษา :</span>
+                                <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">รหัสนักศึกษา :</span>
+                                <span class="value">6806022510xxx</span>
+                            </div>
+                            <div class="button-group"> 
+                                <a href="#project-details-modal" class="detail-button">ดูรายละเอียด</a>
+                                <a href="#project-details-idea" class="detail-button-idea">แสดงความคิดเห็น</a>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h2 class="card-title">โปรแกรมแปลภาษามือเป็นข้อความ</h2>
+                                <div class="info-item">
+                                    <span class="label">รหัสโครงงาน :</span>
+                                    <span class="value">T0002</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">ชื่อนักศึกษา :</span>
+                                    <span class="value">นายสมศักดิ์ ขยันงาน</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">รหัสนักศึกษา :</span>
+                                    <span class="value">6806022530xxx</span>
+                                </div>
+                                <div class="button-group"> 
+                                    <a href="#project-details-modal" class="detail-button">ดูรายละเอียด</a>
+                                    <a href="#project-details-idea" class="detail-button-idea">แสดงความคิดเห็น</a>
+                                </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
+                                <div class="info-item">
+                                    <span class="label">รหัสโครงงาน :</span>
+                                    <span class="value">T0003</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">ชื่อนักศึกษา :</span>
+                                    <span class="value">นายกฤษนัย โถมสันเทียะ</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">รหัสนักศึกษา :</span>
+                                    <span class="value">6806022510xxx</span>
+                                </div>
+                                <div class="button-group"> 
+                                    <a href="#project-details-modal" class="detail-button">ดูรายละเอียด</a>
+                                    <a href="#project-details-idea" class="detail-button-idea">แสดงความคิดเห็น</a>
+                                </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h2 class="card-title">ระบบวิเคราะห์และแปลความรู้สึกจากน้ำเสียง</h2>
+                                <div class="info-item">
+                                    <span class="label">รหัสโครงงาน :</span>
+                                    <span class="value">T0004</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">ชื่อนักศึกษา :</span>
+                                    <span class="value">นายสากุริ มิโคนิ</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">รหัสนักศึกษา :</span>
+                                    <span class="value">6806022540xxx</span>
+                                </div>
+                                <div class="button-group"> 
+                                    <a href="#project-details-modal" class="detail-button">ดูรายละเอียด</a>
+                                    <a href="#project-details-idea" class="detail-button-idea">แสดงความคิดเห็น</a>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            
+                <div class="pagination-container">
+                    <div class="pagination">
+                        <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                        <a href="#" class="page-link active" data-page="1">1</a>
+                        <a href="#" class="page-link" data-page="2">2</a>
+                        <a href="#" class="page-link" data-page="3">3</a>
+                        <a href="#" class="page-link" data-page="4">4</a>
+                        <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="/help">ช่วยเหลือ</a>
+            <a href="/contact">ติดต่อ</a>
+            <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+
+    <div id="project-details-modal" class="modal">
+        <div class="modal-content">
+            <a href="#close" class="close-btn" aria-label="Close">&times;</a> 
+            
+            <h2 class="detail-main-title">รายละเอียดโครงการ</h2>
+        
+            <div class="modal-grid-two-col">
+                
+                <div class="left-detail-col info-block-card">
+                    <div class="data-group">
+                        <div class="info-row"><div class="info-label">ชื่อโครงการ:</div><div class="info-value project-name-text">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+                        <div class="info-row"><div class="info-label">ประเภทโครงงาน:</div><div class="info-value">โครงงานสหกิจ</div></div>
+                        <div class="info-row"><div class="info-label">ปีการศึกษา:</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+                        
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">ผู้จัดทำ: </div>
+                            <div class="person-list-detail">
+                                <div class="person-name">นางสาวไรบีนา มะเก๊ะ <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นายคฤษฐ์ เสือเดช <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นางสาวชาลิสา ยิ้มลำใย <span class="student-id">6806022510xxx</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">อาจารย์ที่ปรึกษา:</div>
+                            <div class="person-list-detail">
+                                <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง (อาจารย์ที่ปรึกษา)</div>
+                                <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ (อาจารย์ที่ปรึกษาร่วม)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-row info-row-section last-row">
+                            <div class="info-label label-section-header">ไฟล์แนบ:</div>
+                            <a href="ทก.01.pdf" target="_blank" class="file-link">
+                                <i class="fas fa-file-pdf"></i> ทก.01.pdf
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+                
+                <div class="right-detail-col">
+                    
+                    <div class="progress-card">
+                        <h4 class="card-title-header">รายงานความคืบหน้า</h4>
+                        <div class="progress-content scrollable">
+                            <div class="report-item"><span class="report-week">สัปดาห์ที่ 1:</span> ดำเนินการรวบรวมข้อมูลและวิเคราะห์ระบบเสร็จสมบูรณ์</div>
+                            <div class="report-item"><span class="report-week">สัปดาห์ที่ 2:</span> เริ่มเขียนโค้ดโมดูล A</div>
+                            <div class="report-item"><span class="report-week">สัปดาห์ที่ 3:</span> พบปัญหาในการเชื่อมต่อฐานข้อมูล</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment-card">
+                        <h4 class="card-title-header comment-header">ความคิดเห็นของอาจารย์ประจำวิชา</h4>
+                        <div class="comment-content">
+                            นักศึกษามีความรับผิดชอบในการส่งรายงาน แต่ควรเพิ่มรายละเอียดการวิเคราะห์ผลให้ชัดเจนกว่านี้
+                        </div>
+                    </div>
+                    
+                </div> 
+            </div> 
+            <div class="modal-footer-actions">
+                <a href="#close">
+                <button class="ter-btn-back">ปิด</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-details-idea" class="modale">
+        <div class="modale-content">
+            <a href="#close" class="close-btn" aria-label="Close">&times;</a> 
+            
+            <h3 class="detail-modale-title comment-section-title">รายละเอียดโครงการ</h3>
+            
+            <div class="modal-form-view"> 
+                
+                <div class="left-detail-col-form info-block-card">
+                    <!-- <h3 class="card-title-header">ข้อมูลโครงงาน</h3> -->
+                    <div class="data-group">
+                        <div class="info-row"><div class="info-label">ชื่อโครงการ:</div><div class="info-value project-name-text">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+                        <div class="info-row"><div class="info-label">ประเภทโครงงาน:</div><div class="info-value">โครงงานสหกิจ</div></div>
+                        <div class="info-row"><div class="info-label">ปีการศึกษา:</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">ผู้จัดทำ: </div>
+                            <div class="person-list-detail">
+                                <div class="person-name">นางสาวไรบีนา มะเก๊ะ <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นายคฤษฐ์ เสือเดช <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นางสาวชาลิสา ยิ้มลำใย <span class="student-id">6806022510xxx</span></div>
+                            </div>
+                        </div>
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">อาจารย์ที่ปรึกษา:</div>
+                            <div class="person-list-detail">
+                                <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง (อาจารย์ที่ปรึกษา)</div>
+                                <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ (อาจารย์ที่ปรึกษาร่วม)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-row info-row-section last-row">
+                            <div class="info-label label-section-header">ไฟล์แนบ:</div>
+                            <a href="ทก.01.pdf" target="_blank" class="file-link">
+                                <i class="fas fa-file-pdf"></i> ทก.01.pdf
+                            </a>
+                        </div>
+                    </div> 
+
+                    <h3 class="card-idea-header">ความคิดเห็นสำหรับโครงงานนี้</h3>
+                    <div class="comment-input-area">
+                        <!-- <label for="comment-text" class="input-label">กรอกความคิดเห็นของคุณ:</label> -->
+                        <textarea id="comment-text" placeholder="ระบุข้อเสนอแนะ หรือคำแนะนำสำหรับนักศึกษา..." rows="6" class="comment-textarea"></textarea>
+                    </div>
+                    
+                    <div class="comment-status-check">
+                        <label>
+                            <input type="checkbox" id="send-notification" name="send-notification">
+                            ลงชื่อรับทราบ
+                        </label>
+                    </div>
+
+                </div> 
+            </div>
+            
+            <div class="modale-footer-actions">
+                <a href="list.html">
+                <button class="pri-btn" type="submit">บันทึก</button></a>
+                <a href="#close" class="ter-btn-back-link close-btn-action">
+                <button class="ter-btn-back">ยกเลิก</button></a>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
