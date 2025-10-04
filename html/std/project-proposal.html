@@ -68,11 +68,13 @@
             </div>
             
             <div class="content-body">
-                <label for="topic">หัวข้อโครงงาน : </label>
-                <input type="text" name="topic" placeholder="ระบบยืม - คืนคุรุภัณฑ์">
-                <label for="details">รายละเอียดโครงงาน : </label>
-                <textarea name="details" rows="10"></textarea>
+                <form action="submit_proposal.php" method="post"> 
+                    <label for="topic">หัวข้อโครงงาน* : </label>
+                    <input type="text" name="topic" placeholder="ระบบยืม - คืนคุรุภัณฑ์" required>
+                    <label for="details">รายละเอียดโครงงาน* : </label>
+                    <textarea name="details" rows="10" required></textarea>
 
+<<<<<<< HEAD
                 <div class="student-row">
                     <div>
                         <label for="namestd1">รายชื่อนักศึกษา คนที่ 1 :</label>
@@ -83,24 +85,151 @@
                         <input type="text" name="idstd" id="idstd" placeholder="6806022510122">
                     </div>
                 </div>
+=======
+                    <div class="dropdown-row">
+                        <div>
+                            <label for="type">ประเภทโครงงาน* : </label>
+                            <select name="type" id="type" required>
+                                <option value="" disabled selected>-- กรุณาเลือกประเภทโครงงาน --</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
+>>>>>>> b1b8577ed3cf3664a888ef94fb86d3307bc5ffe7
 
-                <div class="student-row">
-                    <div>
-                        <label for="namestd2">รายชื่อนักศึกษา คนที่ 2 :</label>
-                        <input type="text" name="namestd2" id="namestd2" placeholder="นายคฤษฐ์ เสือเดช">
+                    <div class="student-row">
+                        <div>
+                            <label for="namestd1">รายชื่อนักศึกษา คนที่ 1 :</label>
+                            <input type="text" name="namestd1" id="namestd1" placeholder="นางสาวไรบีนา มะเก๊ะ">
+                        </div>
+                        <div>
+                            <label for="namestd2">รหัสนักศึกษา :</label>
+                            <input type="text" name="idstd" id="idstd" placeholder="6806022510xxx">
+                        </div>
                     </div>
+<<<<<<< HEAD
                     <div>
                         <label for="namestd4">รหัสนักศึกษา :</label>
                         <input type="text" name="idstd" id="idstd" placeholder="6806022510634">
                     </div>
                 </div>
+=======
+>>>>>>> b1b8577ed3cf3664a888ef94fb86d3307bc5ffe7
 
-                <div class="student-row">
-                     <div>
-                        <label for="namestd3">รายชื่อนักศึกษา คนที่ 3 :</label>
-                        <input type="text" name="namestd3" id="namestd3" placeholder="นางสาวชาลิสา ยิ้มลำใย">
+                    <div class="student-row">
+                        <div>
+                            <label for="namestd2">รายชื่อนักศึกษา คนที่ 2 :</label>
+                            <input type="text" name="namestd2" id="namestd2" placeholder="นายคฤษฐ์ เสือเดช">
+                        </div>
+                        <div>
+                            <label for="namestd4">รหัสนักศึกษา :</label>
+                            <input type="text" name="idstd" id="idstd" placeholder="6806022510xxx">
+                        </div>
                     </div>
+
+                    <div class="student-row">
+                        <div>
+                            <label for="namestd3">รายชื่อนักศึกษา คนที่ 3 :</label>
+                            <input type="text" name="namestd3" id="namestd3" placeholder="นางสาวชาลิสา ยิ้มลำใย">
+                        </div>
+                        <div>
+                            <label for="namestd4">รหัสนักศึกษา :</label>
+                            <input type="text" name="idstd" id="idstd" placeholder="6806022510xxx">
+                        </div>
+                    </div>
+
+                    <div class="student-row">
+                        <div>
+                            <label for="namestd3">รายชื่อนักศึกษา คนที่ 4 :</label>
+                            <input type="text" name="namestd4" id="namestd4" placeholder="-- ป้อนชื่อนักศึกษา --">
+                        </div>
+                        <div>
+                            <label for="namestd4">รหัสนักศึกษา :</label>
+                            <input type="text" name="idstd" id="idstd" placeholder="-- ป้อนรหัสนักศึกษา --">
+                        </div>
+                    </div>
+
+                    <div class="dropdown-row">
+                        <div>
+                            <label for="year" required>ปีการศึกษา* : </label>
+                            <select name="year" id="year" required>
+                                <option value="" disabled selected>-- กรุณาเลือกปีการศึกษา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                            </select>
+
+                            <label for="sec">ภาคเรียน* : </label>
+                                <select name="sec" id="sec" required>
+                                    <option value="" disabled selected>-- กรุณาเลือกภาคเรียน --</option>
+                                    <option value="1">ภาคที่ 1</option>
+                                    <option value="2">ภาคที่ 2</option>
+                                </select>
+                            
+                            <label for="advisor" required>อาจารย์ที่ปรึกษา* : </label>
+                            <select name="advisor" id="advisor" required>
+                                <option value="" disabled selected>-- กรุณาเลือกอาจารย์ที่ปรึกษา --</option>
+                                <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                                <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                                <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                                <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                                <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                                <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                                <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                                <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                                <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                                <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                                <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                                <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                                <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                                <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                                <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                                <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                                <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                                <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                                <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                                <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                                <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                                <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                                <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                            </select>
+                            <div id="advisor-error" class="validation-error"></div> 
+
+                            <label for="advisor-plus">อาจารย์ที่ปรึกษาร่วม : </label>
+                            <select name="advisor-plus" id="advisor-plus" required>
+                                <option value="" disabled selected>-- กรุณาเลือกอาจารย์ที่ปรึกษาร่วม --</option>
+                                <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                                <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                                <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                                <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                                <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                                <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                                <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                                <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                                <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                                <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                                <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                                <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                                <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                                <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                                <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                                <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                                <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                                <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                                <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                                <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                                <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                                <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                                <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                            </select>
+                        </div>
                     <div>
+<<<<<<< HEAD
                         <label for="namestd4">รหัสนักศึกษา :</label>
                         <input type="text" name="idstd" id="idstd" placeholder="6806022510653">
                     </div>
@@ -210,6 +339,21 @@
                     <button type="submit">บันทึก</button>
                     <button type="reset">ยกเลิก</button>
                 </div>
+=======
+
+                    <label for="ter-file">แนบไฟล์เอกสาร* :</label>
+                    <div class="file-input-wrapper" required>
+                        <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                        <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
+                        <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
+                    </div>
+                    <div class="ter-btn">
+                        <a href="project-proposal.html">
+                        <button type="submit">บันทึก</button></a>
+                        <button type="reset">ยกเลิก</button>
+                    </div>
+                </form>
+>>>>>>> b1b8577ed3cf3664a888ef94fb86d3307bc5ffe7
             </div>
         </main>
     </div>

@@ -57,7 +57,6 @@
                 <li><a href="name.html" class="active">
                     <div class="icon"></div>
                     ลงนามอนุมัติ
-                    
                 </a></li>
             </ul>
         </aside>
@@ -66,80 +65,81 @@
         <main class="content">
             <div class="content-header">
                 <h2>ลงนามอนุมัติ</h2>
-                <div class="breadcrumb">หน้าแรก > ลงนามอนุมัติ > รายละเอียด</div>
+                <div class="breadcrumb">หน้าแรก > ลงนามอนุมัติ</div>
             </div>
 
-            <div class="content-body">
-                <div class="detail-container">
+            <div class="schedule-container">
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                            </select>
 
-                    <h3 class="detail-title">รายละเอียดโครงการ</h3>
-                    
-                    <div class="data-group info-block">
-                        <div class="info-row">
-                            <div class="info-label">ชื่อโครงการ :</div>
-                            <div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div>
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
                         </div>
-                        <div class="info-row">
-                            <div class="info-label">ประเภทโครงงาน :</div>
-                            <div class="info-value">โครงงานสหกิจ</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">ปีการศึกษา :</div>
-                            <div class="info-value">2568 ภาคเรียนที่ 1</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">วัน / เวลา / สถานที่สอบ :</div>
-                            <div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">สถานะ :</div>
-                            <div class="info-value">สอบหัวข้อ</div>
-                        </div>
-                        <div class="info-row status-row">
-                            <div class="info-label">ผลสอบหัวข้อ :</div>
-                            <div class="info-value"><span class="status-badge pass">ผ่าน</span></div>
-                        </div>
-                    </div>
-
-                    <div class="project-description-box">
-                        <p>ระบบนี้ถูกออกแบบมาเพื่อจัดการกระบวนการยืมและคืนครุภัณฑ์ของภาควิชา IT โดยใช้เทคโนโลยี QR Code สำหรับการยืนยันตัวตนและการติดตามสถานะ ช่วยลดขั้นตอนเอกสารและเพิ่มความแม่นยำในการจัดการทรัพย์สิน</p>
-                    </div>
-
-
-                    <h3 class="detail-title person-title">รายชื่อผู้จัดทำโครงการ</h3>
-                    <div class="person-list data-group">
-                        <p>
-                            นางสาวไรบีนา มะเก๊ะ <span class="id-code">6806022510xxx</span>
-                        </p>
-                        <p>
-                            นายคฤษฐ์ เสือเดช <span class="id-code">6806022510xxx</span> 
-                        </p>
-                        <p>
-                            นางสาวชาลิสา ยิ้มลำใย <span class="id-code">6806022510xxx</span> 
-                        </p>
-                    </div>
-
-                    <h3 class="detail-title person-title">อาจารย์ที่ปรึกษา</h3>
-                    <div class="person-list data-group">
-                        <p>ผศ.ดร.นิติการ นาคเจือทอง<span class="role-text">อาจารย์ที่ปรึกษา</span></p>
-                        <p>รศ.ดร.อนิราช มิ่งขวัญ<span class="role-text">อาจารย์ที่ปรึกษาร่วม</span></p>
-                    </div>
-
-                    <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
-                    <div class="file-link-section data-group">
-                        <a href="ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
-                            <i class="fas fa-file-pdf"></i> ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf
-                        </a>
-                        <a href="ไฟล์นำเสนอ.pdf" target="_blank" class="file-link">
-                            <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
-                        </a>
                     </div>
                 </div>
-                <div class="ter-btn">
-                    <a href="exam_topic_2.html">
-                    <button type="solve">แก้ไข</button></a>
-                    <a href="exam_topic.html">
-                    <button type="back">ย้อนกลับ</button></a>
+
+            <div class="table-content-wrapper"> 
+                <div class="card-container"> 
+                    <div class="project-card">
+                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2> 
+                        <div class="info-item">
+                            <span class="label">รหัสโครงงาน :</span>
+                            <span class="value">T0001</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="label">ชื่อนักศึกษา :</span>
+                            <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">รหัสนักศึกษา :</span>
+                            <span class="value">6806022510xxx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">สถานะ :</span>
+                            <span class="value">สอบหัวข้อ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ผลสอบ :</span>
+                            <span class="status pass">ผ่าน</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ลงนามอนุมัติ :</span>
+                            <span class="status namemapass">ลงนามอนุมัติแล้ว</span>
+                        </div>
+                        <div class="button-container">
+                            <a href="#project-details-modal"
+                            class="detail-button">ดูรายละเอียด</a>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link" data-page="2">2</a>
+                    <a href="#" class="page-link" data-page="3">3</a>
+                    <a href="#" class="page-link" data-page="4">4</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
                 </div>
             </div>
         </main>
@@ -157,5 +157,69 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+
+    <div id="project-details-modal" class="modal">
+                <div class="modal-content">
+                    <a href="#" class="close-btn">&times;</a>
+
+                    <div class="modal-body">
+                        <h3 class="detail-title">รายละเอียดโครงการ</h3>
+                        <div class="data-group info-block">
+                            <div class="info-row"><div class="info-label">ชื่อโครงการ :</div><div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+
+                            <div class="info-row"><div class="info-label">ประเภทโครงงาน :</div><div class="info-value">โครงงานสหกิจ</div></div>
+
+                            <div class="info-row"><div class="info-label">ปีการศึกษา :</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+
+                            <div class="info-row"><div class="info-label">วัน / เวลา / สถานที่สอบ :</div><div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div></div>
+
+                            <div class="info-row"><div class="info-label">สถานะ :</div><div class="info-value">สอบหัวข้อ</div></div>
+
+                            <div class="info-row">
+                                <div class="info-label">ผู้จัดทำ : </div>
+                                
+                                <div class="person-list-detail">
+                                    <div class="person-name">นางสาวไรบีนา มะเก๊ะ 6806022510xxx</div>
+                                    <div class="person-name">นายคฤษฐ์ เสือเดช 6806022510xxx</div>
+                                    <div class="person-name">นางสาวชาลิสา ยิ้มลำใย 6806022510xxx</div>
+                                </div>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">อาจารย์ที่ปรึกษา :</div>
+                                
+                                <div class="person-list-detail">
+                                    <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง อาจารย์ที่ปรึกษา</div>
+                                    <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ อาจารย์ที่ปรึกษาร่วม</div>
+                                </div>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">ไฟล์แนบ :</div>
+                                <a href="ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
+                                    <i class="fas fa-file-pdf"></i>ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf
+                                </a>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">ลงนามอนุมัติ :</div>
+                                
+                                <div class="info-content-checkbox">
+                                    <input type="checkbox" id="signApproval" name="status" value="อนุมัติ">
+                                    <label for="signApproval">ลงนามเพื่ออนุมัติ</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="ter-btn">
+                            <a href="name_1.html">
+                            <button type="save">บันทึก</button>
+                            <a href="#" class="ter-btn-back">ปิด</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 </body>
 </html>
