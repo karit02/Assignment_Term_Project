@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/visor.css">
     <title>ระบบจัดการโครงงาน - อาจารย์ที่ปรึกษา</title>
 </head>
 <body>
@@ -41,13 +42,17 @@
                     <div class="icon"></div>
                     โครงงานที่ปรึกษา
                 </a></li>
-                <li><a href="#" class="active">
+                <li><a href="progress_review.html" class="active">
                     <div class="icon"></div>
-                    ตรวจความก้าวหน้า
+                    ตรวจสอบความก้าวหน้า
                 </a></li>
                 <li><a href="proposal_approval.html">
                     <div class="icon"></div>
-                    อนุมัติหัวข้อ
+                    ตรวจสอบการสอบหัวข้อ
+                </a></li>
+                <li><a href="final_exam_review.html">
+                    <div class="icon"></div>
+                    ตรวจการสอบจบ
                 </a></li>
                 <li><a href="document_review.html">
                     <div class="icon"></div>
@@ -59,54 +64,75 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>แดชบอร์ด - อาจารย์ที่ปรึกษา</h2>
-                <div class="breadcrumb">หน้าแรก > แดชบอร์ดอาจารย์ที่ปรึกษา</div>
+                <h2>ตรวจสอบความก้าวหน้า</h2>
+                <div class="breadcrumb">หน้าแรก > ตรวจสอบความก้าวหน้า</div>
             </div>
-            <div class="content-body">
-                <!-- Status Cards -->
-                <div class="status-cards">
-                    <div class="status-card">
-                        <div class="number">12</div>
-                        <div class="label">นักศึกษาที่ปรึกษา</div>
+
+            <div class="schedule-container">
+            <div class="table-content-wrapper"> 
+                <div class="progress-card-container">
+                    <div class="progress-card">
+                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2>
+                        <div class="progress-percent">
+                            <span class="percent-value">100</span>
+                            <span class="percent-sign">%</span>
+                        </div>
+                        <div class="progress-updated">
+                            อัปเดตล่าสุด: 5 ตุลาคม 2025
+                        </div>
+                        <div class="progress-info">
+                            <div class="info-item">
+                                <span class="label">รหัสโครงงาน :</span>
+                                <span class="value">T0001</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">จำนวนนักศึกษา :</span>
+                                <span class="value">3 คน</span>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <a href="project_advisor_detail.html">
+                                <button class="detail-button">ดูรายละเอียด</button>
+                            </a>
+                        </div>
                     </div>
-                    <div class="status-card">
-                        <div class="number">8</div>
-                        <div class="label">โครงงานที่ต้องตรวจ</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">3</div>
-                        <div class="label">รอการอนุมัติ</div>
+                    <div class="progress-card">
+                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
+                        <div class="progress-percent">
+                            <span class="percent-value">68</span>
+                            <span class="percent-sign">%</span>
+                        </div>
+                        <div class="progress-updated">
+                            อัปเดตล่าสุด: 5 ตุลาคม 2025
+                        </div>
+                        <div class="progress-info">
+                            <div class="info-item">
+                                <span class="label">รหัสโครงงาน :</span>
+                                <span class="value">T0003</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">จำนวนนักศึกษา :</span>
+                                <span class="value">4 คน</span>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <a href="project_advisor_detail.html">
+                                <button class="detail-button">ดูรายละเอียด</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Quick Actions -->
-                <div class="project-actions">
-                    <a href="/progress-review" class="btn">
-                        <span>📋</span>
-                        ตรวจความก้าวหน้า
-                    </a>
-                    <a href="/proposal-approval" class="btn">
-                        <span>✅</span>
-                        อนุมัติหัวข้อ
-                    </a>
-                    <a href="/document-review" class="btn">
-                        <span>📄</span>
-                        ตรวจเอกสาร
-                    </a>
-                </div>
-
-                <!-- Information Section -->
-                <div class="info-section">
-                    <h3>ข้อมูลการปรึกษาโครงงาน</h3>
-                    <p>
-                        หน้านี้แสดงข้อมูลภาพรวมของการปรึกษาโครงงาน รวมถึงจำนวนนักศึกษาที่ปรึกษา 
-                        โครงงานที่ต้องตรวจสอบ และการอนุมัติต่างๆ ที่รอดำเนินการ คุณสามารถใช้เมนูด้านซ้าย
-                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การตรวจความก้าวหน้า การอนุมัติหัวข้อ 
-                        และการให้คำแนะนำแก่นักศึกษา
-                    </p>
+            
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
                 </div>
             </div>
         </main>
+
+        </div>
     </div>
 
     <!-- Footer -->
@@ -119,5 +145,42 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+
+    <script>
+        function getProgressColor(percent) {
+            // ไล่สีจากแดง (#ef4444) → ส้ม (#f59e42) → เหลือง (#fde047) → เขียว (#22c55e)
+            if (percent <= 0) return '#ef4444'; // แดง
+            if (percent < 50) {
+                // ไล่สีแดงไปส้ม
+                let r = 239 + Math.round((245-239)*(percent/50));
+                let g = 68 + Math.round((158-68)*(percent/50));
+                let b = 68 + Math.round((66-68)*(percent/50));
+                return `rgb(${r},${g},${b})`;
+            }
+            if (percent < 80) {
+                // ไล่สีส้มไปเหลือง
+                let r = 245 + Math.round((253-245)*((percent-50)/30));
+                let g = 158 + Math.round((224-158)*((percent-50)/30));
+                let b = 66 + Math.round((71-66)*((percent-50)/30));
+                return `rgb(${r},${g},${b})`;
+            }
+            // ไล่สีเหลืองไปเขียว
+            let r = 253 + Math.round((34-253)*((percent-80)/20));
+            let g = 224 + Math.round((197-224)*((percent-80)/20));
+            let b = 71 + Math.round((94-71)*((percent-80)/20));
+            return `rgb(${r},${g},${b})`;
+        }
+
+        document.querySelectorAll('.progress-card').forEach(card => {
+            const percentEl = card.querySelector('.percent-value');
+            if (percentEl) {
+                let percent = parseInt(percentEl.textContent, 10);
+                percentEl.style.color = getProgressColor(percent);
+                // เปลี่ยน % ด้วย
+                const signEl = card.querySelector('.percent-sign');
+                if (signEl) signEl.style.color = getProgressColor(percent);
+            }
+        });
+    </script>
 </body>
 </html>

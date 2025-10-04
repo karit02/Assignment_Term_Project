@@ -10,7 +10,6 @@ body {
     color: #333;
 }
 
-/* Banner Styles */
 .banner {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -105,7 +104,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* Navigation Bar */
 .navbar {
     background: white;
     border-bottom: 1px solid #e2e8f0;
@@ -142,27 +140,25 @@ body {
     border-bottom-color: #667eea;
 }
 
-/* Main Container */
 .main-container {
     width: 100%;
     margin-top: 120px;
     display: grid;
-    grid-template-columns: 280px 1fr; /* คงการแบ่งคอลัมน์แบบเดิม */
+    grid-template-columns: 280px 1fr;
     gap: 30px;
     padding: 14px 40px;
     min-height: calc(100vh - 200px);
 }
 
-/* Sidebar */
 .sidebar {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.07);
     padding: 0;
     position: sticky;
-    top: 134px;            /* ติดกับ banner */
-    height: calc(78vh - 140px); /* ความสูงสูงสุด */
-    max-height: calc(78vh - 140px); /* ป้องกันล้นจอ */
+    top: 134px;
+    height: calc(78vh - 140px);
+    max-height: calc(78vh - 140px);
     overflow-y: auto;
 }
 
@@ -193,9 +189,8 @@ body {
     color: #64748b;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
-    
-    width: 100%; /* ทำให้ลิงก์ขยายเต็มความกว้างของ Sidebar */
-    box-sizing: border-box; /* สำคัญ: เพื่อให้ padding ไม่ดันความกว้างเกิน 100% */
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .sidebar-menu a:hover,
@@ -234,25 +229,23 @@ body {
 }
 
 .schedule-container {
-    max-width: 1500px; /* กำหนดความกว้างสูงสุดที่ต้องการ */
-    margin: 0 auto; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    max-width: 1500px; 
+    margin: 0 auto; 
     padding: 15px;
     font-family: Arial, sans-serif;
 }
 
-/* CSS สำคัญที่ทำให้เกิดการจัดเรียง */
 .controls-bar {
     display: flex;
-    justify-content: space-between; /* ดันกลุ่มซ้าย/ขวาออกจากกัน */
+    justify-content: space-between; 
     align-items: center;
     padding-top: 10px;
 }
 
-/* กลุ่ม Dropdown ที่ต้องการให้อยู่ชิดขวา */
 .filter-group-right {
     display: flex;
-    gap: 20px; /* ระยะห่างระหว่าง Dropdown เลือกปีและประเภท */
-    margin-left: auto; /* ดันกลุ่มนี้ไปชิดขวาของ controls-bar */
+    gap: 20px; 
+    margin-left: auto;
 }
 
 /* ================================================= */
@@ -260,43 +253,78 @@ body {
 /* ================================================= */
 
 .filter-area {
-    /* จัดองค์ประกอบให้อยู่ในแนวนอนและมีช่องไฟ */
     display: flex; 
     align-items: center;
-    gap: 10px; /* ระยะห่างระหว่าง Label กับ Select */
+    gap: 10px; 
     margin-bottom: 17px;
-    padding: 12px 22px; /* จัดให้อยู่ในแนวเดียวกับส่วนของตาราง */
+    padding: 12px 22px; 
 }
 
-.filter-label-year {
+.filter-label-year{
     font-size: 16px;
     font-weight: 500;
-    color: #495057; /* สีเทาเข้ม */
+    color: #495057;
     min-width: 80px
 }
 
 .filter-label-se {
     font-size: 16px;
     font-weight: 500;
-    color: #495057; /* สีเทาเข้ม */
+    color: #495057;
     min-width: 135px;
     padding-left: 15px;
 }
 
-.year-selector,
-.project-selector {
+.year-selector {
     padding: 10px 15px;
-    border: 1px solid #ced4da;
+    border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
     border-radius: 6px;
+    min-width: 230px; /* กำหนดความกว้างขั้นต่ำ */
     background-color: white;
     font-size: 15px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    appearance: none;
-    background-image: url('data:image/svg+xml,...');
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
+    
+    /* สไตล์เพิ่มเติมเพื่อให้ดูสะอาดตา */
+    -webkit-appearance: none; /* ลบการแสดงผลเริ่มต้นของเบราว์เซอร์ */
+    -moz-appearance: none;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#6a11cb" d="M287 78.4L146.2 219.2 5.4 78.4h281.6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center; 
+    background-size: 10px;
+}
+
+.project-selector {
+    padding: 10px 15px;
+    border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
+    border-radius: 6px;
+    min-width: 270px; /* กำหนดความกว้างขั้นต่ำ */
+    background-color: white;
+    font-size: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
+    
+    /* สไตล์เพิ่มเติมเพื่อให้ดูสะอาดตา */
+    -webkit-appearance: none; /* ลบการแสดงผลเริ่มต้นของเบราว์เซอร์ */
+    -moz-appearance: none;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#6a11cb" d="M287 78.4L146.2 219.2 5.4 78.4h281.6z"/></svg>');
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 10px;
 }
+
+
+
+/* responsive */
+@media (max-width: 768px) {
+    .student-list {
+        grid-template-columns: 1fr;
+    }
+    .student-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ================================================= */
 /* จัดรูปแบบตาราง (Graduation Schedule Table) */
@@ -304,20 +332,15 @@ body {
 
 .graduation-schedule-table {
     width: 100%;
-    border-collapse: separate; /* ใช้ separate เพื่อให้ใช้ border-radius และ box-shadow ได้ */
+    border-collapse: separate; 
     border-spacing: 0;
     font-size: 14px;
-    /* เพิ่มเงาและมุมโค้งมนให้กับตารางโดยรวม */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
     overflow: hidden; /* สำคัญเพื่อซ่อนเส้นขอบที่เกินมา */
-    overflow-x: auto;
-    display: block;
 }
 
-/* ส่วนหัวตาราง (Thead) */
 .graduation-schedule-table thead th {
-    /* ใช้สีที่เข้ากับธีมม่วง/น้ำเงิน */
     background-color: #f0f3ff; 
     color: #34495e;
     padding: 15px 18px; 
@@ -325,77 +348,69 @@ body {
     font-size: 15px;
     font-weight: 600;
     border: none;
-    border-bottom: 1px solid #e0e0e0; /* เน้นเส้นแบ่งด้วยสีธีม */
-    /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
-    border-right: 1px solid #e0e0e0; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
-    border-left: none; /* ลบขอบซ้ายออกเพื่อไม่ให้ซ้อนทับกับ border ของ table */
-    border-top: none; /* ลบขอบบนออกเพื่อไม่ให้ซ้อนทับกับ border ของ table */
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0; 
+    border-left: none; 
+    border-top: none; 
 }
 
-/* ลบคอลัมน์สุดท้ายของส่วนหัว (หมายเหตุ) ไม่ให้มี border-right */
 .graduation-schedule-table thead th:last-child {
     border-right: none;
 }
 
-/* ส่วนเนื้อหาตาราง (Tbody) */
 .graduation-schedule-table tbody td {
     padding: 18px 20px;
-    /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
-    border-right: 1px solid #e0e0e0; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
-    border-bottom: 1px solid #e0e0e0; /* เส้นแบ่งแถวเป็นสีเทาอ่อน */
-    border-left: none; /* ลบขอบซ้าย */
-    border-top: none; /* ลบขอบบน */
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; 
+    border-left: none; 
+    border-top: none; 
     vertical-align: middle;
     color: #495057;
     text-align: left;
 }
 
-/* ลบคอลัมน์สุดท้ายของเนื้อหา (หมายเหตุ) ไม่ให้มี border-right */
 .graduation-schedule-table tbody td:last-child {
     border-right: none;
 }
 
-/* ส่วนสลับสีแถว */
-.graduation-schedule-table tbody tr:nth-child(even) {
-    background-color: #f7f9ff; /* สีฟ้าอ่อน/ม่วงอ่อนเล็กน้อย */
+\.graduation-schedule-table tbody tr:nth-child(even) {
+    background-color: #f7f9ff; 
 }
 .graduation-schedule-table tbody tr:hover {
     background-color: #f7f9ff; 
     cursor: default;
 }
 
-/* Container ที่ห่อหุ้มตารางและ Pagination */
 .table-content-wrapper {
     display: flex;
     flex-direction: column; /* จัดองค์ประกอบให้อยู่ในแนวตั้ง */   
     /* สำคัญ: กำหนดความสูง เพื่อสร้างพื้นที่ว่างในการดัน Pagination */
-    min-height: 525px; /* ปรับค่านี้ตามความสูงที่ต้องการให้ Card มีพื้นที่ว่าง */
+    min-height: 515px; /* ปรับค่านี้ตามความสูงที่ต้องการให้ Card มีพื้นที่ว่าง */
     background-color: white; /* สมมติว่า Card พื้นหลังเป็นสีขาว */
     padding: 10px; /* เพิ่ม padding รอบด้าน */
 }
 
-/* ตารางหลัก: ตรวจสอบไม่ให้มี margin-bottom มากเกินไป */
 .graduation-schedule-table {
-    margin-bottom: 10px; /* เว้นระยะห่างเล็กน้อยระหว่างตารางกับ pagination */
+    margin-bottom: 10   px; /* เว้นระยะห่างเล็กน้อยระหว่างตารางกับ pagination */
 }
 
 /*
  * *** 1. การปรับปรุงโครงสร้างและการตกแต่งพื้นฐานของ Card ***
  */
 .project-card {
-    flex: 1 1 calc(33.333% - 20px); /* ปรับให้เป็น 3 คอลัมน์ (1/3 ของพื้นที่) */
+    flex: 1 1 calc(33.333% - 20px); 
     max-width: calc(33.333% - 20px);
     
     background-color: #ffffff; /* พื้นหลังสีขาวบริสุทธิ์ */
     border-radius: 10px; /* ขอบโค้งมนปานกลาง */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เงาที่ชัดเจนขึ้น ดูมีมิติ */
     border: 1px solid #e0e0e0; /* เพิ่มขอบบางๆ เพื่อความชัดเจน */
-    padding: 18px 25px;
+    padding: 20px;
     transition: transform 0.3s ease-in-out; /* เพิ่ม Animation เล็กน้อย */
 }
 
 .project-card:hover {
-    transform: translateY(-4px); /* ยก Card ขึ้นเล็กน้อยเมื่อวางเมาส์ (Interactive Effect) */
+    transform: translateY(-4px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -470,13 +485,13 @@ body {
  */
 .card-title {
     font-size: 1.15em;
-    font-weight: 700; /* เน้นความหนา */
-    color: #4a5568; /* สีเทาเข้มเพื่อให้ดูมืออาชีพ */
+    font-weight: 700; 
+    color: #4a5568; 
     margin-top: 0;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 3px solid #667eea; /* ใช้สีหลักของเว็บ (สีม่วง/น้ำเงิน) เป็นเส้นแบ่งใต้หัวข้อ */
-    text-align: center; /* จัดหัวข้อให้อยู่ตรงกลาง Card */
+    border-bottom: 3px solid #667eea; 
+    text-align: center; 
 }
 
 /*
@@ -488,26 +503,29 @@ body {
     padding-bottom: 12px;
 }
 
-
-
-
 /* ========================================================================= */
 /* สไตล์สำหรับหน้ารายละเอียดโครงงาน (Detail View) */
 /* ========================================================================= */
 
 .detail-title {
-    font-size: 1.5rem;
-    color: #1a202c; /* สีเข้มสำหรับหัวข้อหลัก */
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e2e8f0; /* เส้นใต้บาง ๆ */
-    padding-bottom: 10px;
+    font-size: 1.35em;
+    font-weight: 700;
+    color: #1e293b; 
+    margin-top: 30px; 
+    padding-bottom: 3px;
+    border-bottom: 3px solid #667eea; /* เส้นแบ่งยังคงอยู่ */
+    
+    /* 1. เปลี่ยน display จาก block เป็น inline-block */
+    /* - ทำให้ความกว้างของกรอบ (รวมถึงเส้นใต้) หดลงเหลือเท่าเนื้อหา */
+    display: inline-block; 
+    /* 2. ลบ width: 100%; ออกไป (หรือถ้าเคยมี ให้คอมเมนต์ทิ้ง) */
+    /* width: 100%; */
 }
 
 .detail-title:first-child {
     margin-top: 0;
 }
 
-/* กรอบข้อมูลย่อย (Data Card Look) */
 .data-group {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -522,12 +540,11 @@ body {
     overflow: hidden;
 }
 
-/* แถวข้อมูลแต่ละแถว */
 .info-row {
-    display: flex; /* กำหนดให้เป็น Flexbox */
-    align-items: center; /* ช่วยจัดแนวตั้งให้อยู่กึ่งกลาง */
-    padding: 12px 22px; 
+    display: flex;
+    padding: 15px 25px; 
     border-bottom: 1px solid #e9e9e9; 
+    align-items: center;
 }
 
 .info-row:last-child {
@@ -536,44 +553,18 @@ body {
 
 .info-label {
     min-width: 200px; 
-    max-width: 200px; /* กำหนดความกว้างคงที่ (200px) */
+    max-width: 200px; 
     font-weight: bold;
-    color: #000000; 
+    color: #4a5568; 
     flex-shrink: 0;
-    padding-right: 10px; /* ระยะห่างระหว่าง Label กับ Content */
 }
 
 .info-value {
-    /* สำคัญ: ต้องมี flex-grow: 1 เพื่อให้ส่วนข้อมูลขยายเต็มพื้นที่ที่เหลือ */
     flex-grow: 1; 
     color: #1e293b;
     align-self: center; 
 }
 
-/* ปรับระยะห่างระหว่าง checkbox กับข้อความ */
-.info-content input[type="checkbox"] {
-    margin-right: 5px; 
-}
-
-.info-content-checkbox {
-    /* ส่วนนี้จะยืดเต็มพื้นที่ที่เหลือ (ถ้าใช้ Flexbox) หรือจัดเนื้อหาตามต้องการ */
-    flex-grow: 1; /* ส่วนนี้จะยืดพื้นที่ที่เหลือทั้งหมด */
-    
-    /* อาจต้องใช้ margin-left เพื่อให้ Checkbox เริ่มต้นตรงกับจุดที่ต้องการ */
-    /* *** จุดที่ต้องแก้ไขเพื่อให้ Checkbox เลื่อนมาใกล้ขึ้น *** */
-    margin-left: 4px; /* ลองลดค่านี้ หรือตั้งเป็น 0 */ 
-}
-
-/* แก้ไขการจัดแนว Checkbox ให้อยู่ตรงกลางข้อความ */
-.info-content-checkbox input[type="checkbox"] {
-    vertical-align: middle;
-    margin-right: 5px;
-    margin-bottom: 3px;
-}
-
-.info-row > .file-link {
-    flex-grow: 1;
-}
 
 /* ========================================================================= */
 /* 2.2 ปรับปรุงสถานะ (Status Badge) */
@@ -595,18 +586,17 @@ body {
 }
 
 .status-badge.pass {
-    background-color: #f0fff0; /* พื้นหลัง: สีเขียวอ่อนมาก (Honeydew) */
-    color: #2e8b57;           /* ข้อความ: สีเขียวเข้ม (Sea Green) อ่านง่าย */
-    border: 1px solid #66bb6a;  /* เส้นขอบ: สีเขียวกลาง (Medium Green) ดูมั่นคง */
+    background-color: #f0fff0; 
+    color: #2e8b57;           
+    border: 1px solid #66bb6a;  
 }
 
 .status-badge.no {
-    background-color: #fcebeb; /* พื้นหลัง: สีแดงอ่อนมาก (เกือบขาวอมชมพูอ่อน) */
-    color: #cc0000;           /* ข้อความ: สีแดงเข้ม (Dark Red) เพื่อให้อ่านง่ายและเด่นชัด */
-    border: 1px solid #ff4444;  /* เส้นขอบ: สีแดงกลาง (Vivid Red) */
+    background-color: #fcebeb;
+    color: #cc0000;          
+    border: 1px solid #ff4444;  
 }
 
-/* เพิ่มสไตล์สำหรับสถานะอื่นๆ (ถ้ามี) */
 .status-badge.approved {
     background-color: #e6ffed; 
     color: #28a745;
@@ -618,27 +608,25 @@ body {
 /* ========================================================================= */
 
 .project-description-box {
-    background-color: #ffffff; /* พื้นหลังสีขาว */
+    background-color: #ffffff; 
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     padding: 20px;
     margin-top: 15px;
-    line-height: 1.8; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    line-height: 1.8; 
     color: #475569;
-    min-height: 150px; /* ทำให้กรอบมีขนาดใหญ่ขึ้น */
+    min-height: 150px; 
     font-style: italic;
 }
-
 
 /* ========================================================================= */
 /* 2.4 รายชื่อและอาจารย์ที่ปรึกษา */
 /* ========================================================================= */
 
 .person-list p {
-    /* ทำให้ชื่อและรหัส/บทบาท จัดเรียงกันชัดเจน */
     display: flex;
     justify-content: space-between; 
-    padding: 12px 25px; /* เพิ่ม padding ให้เท่า info-row */
+    padding: 12px 25px; 
     border-bottom: 1px solid #e9e9e9;
     margin: 0;
 }
@@ -648,9 +636,8 @@ body {
 
 .id-code, .role-text {
     font-weight: 600;
-    color: #764ba2; /* ใช้สีธีมเพื่อเน้นรหัส/บทบาท */
+    color: #764ba2; 
 }
-
 
 /* ========================================================================= */
 /* 2.5 ไฟล์แนบ */
@@ -661,9 +648,8 @@ body {
 }
 
 .file-link {
-    display: inline-flex; 
-    align-items: center;
-    margin-bottom: 0;
+    display: block;
+    margin-bottom: 8px;
     color: #2563eb;
     text-decoration: underline;
     font-weight: 600;
@@ -676,7 +662,7 @@ body {
 }
 
 .file-link:hover {
-    color: #19389e;
+    color: #1e40af;
     text-decoration: underline;
 }
 
@@ -739,8 +725,8 @@ body {
 }
 
 .detail-button {
-    background-color: #4c7cff; /* สีฟ้า/น้ำเงินที่สดใสขึ้น (Primary Action Color) */
-    color: white; /* ตัวอักษรสีขาว */
+    background-color: #4c7cff; 
+    color: white;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -754,7 +740,7 @@ body {
 }
 
 .detail-button:hover {
-    background-color: #3b5cb0; /* สีเข้มขึ้นเมื่อวางเมาส์ */
+    background-color: #3b5cb0; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     box-shadow: none; 
 }
@@ -797,26 +783,26 @@ body {
 .info-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px; /* ลดระยะห่างระหว่างบรรทัดลงเล็กน้อยเพื่อความกระชับ */
+    margin-bottom: 5px; 
     padding: 2px 0;
 }
 
 .label {
     padding-left: 8px;
-    color: #718096; /* สีเทาอ่อนลงเล็กน้อย */
-    font-size: 0.9em; /* ตัวอักษรเล็กลงนิดหน่อย */
+    color: #718096; 
+    font-size: 0.9em; 
 }
 
 .value {
     padding-right: 8px;
-    font-weight: 600; /* เน้นค่า (Value) ให้หนาขึ้น */
-    color: #2d3748; /* สีดำเข้มขึ้น */
+    font-weight: 600;
+    color: #2d3748; 
     text-align: right;
 }
 
 .status.pending {
     font-weight: 700;
-    color: #ff9800; /* สีส้มที่สว่างขึ้นและดูดีขึ้น */
+    color: #ff9800;
 }
 
 .status.pass {
@@ -824,33 +810,84 @@ body {
     color: #28a745;
 }
 
-.status.namema {
-    font-weight: 700;
-    color: #cc0000;
+.dashboard-section {
+    margin-top: 40px;
 }
 
-.status.namemapass {
-    font-weight: 700;
-    color: #28a745;
+.chart-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* ✅ จำกัดความกว้างให้สมดุล */
+    aspect-ratio: 1 / 1; /* ✅ ทำให้เป็นสี่เหลี่ยมจัตุรัส (วงกลมไม่รี) */
+    margin: 0 auto 30px;
 }
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.recent-activities, .system-logs {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 20px;
+}
+
+.activity-list, .log-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li, .log-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.activity-list li:last-child, .log-list li:last-child {
+    border-bottom: none;
+}
+
+.activity-time {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
 
 /*
  * *** 5. การปรับปรุง Card Container (สำคัญสำหรับการจัดเรียง 3 คอลัมน์) ***
  */
 .card-container {
     display: flex;
-    gap: 30px; /* เพิ่มช่องว่างระหว่าง Card ให้มากขึ้น */
+    gap: 30px; 
     flex-wrap: wrap; 
 }
 
-
-/* Container ที่ห่อหุ้ม Pagination */
 .pagination-container {
     display: flex;
     justify-content: center; 
-    /* กุญแจสำคัญ: margin-top: auto; จะดัน Pagination ลงไปด้านล่างสุดของ Flex Container */
     margin-top: auto; 
-    margin-bottom: 0; /* ไม่ต้องมี margin ด้านล่าง เพราะใช้ padding ของ Wrapper แทน */
+    margin-bottom: 0; 
     padding-bottom: 0;
     padding-top: 50px;
 }
@@ -898,32 +935,29 @@ body {
 
 ### **ไฟล์ CSS (ที่ต้องเพิ่ม)** */
 
+/* ```css */
 /* ========================================================================= */
 /* MODAL STYLES (แก้เพื่อให้ Modal ซ่อนอยู่เมื่อไม่ได้ถูกเปิด) */
 /* ========================================================================= */
 
 .modal {
-    /* ซ่อน Modal โดยค่าเริ่มต้น */
-    display: none; 
-    
-    /* ตั้งค่า Modal Overlay */
-    position: fixed;
-    z-index: 10000; /* ให้ Modal อยู่บนสุด */
+    visibility: hidden;        /* **ซ่อน: ใช้ visibility แทน display: none; เพื่อให้ transition ทำงาน** */
+    opacity: 0;                /* ทำให้โปร่งใสในตอนแรก */
+    position: fixed;           
+    z-index: 2000;             
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5); /* พื้นหลังทึบแสง (Overlay) */
-    backdrop-filter: blur(5px);
+    width: 100%;               
+    height: 100%;              
+    overflow-y: auto;          
+    background-color: rgba(0,0,0,0.0); /* เริ่มต้นพื้นหลังโปร่งใส */
+    transition: opacity 0.4s ease, background-color 0.4s ease; /* เพิ่ม Transition */
 }
 
-/* สั่งให้ Modal แสดงเมื่อ ID ถูกเรียกใช้ใน URL (ทำงานเมื่อคลิกปุ่ม) */
 .modal:target {
-    /* เมื่อ Modal ถูกเรียกโดยใช้ Hash Link (เช่น #project-details-modal) */
-    display: flex; /* ทำให้ Modal แสดงขึ้นมา */
-    justify-content: center; /* จัดให้อยู่กึ่งกลาง */
-    align-items: center; /* จัดให้อยู่กึ่งกลาง */
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5); /* พื้นหลังสีดำโปร่งแสง 50% เมื่อแสดง */
 }
 
 /* กล่องเนื้อหา Modal: สถานะ 'ซ่อน' (เริ่มต้น) */
@@ -932,45 +966,35 @@ body {
     border-radius: 12px;
     padding: 28px 28px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    
-    max-width: 1200px; 
-    
+    max-width: 1200px; /* เพิ่มความกว้างสูงสุด */             
+    max-width: 800px;          
     position: fixed; 
-    top: 50%;
-    left: 50%; 
-    
-    /* ปรับขนาดตรงนี้ */
+    left: 590px;     
+    top: 150px;      
+    bottom: 110px;   
     width: 100%;
-    max-height: 90vh; 
-    
-    opacity: 0;
-    transform: translate(-50%, -60%);
-    transition: all 0.3s ease;
-}
+    max-height: 90vh; /* ความสูงสูงสุดไม่เกิน 90% ของความสูงหน้าจอ */
+    /* overflow-y: auto; ทำให้เนื้อหาเลื่อนได้ถ้ายาวเกิน */
 
-/* กล่องเนื้อหา Modal: สถานะ 'แสดง' */
-.modal:target .modal-content {
-    opacity: 1;
-    transform: translate(-50%, -50%);
+    /* เพิ่ม Animation/Transition สำหรับกล่องเนื้อหา */
+    transform: translateY(-50px); /* ซ่อนกล่องให้สูงขึ้นไป -50px ในตอนแรก */
+    transition: transform 0.4s ease-out;
 }
 
 body:has(#project-details-modal:target) {
     overflow: hidden;
-    overflow-x: hidden; /* ป้องกันการเกิด Scrollbar แนวนอน */
-    padding-right: 15px; /* ชดเชย Scrollbar แนวตั้งที่หายไป (เพื่อไม่ให้หน้าจอกระโดด) */ 
+    overflow-x: hidden; 
+    padding-right: 15px; 
 }
 
-
-/* เพิ่ม CSS นี้เข้าไปในโค้ดของคุณ */
-body:has(.modal:target) { /* ใช้ .modal:target แทน #project-details-modal:target เพื่อความยืดหยุ่น */
+body:has(.modal:target) { 
     overflow: hidden; 
-    overflow-x: hidden; /* ป้องกันการเกิด Scrollbar แนวนอนเมื่อ Modal เปิด */
-    padding-right: 15px; /* ชดเชยความกว้างของ Scrollbar แนวตั้งที่หายไป */
+    overflow-x: hidden; 
+    padding-right: 15px; 
 }
 
 
 
-/* สไตล์ส่วนหัวและปุ่มปิด */
 .modal-header-title {
     font-size: 1.8em;
     font-weight: 700;
@@ -983,6 +1007,86 @@ body:has(.modal:target) { /* ใช้ .modal:target แทน #project-details-
     justify-content: flex-end;
     margin-top: 30px;
 }
+
+.admin-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.admin-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.admin-modal-content h3 {
+    margin-bottom: 18px;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.form-grid input,
+.form-grid select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.form-actions button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.form-actions button[type="button"] {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.form-actions button[type="submit"] {
+    background: #2563eb;
+    color: #fff;
+}
+
+.form-actions button:hover {
+    opacity: 0.9;
+}
+
 
 .detail-main-title {
     font-size: 1.5rem;
@@ -1222,23 +1326,20 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 
 /* 🔴 ปุ่ม "ยกเลิก" (ปรับความกว้างให้บาลานซ์) 🔴 */
 .ter-btn-back {
-    background-color: #e0e0e0; 
-    color: #333;
-    padding: 11px 20px;
+    /* ใช้สไตล์เดียวกับปุ่มย้อนกลับ/ปิดของคุณ */
+    padding: 12px 26px;
+    font-size: 1rem;
     border: none;
     border-radius: 10px; /* เพิ่มความโค้งมน */
     cursor: pointer;
-    font-size: 1em;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    /* 💡 กำหนดความกว้างให้เท่ากับปุ่มบันทึก 💡 */
-    min-width: 80px; 
+    background: #e5e7eb; 
+    color: #374151;
+    text-decoration: none; /* ลบขีดเส้นใต้ของ link */
+    display: inline-block;
 }
 
 .ter-btn-back:hover {
-    background-color: #ccc;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-
+    background-color: #cdcfd1; /* สีเข้มขึ้นเมื่อวางเมาส์ */
 }
 
 /* ปุ่มปิด (X) */
@@ -1458,19 +1559,15 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     box-sizing: border-box; /* ทำให้ padding ไม่เพิ่มความกว้างเกิน 100% */
 }
 
-/* คอนเทนเนอร์หลักของรายชื่อ ต้องขยายตัวและจัดเรียงแบบคอลัมน์ */
 .person-list-detail {
-    flex-grow: 1; /* ขยายเต็มพื้นที่ที่เหลือใน info-row */
-    /* *** สำคัญ: จัดเรียงรายการย่อยในแนวตั้ง *** */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column; 
 }
 
-/* ชื่อแต่ละชื่อ ต้องแสดงผลเป็นบล็อก */
 .person-list-detail .person-name {
-    /* ทำให้แต่ละชื่อขึ้นบรรทัดใหม่ */
     display: block; 
-    padding: 2px 0; /* เว้นระยะห่างระหว่างชื่อ */
+    padding: 2px 0;
     color: #1e293b; 
 }
 
@@ -1542,51 +1639,212 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .project-actions a {
-    /* กำหนดระยะห่างที่คุณต้องการ */
-    text-underline-offset: 5px; /* ปรับค่า 5px เป็นระยะห่างที่คุณต้องการ */
+    text-underline-offset: 5px;
 }
 
 .project-actions a:hover {
     color: #ff0000;
 }
 
-.student-row {
+/* ===== ปรับเฉพาะหน้า project-proposal ===== */
+/* ================================
+    STYLE เฉพาะหน้า project-proposal.html
+   ================================ */
+
+.content-body {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* จัด layout ของแถว dropdown */
+.proposal-row {
     display: flex;
-    gap: 20px; /* ระยะห่างระหว่างช่อง */
-    flex-wrap: wrap; /* ให้ลงบรรทัดใหม่ถ้าจอแคบ */
-    margin-bottom: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
-.student-row > div {
-    flex: 1; /* ให้ครึ่งต่อครึ่ง */
-    min-width: 250px; /* กำหนดขนาดขั้นต่ำ */
-}
-
-.student-row label {
-    display: block;
+/* Label */
+.proposal-row label,
+.content-body label {
     font-weight: 600;
     color: #1e40af;
-    margin-bottom: 6px;
+    margin-right: 6px;
+}
+
+.proposal-select,
+.sec-selector,
+.year-selector,
+.term-selector,
+#advisor,
+#advisor-plus,
+#subject-teacher {
+    appearance: none; /* ซ่อนลูกศรปกติของ browser */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    color: #374151;
+    min-width: 300px;
+
+  /* เพิ่ม icon ลูกศร custom */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%236b7280' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* เมื่อ hover */
+.proposal-select:hover,
+.sec-selector:hover,
+.year-selector:hover,
+.term-selector:hover,
+#advisor:hover,
+#advisor-plus:hover,
+#subject-teacher:hover {
+    border-color: #9ca3af;
+}
+
+/* เมื่อ focus */
+.proposal-select:focus,
+.sec-selector:focus,
+.year-selector:focus,
+.term-selector:focus,
+#advisor:focus,
+#advisor-plus:focus,
+#subject-teacher:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    outline: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%232563eb' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+
+/* Input & Textarea */
+input[type="text"],
+textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    outline: none;
+}
+
+/* Card ของสมาชิก */
+.student-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.student-card {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.student-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.student-row input {
+    flex: 1;
+}
+
+/* File Upload */
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.file-input-wrapper input[type="file"] {
+    display: none;
+}
+
+.file-input-wrapper button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.file-input-wrapper button:hover {
+    background-color: #1e4fd1;
+}
+
+.file-name {
+    color: #374151;
     font-size: 0.95rem;
 }
 
-.student-row input[type="text"] {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #cbd5e1;
+/* ปุ่มท้ายหน้า */
+.ter-btn {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ter-btn button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 24px;
     border-radius: 8px;
     font-size: 1rem;
-    color: #1e293b;
-    transition: all 0.2s;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.student-row input[type="text"]:focus {
-    border-color: #0b2357;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+.ter-btn button[type="reset"] {
+    background-color: #6b7280;
 }
 
-/* Wrapper สำหรับไฟล์ */
+.ter-btn button:hover {
+    opacity: 0.9;
+}
+
+
+/* responsive */
+@media (max-width: 768px) {
+    .proposal-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .proposal-row label {
+        min-width: auto;
+    }
+}
+
 .file-input-wrapper {
     display: flex;
     align-items: center;
@@ -1594,7 +1852,6 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     width: 100%;
 }
 
-/* ช่อง textbox แสดงชื่อไฟล์ */
 .file-input-wrapper .file-name {
     flex: 1;
     padding: 12px 14px;
@@ -1636,13 +1893,205 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     padding-bottom: 10px;
 }
 
-/* แต่ละ dropdown ให้ครึ่งหนึ่งของความกว้าง */
 .dropdown-row > div {
-    flex: 1 1 100%; /* เริ่มต้นเต็มความกว้าง */
-    min-width: 250px; /* กำหนดขั้นต่ำ */
+    flex: 1 1 100%;
+    min-width: 250px;
 }
 
-/* บนจอใหญ่ ให้แบ่งครึ่ง */
+.um-content {
+    flex: 1;
+    padding: 20px 32px;
+}
+
+.um-content-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.um-btn:hover {
+    background: #1d4ed8;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.project-actions label {
+    font-size: 14px;
+    color: #374151;
+}
+
+.project-actions select, .project-actions input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+.project-actions select:focus, .project-actions input[type="text"]:focus {
+    border-color: #2563eb;
+}
+
+/* Buttons */
+.um-btn {
+    background: #2563eb;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.um-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Table */
+.info-section h3 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.info-section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 20px; 
+    margin-top: 20px;
+}
+
+.info-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-section th, .info-section td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.info-section th {
+    text-align: left;
+    color: #374151;
+    background: #f8fafc;
+}
+.info-section td button {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+.info-section td button:hover {
+    background: #e5e7eb;
+}
+.info-section td button:nth-child(1) {
+    color: white;
+    background-color: #3b82f6; 
+    border: none;
+    transition: 0.2s;
+}
+.info-section td button:nth-child(1):hover {
+    background-color: #2563eb;
+}
+
+.info-section td button:nth-child(2) {
+    color: white;
+    background-color: #fbbf24;
+    border: none;
+    transition: 0.2s;
+}
+.info-section td button:nth-child(2):hover {
+    background-color: #f59e0b;
+}
+
+.info-section td button:nth-child(3) {
+    color: white;
+    background-color: #f87171; 
+    border: none;
+    transition: 0.2s;
+}
+.info-section td button:nth-child(3):hover {
+    background-color: #ef4444;
+}
+
+/* Modal */
+.user-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.user-modal-content {
+    background: white;
+    padding: 20px;
+    width: 720px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.user-modal-content h3 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #111827;
+}
+.user-modal-content form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.user-modal-content input, 
+.user-modal-content select {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    outline: none;
+}
+.user-modal-content input:focus, 
+.user-modal-content select:focus {
+    border-color: #2563eb;
+}
+.user-modal-actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+.user-modal-actions button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+}
+.user-modal-actions button[type="submit"] {
+    background: #2563eb;
+    color: white;
+}
+.user-modal-actions button[type="button"] {
+    background: #e5e7eb;
+}
 @media (max-width: 992px) {
     .banner {
         position: relative;
@@ -1665,7 +2114,6 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     }
 }
 
-/* ปรับ label */
 .dropdown-row label {
     display: block;
     font-weight: 600;
@@ -1674,7 +2122,6 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     font-size: 0.95rem;
 }
 
-/* ปรับ select ให้เต็มความกว้าง */
 .dropdown-row select {
     width: 100%;
     padding: 12px 14px;
@@ -1688,14 +2135,12 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     transition: all 0.2s;
 }
 
-/* โฟกัส */
 .dropdown-row select:focus {
     border-color: #0b2357;
     outline: none;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-/* ลูกศร custom */
 .dropdown-row select::-ms-expand {
     display: none;
 }
@@ -1708,7 +2153,6 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 /* ปุ่ม */
-/* จัดเรียงปุ่มและเว้นวรรค */
 .ter-btn {
     display: flex; /* ใช้ Flexbox ในการจัดเรียงปุ่ม */
     justify-content: flex-end; /* จัดปุ่มไปทางขวา */
@@ -1743,71 +2187,72 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .ter-btn button[type="submit"] {
-    background: #2563eb; /* ฟ้า */
+    background: #2563eb; 
     color: white;
 }
 
 .ter-btn button[type="submit"]:hover {
-    background: #1e40af; /* น้ำเงินเข้ม */
+    background: #1e40af; 
 }
 
 .ter-btn button[type="reset"] {
-    background: #e5e7eb; /* เทาอ่อน */
+    background: #e5e7eb; 
     color: #374151;
 }
 
 .ter-btn button[type="reset"]:hover {
-    background: #bbbec3; /* เทากลาง */
+    background: #bbbec3;
 }
 
 .ter-btn button[type="solve"] {
-    background: #2563eb; /* ฟ้า */
+    background: #2563eb; 
     color: white;
 }
 
 .ter-btn button[type="solve"]:hover {
-    background: #1e40af; /* น้ำเงินเข้ม */
+    background: #1e40af; 
 }
 
 .ter-btn button[type="save"] {
-    background: #2563eb; /* ฟ้า */
+    background: #2563eb;
     color: white;
 }
 
 .ter-btn button[type="save"]:hover {
-    background: #1e40af; /* น้ำเงินเข้ม */
+    background: #1e40af; 
 }
 
 .ter-btn button[type="back"] {
-    background: #e5e7eb; /* เทาอ่อน */
+    background: #e5e7eb;
     color: #374151;
 }
 
 .ter-btn button[type="back"]:hover {
-    background: #bbbec3; /* เทากลาง */
+    background: #bbbec3; 
 }
 
 .ter-btn button[type="pass"] {
-    background: #28a745; /* เขียวสดใส (Bootstrap Success) */
+    background: #28a745; 
     color: white;
 }
 
 .ter-btn button[type="pass"]:hover {
-    background: #1e7e34; /* เขียวเข้มขึ้นเมื่อ hover */
+    background: #1e7e34; 
 }
 
 .ter-btn button[type="no"] {
-    background: #dc3545; /* แดงสดใส (Bootstrap Danger) */
+    background: #dc3545; 
     color: white;
 }
 
 .ter-btn button[type="no"]:hover {
-    background: #bd2130; /* แดงเข้มขึ้นเมื่อ hover */
+    background: #bd2130; 
 }
 
 /* Status Crads */
 .status-cards {
     display: flex;
+    text-decoration: none;
     justify-content: center; /* จัดตรงกลางแนวนอน */
     flex-wrap: wrap; /* ถ้าจอเล็กจะขึ้นบรรทัดใหม่ */
     gap: 20px;
@@ -1816,16 +2261,20 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 
 .status-card {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    width: 300px;   /* กำหนดความกว้าง */
-    height: 300px;  /* ให้เท่ากับความสูง = จัตุรัส */
+    width: 300px;  
+    height: 300px;  
     display: flex;
     flex-direction: column;
-    justify-content: center; /* จัดเนื้อหาให้อยู่กลางแนวตั้ง */
-    align-items: center;     /* จัดเนื้อหาให้อยู่กลางแนวนอน */
+    justify-content: center; 
+    align-items: center;     
     border-radius: 12px;
     border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     text-align: center;
+}
+
+.status-cards a {
+    text-decoration: none;
 }
 
 .status-card:hover {
@@ -1834,7 +2283,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .status-card .number {
-    font-size: 36px; /* เน้นตัวเลข/เปอร์เซ็นต์ให้ใหญ่ขึ้น */
+    font-size: 36px; 
     font-weight: bold;
     color: #667eea;
     margin-bottom: 8px;
@@ -1871,17 +2320,15 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 
 /* **1. ปรับปรุง Container หลัก (info-group)** */
 .info-group {
-    /* เปลี่ยนจาก Grid เป็น Flex เพื่อควบคุมการไหลของข้อมูลทีละรายการ */
     display: flex;
-    flex-direction: column; /* จัดเรียงรายการลงมาในแนวตั้ง */
-    gap: 0; /* ไม่ต้องมีช่องว่างมากระหว่างรายการ */
+    flex-direction: column; 
+    gap: 0; 
 }
-
 
 /* **2. สไตล์สำหรับแต่ละแถวข้อมูล (หัวข้อ : ค่า)** */
 .info-row-item {
-    display: flex; /* ใช้งาน Flexbox ภายในแต่ละแถว */
-    align-items: flex-start; /* จัดเรียงให้ Label และ Value อยู่ในแนวเดียวกัน */
+    display: flex; 
+    align-items: flex-start; 
     padding: 10px 0;
 }
 
@@ -1892,10 +2339,10 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 /* **3. สไตล์สำหรับ Label (หัวข้อ)** */
 .info-row-item label {
     font-weight: 700; 
-    color: #1e40af; /* ⬅️ ใช้สีน้ำเงินเข้มเพื่อเน้นหัวข้อ */
-    min-width: 150px; /* ➡️ กำหนดความกว้างคงที่เพื่อให้หัวข้อทั้งหมดตรงกัน */
-    margin-right: 15px; /* ระยะห่างระหว่าง Label และ Value */
-    flex-shrink: 0; /* ป้องกันไม่ให้ Label หดตัว */
+    color: #1e40af; 
+    min-width: 150px; 
+    margin-right: 15px; 
+    flex-shrink: 0; 
     font-size: 1rem;
 }
 
@@ -1904,7 +2351,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     color: #1e293b;
     font-weight: 500;
     line-height: 1.6;
-    flex-grow: 1; /* ให้ค่าข้อมูลขยายเต็มพื้นที่ที่เหลือ */
+    flex-grow: 1; 
     padding-top: 13px;
 }
 
@@ -1979,6 +2426,153 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     font-weight: 500;
     padding-left: 5px;
 }
+.modal-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 9999;
+}
+
+.modal-admin:target {
+    display: block;
+}
+
+.modal-content-admin {
+    background: #fff;
+    width: 90%;
+    max-width: 800px;   /* 🔹 กว้างขึ้นเป็นผืนผ้า */
+    padding: 20px 28px; /* 🔹 ลด padding ให้เตี้ยลง */
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    animation: modalFadeInAdmin 0.3s ease;
+}
+
+@keyframes modalFadeInAdmin {
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.close-btn-admin {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 22px;
+    color: #666;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.close-btn-admin:hover { color: #000; }
+
+/* ===== ฟอร์มภายใน modal แบบ grid ===== */
+.modal-content-admin h3.detail-title {
+    text-align: center;
+    color: #222;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 🔹 2 คอลัมน์ */
+    gap: 16px 24px;
+}
+
+.modal-content-admin label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.modal-content-admin input[type="text"],
+.modal-content-admin input[type="date"],
+.modal-content-admin input[type="time"],
+.modal-content-admin select {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #64748b;              /* << สีเทาอ่อน เหมือนหน้าอื่น */
+    background-color: #fff;
+    transition: border-color 0.2s, color 0.2s;
+    appearance: none;
+}
+
+.modal-content-admin input::placeholder {
+  color: #94a3b8;              /* สีเทาอ่อนสำหรับ placeholder */
+}
+
+.modal-content-admin select:focus,
+.modal-content-admin input:focus {
+    border-color: #2563eb;       /* ฟ้า (สีเดียวกับธีมหลัก) */
+    color: #334155;              /* เข้มขึ้นเล็กน้อยตอนโฟกัส */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.modal-content-admin input[disabled] {
+  background-color: #f1f5f9;   /* พื้นเทาอ่อน */
+  color: #94a3b8;              /* ตัวอักษรเทาอ่อน */
+}
+
+
+/* ===== ปุ่ม action ===== */
+.modal-content-admin .ter-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+    gap: 10px;
+}
+
+.modal-content-admin .ter-btn button,
+.modal-content-admin .ter-btn a {
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.modal-content-admin .ter-btn .ter-btn-save {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.modal-content-admin .ter-btn .ter-btn-save:hover {
+    background-color: #1e40af;
+}
+
+.modal-content-admin .ter-btn .ter-btn-back {
+    background-color: #ccc;
+    color: #000;
+}
+.modal-content-admin .ter-btn .ter-btn-back:hover {
+    background-color: #b0b0b0;
+}
+
+/* ===== Responsive (มือถือกลับเป็น 1 คอลัมน์) ===== */
+@media (max-width: 700px) {
+    .modal-grid {
+    grid-template-columns: 1fr;
+    }
+    .modal-content-admin {
+    width: 95%;
+    padding: 18px;
+    }
+}
+
 
 /* Footer */
 .footer {
@@ -2079,6 +2673,68 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .ter-btn button {
-     width: 100%;
+    width: 100%;
 }
+}
+
+/* Dropdown animation for status card */
+.status-card-dropdown {
+    position: relative;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 8%;
+    top: 96%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 460px;
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 24px 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s, transform 0.35s;
+    z-index: 10;
+}
+
+.status-card-dropdown.active .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-btn {
+    flex: none;
+    width: 125px;
+    min-width: 155px;
+    max-width: 155px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 0;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.dropdown-btn:hover {
+    background: #cecece;
+    color: #2f2f2f;
+    
 }

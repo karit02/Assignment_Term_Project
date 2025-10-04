@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการโครงงาน - กำหนดกรรมการสอบ</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">A</div>
+                <div class="user-name">Admin</div>
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - ผู้ดูแลระบบ
+            </div>
+                <ul class="sidebar-menu">
+                    <li><a href="dashbroadadmin.html">
+                        <div class="icon"></div>
+                        แดชบอร์ดระบบ
+                    </a></li>
+                    <li><a href="user-management.html">
+                        <div class="icon"></div>
+                        จัดการผู้ใช้
+                    </a></li>
+                    <li><a href="committee-assignment.html" class="active">
+                        <div class="icon"></div>
+                        จัดการกรรมการสอบ
+                    </a></li>
+                </ul>
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+            <div class="content-header">
+                <h2>กำหนดกรรมการสอบ</h2>
+            </div>
+
+            <div class="schedule-container">
+                <!-- Filter -->
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option>2570</option>
+                                <option>2569</option>
+                                <option>2568</option>
+                                <option>2567</option>
+                                <option>2566</option>
+                            </select>
+
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="special">โครงงานพิเศษ</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="table-content-wrapper">
+                    <div class="card-container">
+                        <div class="project-card">
+                            <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2>
+                            <div class="info-item"><span class="label">รหัสโครงงาน :</span><span class="value">T0001</span></div>
+                            <div class="info-item"><span class="label">นักศึกษา :</span><span class="value">นางสาวไรบีนา มะเก๊ะ</span></div>
+                            <div class="info-item"><span class="label">สถานะ :</span><span class="value status-text">รอการกำหนดสอบ</span></div>
+                            <div class="button-container">
+                                <a href="#committee-modal" class="detail-button">กำหนดกรรมการ/วันสอบ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="committee-modal" class="modal-admin">
+        <div class="modal-content-admin">
+            <a href="#" class="close-btn-admin">&times;</a>
+            <h3 class="detail-title">กำหนดกรรมการและวันสอบ</h3>
+
+            <div class="content-body">
+                <label for="exam-date">วันสอบ</label>
+                <input type="date" id="exam-date" name="exam-date" value="2025-09-11">
+
+                <label for="exam-time">เวลาสอบ</label>
+                <input type="time" id="exam-time" name="exam-time" value="09:30">
+
+                <label>สถานที่สอบ</label>
+                <select name="advisor-plus" id="advisor-plus">
+                    <option value="B4-01">B4-01</option>
+                    <option value="B4-02">B4-02</option>
+                    <option value="B4-03">B4-03</option>
+                </select>
+
+                <label>กรรมการท่านที่ 1 :</label>
+                <select name="advisor-plus" id="advisor-plus">
+                    <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                    <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                    <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                    <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                    <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                    <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                    <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                    <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                    <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                    <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                    <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                    <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                    <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                    <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                    <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                    <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                    <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                    <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                    <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                    <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                    <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                    <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                    <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                </select>
+
+                <label>กรรมการท่านที่ 2 :</label>
+                <select name="advisor-plus" id="advisor-plus">
+                    <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                    <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                    <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                    <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                    <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                    <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                    <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                    <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                    <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                    <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                    <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                    <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                    <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                    <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                    <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                    <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                    <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                    <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                    <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                    <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                    <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                    <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                    <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                </select>
+
+                <label for="committee3">กรรมการท่านที่ 3 :</label>
+                <select name="advisor-plus" id="advisor-plus">
+                    <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                    <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                    <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                    <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                    <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                    <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                    <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                    <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                    <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                    <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                    <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                    <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                    <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                    <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                    <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                    <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                    <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                    <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                    <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                    <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                    <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                    <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                    <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                </select>
+
+                <label for="committee4">กรรมการท่านที่ 4 :</label>
+                <select name="advisor-plus" id="advisor-plus">
+                    <option value="" disabled selected> </option>
+                    <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
+                    <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                    <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
+                    <option value="ขนิษฐา นามี">ผศ.ดร.ขนิษฐา นามี</option>
+                    <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
+                    <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
+                    <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
+                    <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
+                    <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                    <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
+                    <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
+                    <option value="พาฝัน ดวงไพศาล">ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                    <option value="ประดิษฐ์ พิทักษ์เสถียรกุล">อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                    <option value="พีระศักดิ์ เสรีกุล">ผศ.พีระศักดิ์ เสรีกุล</option>
+                    <option value="สมชัย เชียงพงศ์พันธุ์">ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                    <option value="สุปีติ กุลจันทร์">ผศ.ดร.สุปีติ กุลจันทร์</option>
+                    <option value="สิวาลัย จินเจือ">ผศ.สิวาลัย จินเจือ</option>
+                    <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                    <option value="ศรายุทธ ธเนศสกุลวัฒนา">ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                    <option value="ศิรินทรา แว่วศรี">อ.ดร.ศิรินทรา แว่วศรี</option>
+                    <option value="วัชรชัย คงศิริวัฒนา">อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                    <option value="วันทนี ประจวบศุภกิจ">ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                    <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
+                </select>
+
+                <div class="ter-btn">
+                    <a href="#" class="ter-btn-back">ยกเลิก</a>
+                    <a href="#" class="ter-btn-save">บันทึก</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+    </footer>
+
+    <script>
+        let currentCard = null;
+
+        document.querySelectorAll('.detail-button').forEach(button => {
+            button.addEventListener('click', function() {
+            currentCard = this.closest('.project-card');
+            });
+        });
+
+        document.querySelector('.ter-btn-save').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentCard) {
+            const statusElement = currentCard.querySelector('.status-text');
+            if (statusElement) {
+                statusElement.textContent = 'รอสอบ';
+                statusElement.style.color = '#2563eb';
+                statusElement.style.fontWeight = 'bold';
+            }
+            }
+            window.location.hash = ''; 
+        });
+
+        document.querySelector('.ter-btn-back').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.hash = '';
+        });
+    </script>
+
+
+</body>
+</html>
