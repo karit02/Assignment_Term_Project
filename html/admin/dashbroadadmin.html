@@ -32,34 +32,34 @@
             <div class="sidebar-header">
                 เมนู - ผู้ดูแลระบบ
             </div>
-            <ul class="sidebar-menu">
-                <li><a href="/" class="active">
-                    <div class="icon"></div>
-                    แดชบอร์ดระบบ
-                </a></li>
-                <li><a href="/user-management">
-                    <div class="icon"></div>
-                    จัดการผู้ใช้
-                </a></li>
-                <li><a href="/project-management">
-                    <div class="icon"></div>
-                    จัดการโครงงานทั้งหมด
-                </a></li>
-                <li><a href="/committee-assignment">
-                    <div class="icon"></div>
-                    จัดการกรรมการสอบ
-                </a></li>
-            </ul>
+                <ul class="sidebar-menu">
+                    <li><a href="dashbroadadmin.html" class="active">
+                        <div class="icon"></div>
+                        แดชบอร์ดระบบ
+                    </a></li>
+                    <li><a href="user-management.html">
+                        <div class="icon"></div>
+                        จัดการผู้ใช้
+                    </a></li>
+                    <li><a href="committee-assignment.html">
+                        <div class="icon"></div>
+                        จัดการกรรมการสอบ
+                    </a></li>
+                </ul>
         </aside>
 
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
                 <h2>แดชบอร์ด - ผู้ดูแลระบบ</h2>
-                <div class="breadcrumb">หน้าแรก > แดชบอร์ดระบบ</div>
             </div>
             <div class="content-body">
-                <!-- Status Cards -->
+                <div class="dashboard-section">
+                    <div class="chart-container">
+                        <canvas id="projectChart"></canvas>
+                    </div>
+                </div>
+
                 <div class="status-cards">
                     <div class="status-card">
                         <div class="number">156</div>
@@ -75,15 +75,33 @@
                     </div>
                 </div>
 
-                <!-- Information Section -->
-                <div class="info-section">
-                    <h3>ข้อมูลการจัดการระบบ</h3>
-                    <p>
-                        หน้านี้แสดงข้อมูลภาพรวมของระบบจัดการโครงงาน รวมถึงจำนวนโครงงาน นักศึกษา และอาจารย์ในระบบ 
-                        ประสิทธิภาพการทำงานของระบบ และการจัดการต่างๆ คุณสามารถใช้เมนูด้านซ้าย
-                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การจัดการผู้ใช้ การมอบหมายอาจารย์ที่ปรึกษา 
-                        การจัดตารางสอบ และการตั้งค่าระบบ
-                    </p>
+                <div class="dashboard-section grid-2">
+                    <div class="recent-activities">
+                        <div class="section-title">กิจกรรมล่าสุด</div>
+                        <ul class="activity-list">
+                            <li>
+                                เพิ่มผู้ใช้ใหม่: <strong>นายสมชาย ใจดี</strong><br>
+                                <span class="activity-time">เมื่อ 2 ชั่วโมงที่ผ่านมา</span>
+                            </li>
+                            <li>
+                                โครงงาน “ระบบจองห้องเรียนออนไลน์” ได้รับอนุมัติ<br>
+                                <span class="activity-time">เมื่อ 5 ชั่วโมงที่ผ่านมา</span>
+                            </li>
+                            <li>
+                                ลบผู้ใช้: <strong>อาจารย์นิภาพร</strong><br>
+                                <span class="activity-time">เมื่อ 1 วันก่อน</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="system-logs">
+                        <div class="section-title">บันทึกการทำงานระบบ</div>
+                        <ul class="log-list">
+                            <li>[10:23] ระบบสำรองข้อมูลอัตโนมัติสำเร็จ</li>
+                            <li>[09:11] มีการเข้าสู่ระบบจาก IP 192.168.1.12</li>
+                            <li>[07:45] ตรวจพบการแก้ไขข้อมูลผู้ใช้ 3 ราย</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
@@ -99,5 +117,28 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // สร้างกราฟภาพรวม
+        const ctx = document.getElementById('projectChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['รออนุมัติ', 'กำลังดำเนินการ', 'เสร็จสิ้น'],
+                datasets: [{
+                    data: [30, 70, 56],
+                    backgroundColor: ['#facc15', '#60a5fa', '#34d399'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
