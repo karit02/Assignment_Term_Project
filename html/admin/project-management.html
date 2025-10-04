@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../../css/main.css">
+  <title>จัดการโครงงาน - ผู้ดูแลระบบ</title>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+        <div class="banner-left">
+            <div class="logo">IT</div>
+            <div class="banner-text">
+            <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+            <p>จัดการโครงงานทั้งหมด</p>
+            </div>
+        </div>
+        <div class="banner-user">
+            <div class="user-avatar">A</div>
+            <div class="user-name">Admin</div>
+            <button class="logout-btn">ออกจากระบบ</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - ผู้ดูแลระบบ
+            </div>
+                <ul class="sidebar-menu">
+                    <li><a href="dashbroadadmin.html">
+                        <div class="icon"></div>
+                        แดชบอร์ดระบบ
+                    </a></li>
+                    <li><a href="user-management.html">
+                        <div class="icon"></div>
+                        จัดการผู้ใช้
+                    </a></li>
+                    <li><a href="project-management.html" class="active">
+                        <div class="icon"></div>
+                        จัดการโครงงานทั้งหมด
+                    </a></li>
+                    <li><a href="committee-assignment.html">
+                        <div class="icon"></div>
+                        จัดการกรรมการสอบ
+                    </a></li>
+                </ul>
+        </aside>
+
+        <main class="content">
+        <div class="content-header">
+            <h2>จัดการโครงงาน</h2>
+            <div class="breadcrumb">หน้าแรก > จัดการโครงงานทั้งหมด</div>
+        </div>
+
+        <div class="content-body">
+            <div class="project-actions">
+            <a class="btn" id="newProjectBtn"><span>➕</span> สร้างโครงงานใหม่</a>
+            <a class="btn" id="filterBtn"><span>🔎</span> ค้นหา/กรอง</a>
+            </div>
+
+            <div class="info-section">
+            <h3>รายการโครงงาน (ตัวอย่าง)</h3>
+            <table style="width:100%; border-collapse:collapse; margin-top:12px;">
+                <thead>
+                <tr style="text-align:left; border-bottom:1px solid #e2e8f0;">
+                    <th style="padding:8px;">รหัสโครงงาน</th>
+                    <th>หัวข้อ</th>
+                    <th>นักศึกษา</th>
+                    <th>ที่ปรึกษา</th>
+                    <th>สถานะ</th>
+                    <th>การทำงาน</th>
+                </tr>
+                </thead>
+                <tbody id="projectTable">
+                <tr>
+                    <td style="padding:8px;">PRJ-001</td>
+                    <td>ระบบจัดการร้านอาหารออนไลน์</td>
+                    <td>สมชาย (1)</td>
+                    <td>ดร. วิทยา</td>
+                    <td>ยื่นสอบหัวข้อ (รอกรรมการ)</td>
+                    <td>
+                    <button onclick="openProject('PRJ-001')">ดู</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- ตัวอย่าง view / form project -->
+            <div id="projectDetail" style="margin-top:16px; display:none; border-top:1px solid #e2e8f0; padding-top:16px;">
+                <h4 id="projTitle">PRJ-001 — ระบบจัดการร้านอาหารออนไลน์</h4>
+                <div style="display:grid; grid-template-columns:1fr 320px; gap:16px; margin-top:12px;">
+                <div>
+                    <h5>ข้อมูลโครงงาน</h5>
+                    <p><strong>คำอธิบาย:</strong> ระบบเว็บสำหรับสั่งอาหาร...</p>
+                    <p><strong>นักศึกษา:</strong></p>
+                    <ul id="studentList">
+                    <li>สมชาย ใจดี (630123)</li>
+                    </ul>
+
+                    <!-- เพิ่ม/แก้ไข นักศึกษา (รองรับ up to 4) -->
+                    <div style="margin-top:8px;">
+                    <label>เพิ่ม/แก้ไข นักศึกษา (สูงสุด 4 คน)</label>
+                    <div id="studentInputs"></div>
+                    <div style="margin-top:8px;">
+                        <button id="addStudentBtn">เพิ่มนักศึกษา</button>
+                    </div>
+                    </div>
+
+                    <!-- Lifecycle controls (admin) -->
+                    <div style="margin-top:16px;">
+                    <label>สถานะโครงงาน:</label>
+                    <select id="projStatus">
+                        <option>เสนอหัวข้อ</option>
+                        <option>รอสอบหัวข้อ</option>
+                        <option>สอบหัวข้อแล้ว - แก้ไข</option>
+                        <option>ติดตามความก้าวหน้า</option>
+                        <option>ยื่นสอบ 100%</option>
+                        <option>สอบจบ (ผ่าน)</option>
+                        <option>สอบจบ (ไม่ผ่าน)</option>
+                    </select>
+                    </div>
+
+                    <!-- Weekly progress -->
+                    <div style="margin-top:12px;">
+                    <h5>ความก้าวหน้ารายสัปดาห์</h5>
+                    <div id="progressList">
+                        <!-- ตัวอย่าง progress -->
+                        <div style="border:1px dashed #e2e8f0; padding:8px; border-radius:6px; margin-bottom:8px;">
+                        <strong>สัปดาห์ 1</strong> — รายละเอียดงานที่ทำ...
+                        <div><em>ที่ปรึกษา: ความคิดเห็น / 20%</em></div>
+                        <div><em>อาจารย์ประจำวิชา: รับทราบ</em></div>
+                        </div>
+                    </div>
+                    <button id="addProgressBtn">บันทึกความก้าวหน้าสัปดาห์ใหม่</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>การยื่นสอบ / เอกสาร</h5>
+                    <div style="margin-top:8px;">
+                    <label>ยื่นสอบหัวข้อ</label>
+                    <div>
+                        <input type="date" id="proposalExamDate" />
+                        <button id="assignCommitteeBtn">มอบหมายกรรมการ (admin)</button>
+                    </div>
+                    </div>
+
+                    <div style="margin-top:12px;">
+                    <label>ยื่นสอบ 100% (ส่งไฟล์)</label>
+                    <input type="file" id="finalUpload" accept=".pdf" />
+                    <div style="margin-top:8px;">
+                        <button id="submit100Btn">ยื่นสอบ 100%</button>
+                    </div>
+                    </div>
+
+                    <div style="margin-top:12px;">
+                    <label>ผลสอบ</label>
+                    <select id="examResult">
+                        <option value="">- เลือก -</option>
+                        <option value="pass">ผ่าน</option>
+                        <option value="revise">แก้ไข</option>
+                        <option value="fail">ไม่ผ่าน</option>
+                    </select>
+                    <div style="margin-top:8px;">
+                        <button id="finalizeBtn">สรุปผล และ ปรับสถานะ</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </main>
+    </div>
+
+    <script>
+        // นักศึกษาสูงสุด 4 คน: dynamic inputs
+        const studentInputs = document.getElementById('studentInputs');
+        let studentCount = 1;
+        function renderStudentInputs(){
+        studentInputs.innerHTML = '';
+        for(let i=0;i<studentCount;i++){
+            const div = document.createElement('div');
+            div.style.display = 'flex'; div.style.gap='8px'; div.style.marginTop='6px';
+            div.innerHTML = '<input placeholder="ชื่อนักศึกษา" /> <input placeholder="รหัสนักศึกษา" />' +
+                            (studentCount>1?'<button onclick="removeStudent('+i+')" type="button">ลบ</button>':'');
+            studentInputs.appendChild(div);
+        }
+        }
+        function addStudent(){
+        if(studentCount>=4){ alert('เพิ่มได้สูงสุด 4 คน'); return;}
+        studentCount++; renderStudentInputs();
+        }
+        function removeStudent(i){
+        studentCount--; renderStudentInputs();
+        }
+        document.getElementById('addStudentBtn').addEventListener('click', addStudent);
+        renderStudentInputs();
+
+        function openProject(id){
+        document.getElementById('projectDetail').style.display = 'block';
+        // TODO: fetch project detail by id
+        }
+
+        document.getElementById('addProgressBtn').addEventListener('click', ()=>{
+        const idx = (document.querySelectorAll('#progressList > div').length)+1;
+        const el = document.createElement('div');
+        el.style.border='1px dashed #e2e8f0'; el.style.padding='8px'; el.style.borderRadius='6px'; el.style.marginBottom='8px';
+        el.innerHTML = `<strong>สัปดาห์ ${idx}</strong> — <textarea style="width:100%;height:60px" placeholder="สรุปงานประจำสัปดาห์"></textarea>
+                        <div style="margin-top:8px;">ที่ปรึกษา: <input placeholder="ความคิดเห็น" /> <input placeholder="% ความก้าวหน้า" style="width:80px;" /></div>
+                        <div style="margin-top:6px;">อาจารย์ประจำวิชา: <input placeholder="ความคิดเห็น / ลงชื่อรับทราบ" /></div>`;
+        document.getElementById('progressList').appendChild(el);
+        });
+
+        document.getElementById('submit100Btn').addEventListener('click', ()=>{
+        const f = document.getElementById('finalUpload').files[0];
+        if(!f){ alert('กรุณาแนบไฟล์ PDF เล่มโปรเจค'); return;}
+        alert('ยื่นสอบ 100% แล้ว (จำลอง) — เซิร์ฟเวอร์จะรับไฟล์และประกาศให้กรรมการ');
+        });
+
+        document.getElementById('finalizeBtn').addEventListener('click', ()=>{
+        const r = document.getElementById('examResult').value;
+        if(!r){ alert('เลือกผลการสอบก่อน'); return; }
+        if(r==='pass'){ alert('ปรับสถานะเป็น "ผ่าน" และอนุญาตให้อัปโหลดเล่มฉบับสมบูรณ์'); }
+        else if(r==='revise'){ alert('ปรับสถานะเป็น "แก้ไข"'); }
+        else { alert('ปรับสถานะเป็น "ไม่ผ่าน"'); }
+        });
+    </script>
+</body>
+</html>

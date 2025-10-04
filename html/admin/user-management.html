@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>จัดการผู้ใช้ - ผู้ดูแลระบบ</title>
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>แดชบอร์ด - จัดการผู้ใช้</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">A</div>
+                <div class="user-name">Admin</div>
+                <button class="logout-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - ผู้ดูแลระบบ
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashbroadadmin.html">แดชบอร์ดระบบ</a></li>
+                <li><a href="user-management.html" class="active">จัดการผู้ใช้</a></li>
+                <li><a href="project-management.html">จัดการโครงงานทั้งหมด</a></li>
+                <li><a href="committee-assignment.html">จัดการกรรมการสอบ</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="content-header">
+                <h2>จัดการผู้ใช้</h2>
+                <div class="breadcrumb">หน้าแรก > จัดการผู้ใช้</div>
+            </div>
+
+            <div class="content-body">
+                <div class="project-actions">
+                    <a class="btn" id="addUserBtn"><span>➕</span> เพิ่มผู้ใช้</a>
+                    <div class="filter-box">
+                        <label>สาขา:</label>
+                        <select id="filterProgram">
+                            <option value="">-- ทั้งหมด --</option>
+                            <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label>ประเภท:</label>
+                        <select id="filterRole">
+                            <option value="">-- ทั้งหมด --</option>
+                            <option value="student">นักศึกษา</option>
+                            <option value="teacher">อาจารย์</option>
+                            <option value="admin">ผู้ดูแลระบบ</option>
+                        </select>
+                    </div>
+                    <div class="filter-box">
+                        <label>ค้นหา:</label>
+                        <input type="text" id="searchInput" placeholder="ค้นหาชื่อหรือรหัส">
+                    </div>
+                </div>
+
+                <!-- ตารางผู้ใช้ -->
+                <div class="info-section">
+                    <h3>รายการผู้ใช้</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>รหัส</th>
+                                <th>ชื่อ-สกุล</th>
+                                <th>ตำแหน่ง</th>
+                                <th>สาขา</th>
+                                <th>สถานะ</th>
+                                <th>การทำงาน</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTable">
+                            <tr>
+                                <td>6806022510122</td>
+                                <td>นางสาวไรบีนา มะเก๊ะ</td>
+                                <td>นักศึกษา</td>
+                                <td>INET</td>
+                                <td class="status active">Active</td>
+                                <td>
+                                    <button onclick="editUser(this)">แก้ไข</button>
+                                    <button onclick="toggleStatus(this)">ปิดการใช้งาน</button>
+                                    <button onclick="deleteUser(this)">ลบ</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6806022510634</td>
+                                <td>นายคฤษฐ์ เสือเดช</td>
+                                <td>นักศึกษา</td>
+                                <td>INET</td>
+                                <td class="status active">Active</td>
+                                <td>
+                                    <button onclick="editUser(this)">แก้ไข</button>
+                                    <button onclick="toggleStatus(this)">ปิดการใช้งาน</button>
+                                    <button onclick="deleteUser(this)">ลบ</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6806022510653</td>
+                                <td>นางสาวชาลิสา ยิ้มลำใย</td>
+                                <td>นักศึกษา</td>
+                                <td>INET</td>
+                                <td class="status active">Active</td>
+                                <td>
+                                    <button onclick="editUser(this)">แก้ไข</button>
+                                    <button onclick="toggleStatus(this)">ปิดการใช้งาน</button>
+                                    <button onclick="deleteUser(this)">ลบ</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <h3>เพิ่ม / แก้ไข ผู้ใช้</h3>
+            <form id="userForm" name="userForm">
+                <div class="form-grid">
+                    <input name="fullname" placeholder="ชื่อ-สกุล" required />
+                    <input name="username" placeholder="รหัสผู้ใช้ / รหัสนักศึกษา" required />
+                    <select name="role" required>
+                        <option value="student">นักศึกษา</option>
+                        <option value="teacher">อาจารย์</option>
+                        <option value="admin">ผู้ดูแลระบบ</option>
+                    </select>
+                    <select name="program" required>
+                        <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeUserModal()">ยกเลิก</button>
+                    <button type="submit">บันทึก</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      const userTable = document.getElementById('userTable');
+      let editingRow = null;
+
+      function roleText(role){
+        if(role === "student") return "นักศึกษา";
+        if(role === "teacher") return "อาจารย์";
+        if(role === "admin") return "ผู้ดูแลระบบ";
+        return role;
+      }
+
+      function addRow(user) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${user.fullname}</td>
+          <td>${user.username} / ${roleText(user.role)}</td>
+          <td>${user.program}</td>
+          <td class="status active">${user.status}</td>
+          <td>
+            <button onclick="editUser(this)">แก้ไข</button>
+            <button onclick="toggleStatus(this)">ปิดการใช้งาน</button>
+            <button onclick="deleteUser(this)">ลบ</button>
+          </td>
+        `;
+        userTable.appendChild(tr);
+      }
+
+      document.getElementById('addUserBtn').addEventListener('click', ()=> {
+        editingRow = null;
+        document.getElementById('userForm').reset();
+        document.getElementById('userModal').style.display = 'flex';
+      });
+
+      function closeUserModal(){ 
+        document.getElementById('userModal').style.display = 'none'; 
+      }
+
+      document.getElementById('userForm').addEventListener('submit', (e)=> {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        data.status = 'Active';
+        if(editingRow){
+          editingRow.cells[0].textContent = data.fullname;
+          editingRow.cells[1].textContent = `${data.username} / ${roleText(data.role)}`;
+          editingRow.cells[2].textContent = data.program;
+          editingRow.cells[3].textContent = "Active";
+          editingRow.cells[3].className = "status active";
+          editingRow.querySelector("td:last-child button:nth-child(2)").textContent = "ปิดการใช้งาน";
+          editingRow = null;
+        } else {
+          addRow(data);
+        }
+        closeUserModal();
+      });
+
+      function editUser(btn){
+        editingRow = btn.closest('tr');
+        const cells = editingRow.cells;
+        document.userForm.fullname.value = cells[0].textContent;
+        document.userForm.username.value = cells[1].textContent.split(" / ")[0];
+        document.userForm.role.value = cells[1].textContent.includes("นักศึกษา") ? "student" :
+                                       cells[1].textContent.includes("อาจารย์") ? "teacher" : "admin";
+        document.userForm.program.value = cells[2].textContent;
+        document.getElementById('userModal').style.display = 'flex';
+      }
+
+      function toggleStatus(btn){
+        const row = btn.closest('tr');
+        const statusCell = row.querySelector('.status');
+        if(statusCell.textContent === "Active"){
+          statusCell.textContent = "Inactive";
+          statusCell.className = "status inactive";
+          btn.textContent = "เปิดการใช้งาน";
+        } else {
+          statusCell.textContent = "Active";
+          statusCell.className = "status active";
+          btn.textContent = "ปิดการใช้งาน";
+        }
+      }
+
+      function deleteUser(btn){
+        if(confirm("คุณต้องการลบผู้ใช้นี้หรือไม่?")){
+          btn.closest('tr').remove();
+        }
+      }
+
+      function filterTable(){
+        const program = document.getElementById('filterProgram').value;
+        const role = document.getElementById('filterRole').value;
+        const search = document.getElementById('searchInput').value.toLowerCase();
+
+        Array.from(userTable.rows).forEach(row=>{
+          const fullname = row.cells[0].textContent.toLowerCase();
+          const usernameRole = row.cells[1].textContent.toLowerCase();
+          const programCell = row.cells[2].textContent;
+          const roleCell = row.cells[1].textContent;
+
+          let match = true;
+          if(program && programCell !== program) match = false;
+          if(role && !roleCell.includes(roleText(role))) match = false;
+          if(search && !fullname.includes(search) && !usernameRole.includes(search)) match = false;
+
+          row.style.display = match ? "" : "none";
+        });
+      }
+
+      document.getElementById('filterProgram').addEventListener('change', filterTable);
+      document.getElementById('filterRole').addEventListener('change', filterTable);
+      document.getElementById('searchInput').addEventListener('input', filterTable);
+    </script>
+</body>
+</html>
