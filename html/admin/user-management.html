@@ -54,28 +54,33 @@
 
             <div class="content-body">
                 <!-- ฟิลเตอร์ -->
-                <div class="project-actions">
-                    <div class="filter-area">
-                        <label>สาขา:</label>
-                        <select id="filterProgram">
-                            <option value="">-- ทั้งหมด --</option>
-                            <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
-                        </select>
-                    </div>
-                    <div class="filter-area">
-                        <label>ประเภท:</label>
-                        <select id="filterRole">
-                            <option value="">-- ทั้งหมด --</option>
-                            <option value="student">นักศึกษา</option>
-                            <option value="teacher">อาจารย์</option>
-                            <option value="commit">กรรมการ</option>
-                        </select>
-                    </div>
-                    <div class="filter-area">
-                        <label>ค้นหา:</label>
-                        <input type="text" id="searchInput" placeholder="ค้นหาชื่อหรือรหัส">
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label class="filter-label-major">สาขา</label>
+                            <select id="filterProgram" class="major-select">
+                                <option value="">-- ทั้งหมด --</option>
+                                <option>IT</option>
+                                <option>ITI</option>
+                                <option>ITT</option>
+                                <option>INET</option>
+                                <option>NET</option>
+                            </select>
+
+                            <label class="filter-label-role">ประเภท</label>
+                            <select id="filterRole" class="role-select">
+                                <option value="">-- ทั้งหมด --</option>
+                                <option value="student">นักศึกษา</option>
+                                <option value="teacher">อาจารย์</option>
+                                <option value="commit">กรรมการ</option>
+                            </select>
+
+                            <label class="filter-label-find">ค้นหา</label>
+                            <input type="text" id="searchInput" placeholder="ค้นหาชื่อหรือรหัส">
+                        </div>
                     </div>
                 </div>
+
 
                 <!-- ตารางผู้ใช้ -->
                 <div class="info-section">
@@ -192,8 +197,10 @@
         const cells = editingRow.cells;
         document.userForm.username.value = cells[0].textContent;
         document.userForm.fullname.value = cells[1].textContent;
-        document.userForm.role.value = cells[2].textContent === "นักศึกษา" ? "student" :
-                                       cells[2].textContent === "อาจารย์" ? "teacher" : "admin";
+        document.userForm.role.value = 
+                                    cells[2].textContent === "นักศึกษา" ? "student" :
+                                    cells[2].textContent === "อาจารย์" ? "teacher" :
+                                    cells[2].textContent === "กรรมการ" ? "commit" : "admin";
         document.userForm.program.value = cells[3].textContent;
         document.getElementById('userModal').style.display = 'flex';
       }

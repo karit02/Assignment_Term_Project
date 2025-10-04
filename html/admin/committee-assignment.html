@@ -225,8 +225,8 @@
                 </select>
 
                 <div class="ter-btn">
-                    <a href="#" class="ter-btn-save">บันทึก</a>
                     <a href="#" class="ter-btn-back">ยกเลิก</a>
+                    <a href="#" class="ter-btn-save">บันทึก</a>
                 </div>
             </div>
         </div>
@@ -241,14 +241,12 @@
     <script>
         let currentCard = null;
 
-        // เก็บการ์ดที่ถูกกด
         document.querySelectorAll('.detail-button').forEach(button => {
             button.addEventListener('click', function() {
             currentCard = this.closest('.project-card');
             });
         });
 
-        // ปุ่มบันทึก
         document.querySelector('.ter-btn-save').addEventListener('click', function(e) {
             e.preventDefault();
             if (currentCard) {
@@ -259,10 +257,9 @@
                 statusElement.style.fontWeight = 'bold';
             }
             }
-            window.location.hash = ''; // ปิด modal
+            window.location.hash = ''; 
         });
 
-        // ปุ่มยกเลิก
         document.querySelector('.ter-btn-back').addEventListener('click', function(e) {
             e.preventDefault();
             window.location.hash = '';

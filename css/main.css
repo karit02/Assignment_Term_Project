@@ -10,7 +10,6 @@ body {
     color: #333;
 }
 
-/* Banner Styles */
 .banner {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -105,7 +104,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* Navigation Bar */
 .navbar {
     background: white;
     border-bottom: 1px solid #e2e8f0;
@@ -142,27 +140,25 @@ body {
     border-bottom-color: #667eea;
 }
 
-/* Main Container */
 .main-container {
     width: 100%;
     margin-top: 120px;
     display: grid;
-    grid-template-columns: 280px 1fr; /* คงการแบ่งคอลัมน์แบบเดิม */
+    grid-template-columns: 280px 1fr;
     gap: 30px;
     padding: 14px 40px;
     min-height: calc(100vh - 200px);
 }
 
-/* Sidebar */
 .sidebar {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.07);
     padding: 0;
     position: sticky;
-    top: 134px;            /* ติดกับ banner */
-    height: calc(78vh - 140px); /* ความสูงสูงสุด */
-    max-height: calc(78vh - 140px); /* ป้องกันล้นจอ */
+    top: 134px;
+    height: calc(78vh - 140px);
+    max-height: calc(78vh - 140px);
     overflow-y: auto;
 }
 
@@ -193,9 +189,8 @@ body {
     color: #64748b;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
-    
-    width: 100%; /* ทำให้ลิงก์ขยายเต็มความกว้างของ Sidebar */
-    box-sizing: border-box; /* สำคัญ: เพื่อให้ padding ไม่ดันความกว้างเกิน 100% */
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .sidebar-menu a:hover,
@@ -265,51 +260,46 @@ body {
     padding: 12px 22px; 
 }
 
-.filter-label-year {
+.filter-label-year{
     font-size: 16px;
     font-weight: 500;
-    color: #495057; /* สีเทาเข้ม */
+    color: #495057;
     min-width: 80px
 }
 
 .filter-label-se {
     font-size: 16px;
     font-weight: 500;
-    color: #495057; /* สีเทาเข้ม */
+    color: #495057;
     min-width: 135px;
     padding-left: 15px;
 }
 
-.year-selector {
-    padding: 10px 15px;
-    border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
-    border-radius: 6px;
-    min-width: 230px; /* กำหนดความกว้างขั้นต่ำ */
-    background-color: white;
-    font-size: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
-    
-    /* สไตล์เพิ่มเติมเพื่อให้ดูสะอาดตา */
-    -webkit-appearance: none; /* ลบการแสดงผลเริ่มต้นของเบราว์เซอร์ */
-    -moz-appearance: none;
-    appearance: none; 
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#6a11cb" d="M287 78.4L146.2 219.2 5.4 78.4h281.6z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 15px center; 
-    background-size: 10px;
+.filter-label-major{
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057;
+    min-width: 80px;
 }
 
-.project-selector {
+.filter-label-find, .filter-label-role{
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057;
+    min-width: 80px;
+    padding-left: 15px;
+}
+
+.major-select, .role-select, .year-selector, .project-selector {
     padding: 10px 15px;
-    border: 1px solid #ced4da; /* ขอบสีเทาอ่อน */
+    border: 1px solid #ced4da; 
     border-radius: 6px;
-    min-width: 270px; /* กำหนดความกว้างขั้นต่ำ */
+    min-width: 230px;
     background-color: white;
     font-size: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* เงาเล็กน้อย */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     
-    /* สไตล์เพิ่มเติมเพื่อให้ดูสะอาดตา */
-    -webkit-appearance: none; /* ลบการแสดงผลเริ่มต้นของเบราว์เซอร์ */
+    -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; 
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#6a11cb" d="M287 78.4L146.2 219.2 5.4 78.4h281.6z"/></svg>');
@@ -324,18 +314,15 @@ body {
 
 .graduation-schedule-table {
     width: 100%;
-    border-collapse: separate; /* ใช้ separate เพื่อให้ใช้ border-radius และ box-shadow ได้ */
+    border-collapse: separate; 
     border-spacing: 0;
     font-size: 14px;
-    /* เพิ่มเงาและมุมโค้งมนให้กับตารางโดยรวม */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
-    overflow: hidden; /* สำคัญเพื่อซ่อนเส้นขอบที่เกินมา */
+    overflow: hidden; 
 }
 
-/* ส่วนหัวตาราง (Thead) */
 .graduation-schedule-table thead th {
-    /* ใช้สีที่เข้ากับธีมม่วง/น้ำเงิน */
     background-color: #f0f3ff; 
     color: #34495e;
     padding: 15px 18px; 
@@ -343,39 +330,33 @@ body {
     font-size: 15px;
     font-weight: 600;
     border: none;
-    border-bottom: 1px solid #e0e0e0; /* เน้นเส้นแบ่งด้วยสีธีม */
-    /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
-    border-right: 1px solid #e0e0e0; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
-    border-left: none; /* ลบขอบซ้ายออกเพื่อไม่ให้ซ้อนทับกับ border ของ table */
-    border-top: none; /* ลบขอบบนออกเพื่อไม่ให้ซ้อนทับกับ border ของ table */
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0; 
+    border-left: none; 
+    border-top: none; 
 }
 
-/* ลบคอลัมน์สุดท้ายของส่วนหัว (หมายเหตุ) ไม่ให้มี border-right */
 .graduation-schedule-table thead th:last-child {
     border-right: none;
 }
 
-/* ส่วนเนื้อหาตาราง (Tbody) */
 .graduation-schedule-table tbody td {
     padding: 18px 20px;
-    /* *** สำคัญ: เพิ่มเส้นขอบด้านขวาที่เข้มขึ้นและสีธีม *** */
-    border-right: 1px solid #e0e0e0; /* เส้นแบ่งคอลัมน์ด้านขวาสีม่วง */
-    border-bottom: 1px solid #e0e0e0; /* เส้นแบ่งแถวเป็นสีเทาอ่อน */
-    border-left: none; /* ลบขอบซ้าย */
-    border-top: none; /* ลบขอบบน */
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; 
+    border-left: none; 
+    border-top: none; 
     vertical-align: middle;
     color: #495057;
     text-align: left;
 }
 
-/* ลบคอลัมน์สุดท้ายของเนื้อหา (หมายเหตุ) ไม่ให้มี border-right */
 .graduation-schedule-table tbody td:last-child {
     border-right: none;
 }
 
-/* ส่วนสลับสีแถว */
-.graduation-schedule-table tbody tr:nth-child(even) {
-    background-color: #f7f9ff; /* สีฟ้าอ่อน/ม่วงอ่อนเล็กน้อย */
+\.graduation-schedule-table tbody tr:nth-child(even) {
+    background-color: #f7f9ff; 
 }
 .graduation-schedule-table tbody tr:hover {
     background-color: #f7f9ff; 
@@ -646,6 +627,69 @@ body {
 .status.pass {
     font-weight: 700;
     color: #28a745;
+}
+
+.dashboard-section {
+    margin-top: 40px;
+}
+
+.chart-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* ✅ จำกัดความกว้างให้สมดุล */
+    aspect-ratio: 1 / 1; /* ✅ ทำให้เป็นสี่เหลี่ยมจัตุรัส (วงกลมไม่รี) */
+    margin: 0 auto 30px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.recent-activities, .system-logs {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 20px;
+}
+
+.activity-list, .log-list {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-list li, .log-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.activity-list li:last-child, .log-list li:last-child {
+    border-bottom: none;
+}
+
+.activity-time {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
 /*
