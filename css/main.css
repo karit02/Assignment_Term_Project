@@ -809,7 +809,7 @@ body {
 }
 
 .dashboard-section {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .chart-container {
@@ -1731,6 +1731,7 @@ body:has(.modalde:target) {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
 }
 
 /* จัด layout ของแถว dropdown */
@@ -1749,6 +1750,7 @@ body:has(.modalde:target) {
     font-weight: 600;
     color: #1e40af;
     margin-right: 6px;
+    
 }
 
 .proposal-select,
@@ -2285,6 +2287,17 @@ input[type="time"]:focus {
     background-size: 12px 8px;
 }
 
+.system-logs .log-list li .log-time {
+    /* 🔴 ทำให้ตัวเลขเป็นตัวหนา 🔴 */
+    font-weight: bold;
+    
+    /* อาจเพิ่มสีเพื่อเน้นให้เด่นชัดขึ้น */
+    /* color: #1f2937; */ 
+    
+    /* อาจเพิ่มระยะห่างเล็กน้อยระหว่างตัวเลขกับข้อความถัดไป */
+    /* margin-right: 4px; */
+}
+
 /* ปุ่ม */
 .ter-btn {
     display: flex; 
@@ -2579,22 +2592,33 @@ input[type="time"]:focus {
 
 .modal-content-admin {
     background-color: #fefefe; 
-    padding: 2px 40px; 
+    padding: 20px 35px; 
     border: 1px solid #ddd;
     width: 50%; 
     max-width: 800px; 
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+<<<<<<< HEAD
     
     max-height: 90vh;
+=======
+    padding-bottom: 40px;
+>>>>>>> ea9a666d53326daa9bf5488b472c2957f2a99c07
     
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
+    /* 💡 สำคัญ: จัดการเนื้อหาที่ล้น 💡 */
+    max-height: 80vh; /* กำหนดความสูงสูงสุด (90% ของความสูงหน้าจอ) */
+    
     animation: fadeIn 0.3s ease-out; 
     
+<<<<<<< HEAD
+=======
+    /* คงค่านี้ไว้สำหรับปุ่ม .close-btn */
+>>>>>>> ea9a666d53326daa9bf5488b472c2957f2a99c07
     position: relative;
 }
 
@@ -2630,7 +2654,7 @@ input[type="time"]:focus {
 .modal-content-admin label {
     font-weight: 600;
     font-size: 0.9rem;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
     display: block;
 }
 
@@ -2640,11 +2664,11 @@ input[type="time"]:focus {
 .modal-content-admin select {
     width: 100%;
     padding: 10px 14px;
-    margin-bottom: 16px;
+    margin-bottom: 8px; 
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     font-size: 0.95rem;
-    color: #64748b;              /* << สีเทาอ่อน เหมือนหน้าอื่น */
+    color: #64748b;
     background-color: #fff;
     transition: border-color 0.2s, color 0.2s;
     appearance: none;
@@ -2670,7 +2694,7 @@ input[type="time"]:focus {
 .modal-content-admin .ter-btn {
     display: flex;
     justify-content: flex-end;
-    margin-top: 18px;
+    margin-top: 10px;
     gap: 10px;
 }
 
@@ -2695,11 +2719,11 @@ input[type="time"]:focus {
 }
 
 .modal-content-admin .ter-btn .ter-btn-back {
-    background-color: #ccc;
+    background-color: #e5e7eb;
     color: #000;
 }
 .modal-content-admin .ter-btn .ter-btn-back:hover {
-    background-color: #b0b0b0;
+    background-color: #cdcfd1;
 }
 
 @media (max-width: 700px) {

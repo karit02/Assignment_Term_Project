@@ -118,24 +118,30 @@
             <h3 class="detail-title">กำหนดกรรมการและวันสอบ</h3>
 
             <div class="content-body">
+<<<<<<< HEAD
                 <label for="exam-type">ประเภทการสอบ</label>
                 <input type="text" id="exam-type" name="exam-type" placeholder="สอบหัวข้อ">
 
                 <label for="exam-date">วันสอบ</label>
+=======
+                <label for="exam-date">วันสอบ :</label>
+>>>>>>> ea9a666d53326daa9bf5488b472c2957f2a99c07
                 <input type="date" id="exam-date" name="exam-date" value="2025-09-11">
 
-                <label for="exam-time">เวลาสอบ</label>
+                <label for="exam-time">เวลาสอบ :</label>
                 <input type="time" id="exam-time" name="exam-time" value="09:30">
 
-                <label>สถานที่สอบ</label>
+                <label>สถานที่สอบ :</label>
                 <select name="advisor-plus" id="advisor-plus">
-                    <option value="B4-01">B4-01</option>
-                    <option value="B4-02">B4-02</option>
-                    <option value="B4-03">B4-03</option>
+                    <option value="default" disabled selected>-- เลือกสถานที่สอบ --</option>
+                    <option value="">ตึกคณะเทคโนฯ ห้อง B416</option>
+                    <option value="">ตึกคณะเทคโนฯ ห้อง B417</option>
+                    <option value="">ตึกคณะเทคโนฯ ห้อง B418</option>
                 </select>
 
-                <label>กรรมการท่านที่ 1 :</label>
+                <label>กรรมการ :</label>
                 <select name="advisor-plus" id="advisor-plus">
+                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 1 --</option>
                     <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -161,8 +167,8 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <label>กรรมการท่านที่ 2 :</label>
                 <select name="advisor-plus" id="advisor-plus">
+                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 2 --</option>
                     <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -188,8 +194,8 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <label for="committee3">กรรมการท่านที่ 3 :</label>
                 <select name="advisor-plus" id="advisor-plus">
+                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 3 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                     <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -215,9 +221,8 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <label for="committee4">กรรมการท่านที่ 4 :</label>
                 <select name="advisor-plus" id="advisor-plus">
-                    <option value="" disabled selected> </option>
+                    <option value="" disabled selected>-- เลือกกรรมการท่านที่ 4 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                     <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -244,8 +249,8 @@
                 </select>
 
                 <div class="ter-btn">
-                    <a href="#" class="ter-btn-back">ยกเลิก</a>
                     <a href="#" class="ter-btn-save">บันทึก</a>
+                    <a href="#" class="ter-btn-back">ยกเลิก</a>
                 </div>
             </div>
         </div>
