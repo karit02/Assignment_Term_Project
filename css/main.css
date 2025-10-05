@@ -233,6 +233,17 @@ body {
     margin: 0 auto; 
     padding: 15px;
     font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: orange;
+}
+
+.schedule-container-one {
+    max-width: 1500px; 
+    margin: 0 auto; 
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #16a34a
 }
 
 .controls-bar {
@@ -891,8 +902,6 @@ body {
     margin-bottom: 0; 
     padding-bottom: 0;
     padding-top: 50px;
-    
-
 }
 
 .pagination {
@@ -900,6 +909,7 @@ body {
     gap: 5px;
     align-items: center;
 }
+
 .page-link {
     display: flex;
     justify-content: center;
@@ -957,17 +967,16 @@ body {
     backdrop-filter: blur(5px); 
 }
 
-.modal-content {
+.modal-content-commit {
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 28px 28px;
+    padding: 30px 45px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     
     max-width: 950px; 
     width: 90%; 
     
-    max-height: 80vh; 
-    overflow-y: auto; 
+    max-height: 90vh;
 
     position: relative;
 
@@ -1271,11 +1280,6 @@ body:has(.modal:target) {
 .report-content-box.scrollable {
     max-height: 250px;
     overflow-y: auto; 
-}
-
-.modal-body .detail-title {
-    margin-top: 10px; 
-    margin-bottom: 15px;
 }
 
 @media (max-width: 992px) {
@@ -2465,7 +2469,7 @@ input[type="time"]:focus {
 }
 
 .info-item {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     display: flex; /* ใช้ flexbox */
     align-items: flex-start;
 }
