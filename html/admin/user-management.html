@@ -40,6 +40,10 @@
                         <div class="icon"></div>
                         จัดการผู้ใช้
                     </a></li>
+                    <li><a href="project-management.html">
+                        <div class="icon"></div>
+                        จัดการโครงงาน
+                    </a></li>
                     <li><a href="committee-assignment.html">
                         <div class="icon"></div>
                         จัดการกรรมการสอบ
@@ -177,6 +181,18 @@
         </div>
     </div>
 
+    <!-- Confirm Delete Modal -->
+    <div id="confirmModal" class="confirm-modal">
+    <div class="confirm-modal-content">
+        <h3>ยืนยันการลบ</h3>
+        <p id="confirmMessage">คุณต้องการลบผู้ใช้นี้หรือไม่?</p>
+        <div class="confirm-actions">
+        <button class="btn-cancel" onclick="closeConfirmModal()">ยกเลิก</button>
+        <button class="btn-confirm" onclick="confirmDelete()">ยืนยัน</button>
+        </div>
+    </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
@@ -189,89 +205,107 @@
     </footer>
     
     <script>
-      const userTable = document.getElementById('userTable');
-      let editingRow = null;
+        const userTable = document.getElementById('userTable');
+        let editingRow = null;
+        let targetDeleteRow = null; // เก็บแถวที่รอลบ
 
-      function roleText(role){
-        if(role === "student") return "นักศึกษา";
-        if(role === "teacher") return "อาจารย์";
-        if(role === "admin") return "ผู้ดูแลระบบ";
-        return role;
-      }
-
-      function closeUserModal(){ 
-        document.getElementById('userModal').style.display = 'none'; 
-      }
-
-      document.getElementById('userForm').addEventListener('submit', (e)=> {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(e.target).entries());
-        if(editingRow){
-          editingRow.cells[0].textContent = data.username;
-          editingRow.cells[1].textContent = data.fullname;
-          editingRow.cells[2].textContent = roleText(data.role);
-          editingRow.cells[3].textContent = data.program;
+        function roleText(role){
+            if(role === "student") return "นักศึกษา";
+            if(role === "teacher") return "อาจารย์";
+            if(role === "admin") return "ผู้ดูแลระบบ";
+            return role;
         }
-        closeUserModal();
-      });
 
-      function editUser(btn){
-        editingRow = btn.closest('tr');
-        const cells = editingRow.cells;
-        document.userForm.username.value = cells[0].textContent;
-        document.userForm.fullname.value = cells[1].textContent;
-        document.userForm.role.value = 
-                                    cells[2].textContent === "นักศึกษา" ? "student" :
-                                    cells[2].textContent === "อาจารย์" ? "teacher" :
-                                    cells[2].textContent === "กรรมการ" ? "commit" : "admin";
-        document.userForm.program.value = cells[3].textContent;
-        document.getElementById('userModal').style.display = 'flex';
-      }
-
-      function toggleStatus(btn){
-        const row = btn.closest('tr');
-        const statusCell = row.querySelector('.status');
-        if(statusCell.textContent === "Active"){
-          statusCell.textContent = "Inactive";
-          statusCell.className = "status inactive";
-          btn.textContent = "เปิดการใช้งาน";
-        } else {
-          statusCell.textContent = "Active";
-          statusCell.className = "status active";
-          btn.textContent = "ปิดการใช้งาน";
+        function closeUserModal(){ 
+            document.getElementById('userModal').style.display = 'none'; 
         }
-      }
 
-      function deleteUser(btn){
-        if(confirm("คุณต้องการลบผู้ใช้นี้หรือไม่?")){
-          btn.closest('tr').remove();
-        }
-      }
-
-      function filterTable(){
-        const program = document.getElementById('filterProgram').value;
-        const role = document.getElementById('filterRole').value;
-        const search = document.getElementById('searchInput').value.toLowerCase();
-
-        Array.from(userTable.rows).forEach(row=>{
-          const username = row.cells[0].textContent.toLowerCase();
-          const fullname = row.cells[1].textContent.toLowerCase();
-          const roleCell = row.cells[2].textContent;
-          const programCell = row.cells[3].textContent;
-
-          let match = true;
-          if(program && programCell !== program) match = false;
-          if(role && roleCell !== roleText(role)) match = false;
-          if(search && !fullname.includes(search) && !username.includes(search)) match = false;
-
-          row.style.display = match ? "" : "none";
+        document.getElementById('userForm').addEventListener('submit', (e)=> {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target).entries());
+            if(editingRow){
+            editingRow.cells[0].textContent = data.username;
+            editingRow.cells[1].textContent = data.fullname;
+            editingRow.cells[2].textContent = roleText(data.role);
+            editingRow.cells[3].textContent = data.program;
+            }
+            closeUserModal();
         });
-      }
 
-      document.getElementById('filterProgram').addEventListener('change', filterTable);
-      document.getElementById('filterRole').addEventListener('change', filterTable);
-      document.getElementById('searchInput').addEventListener('input', filterTable);
-    </script>
+        function editUser(btn){
+            editingRow = btn.closest('tr');
+            const cells = editingRow.cells;
+            document.userForm.username.value = cells[0].textContent;
+            document.userForm.fullname.value = cells[1].textContent;
+            document.userForm.role.value = 
+                                        cells[2].textContent === "นักศึกษา" ? "student" :
+                                        cells[2].textContent === "อาจารย์" ? "teacher" :
+                                        cells[2].textContent === "กรรมการ" ? "commit" : "admin";
+            document.userForm.program.value = cells[3].textContent;
+            document.getElementById('userModal').style.display = 'flex';
+        }
+
+        function toggleStatus(btn){
+            const row = btn.closest('tr');
+            const statusCell = row.querySelector('.status');
+            if(statusCell.textContent === "Active"){
+            statusCell.textContent = "Inactive";
+            statusCell.className = "status inactive";
+            btn.textContent = "เปิดการใช้งาน";
+            } else {
+            statusCell.textContent = "Active";
+            statusCell.className = "status active";
+            btn.textContent = "ปิดการใช้งาน";
+            }
+        }
+
+        // ---------- ส่วนยืนยันการลบ ----------
+        function deleteUser(btn){
+            targetDeleteRow = btn.closest('tr');
+            const name = targetDeleteRow.cells[1].textContent; // ดึงชื่อผู้ใช้
+            document.getElementById('confirmMessage').textContent = `คุณต้องการลบผู้ใช้ "${name}" หรือไม่?`;
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+
+        function confirmDelete(){
+            if (targetDeleteRow) {
+            targetDeleteRow.remove();
+            targetDeleteRow = null;
+            }
+            closeConfirmModal();
+        }
+
+        function closeConfirmModal(){
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+        // ------------------------------------
+
+        function filterTable(){
+            const program = document.getElementById('filterProgram').value;
+            const role = document.getElementById('filterRole').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+
+            Array.from(userTable.rows).forEach(row=>{
+            const username = row.cells[0].textContent.toLowerCase();
+            const fullname = row.cells[1].textContent.toLowerCase();
+            const roleCell = row.cells[2].textContent;
+            const programCell = row.cells[3].textContent;
+
+            let match = true;
+            if(program && programCell !== program) match = false;
+            if(role && roleCell !== roleText(role)) match = false;
+            if(search && !fullname.includes(search) && !username.includes(search)) match = false;
+
+            row.style.display = match ? "" : "none";
+            });
+        }
+
+        document.getElementById('filterProgram').addEventListener('change', filterTable);
+        document.getElementById('filterRole').addEventListener('change', filterTable);
+        document.getElementById('searchInput').addEventListener('input', filterTable);
+        </script>
+
+
     
 </body>
 </html>

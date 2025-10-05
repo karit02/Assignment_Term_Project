@@ -901,7 +901,7 @@ body {
     margin-top: 40px; 
     margin-bottom: 0; 
     padding-bottom: 0;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .pagination {
@@ -914,6 +914,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
     width: 35px; 
     height: 35px;
     text-decoration: none;
@@ -942,9 +943,322 @@ body {
     height: 30px;
 }
 
-/* ========================================================================= */
-/* MODAL STYLES (แก้เพื่อให้ Modal ซ่อนอยู่เมื่อไม่ได้ถูกเปิด) */
-/* ========================================================================= */
+.confirm-modal {
+  display: none; 
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.confirm-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 35px;
+  text-align: center;
+  width: 500px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: popupFade 0.25s ease-out;
+}
+
+.confirm-modal-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.confirm-modal-content p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confirm-actions button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel {
+  background: #ccc;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background: #b5b5b5;
+}
+
+.btn-confirm {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-confirm:hover {
+  background: #c0392b;
+}
+
+@keyframes popupFade {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================================
+   📋 ตารางโครงงาน (เวอร์ชันปรับใหม่สุด)
+================================ */
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  table-layout: auto; /* ✅ ให้คอลัมน์ขยายตามเนื้อหาได้ */
+}
+
+.project-table th,
+.project-table td {
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.project-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ✅ ปรับสัดส่วนคอลัมน์ */
+.project-table th:nth-child(1),
+.project-table td:nth-child(1) {
+  width: 8%; /* รหัสโครงงาน */
+  text-align: center;
+}
+
+.project-table th:nth-child(2),
+.project-table td:nth-child(2) {
+  width: 20%; /* ชื่อโครงงาน */
+}
+
+.project-table th:nth-child(3),
+.project-table td:nth-child(3) {
+  width: 15%; /* ผู้จัดทำ */
+}
+
+.project-table th:nth-child(4),
+.project-table td:nth-child(4) {
+  width: 25%; /* ✅ อาจารย์ที่ปรึกษา */
+  white-space: nowrap;       /* ✅ แสดงบรรทัดเดียว */
+  overflow: hidden;
+  text-overflow: ellipsis;   /* ✅ ถ้ายาวเกิน ตัดด้วย ... */
+}
+
+.project-table th:nth-child(5),
+.project-table td:nth-child(5) {
+  width: 10%; /* สาขา */
+  text-align: center;
+}
+
+.project-table th:nth-child(6),
+.project-table td:nth-child(6) {
+  width: 10%; /* สถานะ */
+  text-align: center;
+}
+
+/* ✅ การทำงาน — ล็อกความกว้างไว้ */
+.project-table th:nth-child(7),
+.project-table td:nth-child(7) {
+  width: 230px; /* ไม่ให้โดนบีบ */
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ================================
+   🎨 ปุ่มการทำงาน
+================================ */
+.project-table td.actions button {
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  padding: 6px 14px;
+  margin: 0 2px;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background-color 0.2s, transform 0.15s;
+  display: inline-block;
+  min-width: 60px;
+}
+
+.project-table td.actions button:hover {
+  transform: translateY(-1px);
+}
+
+/* ปุ่มเฉพาะแต่ละประเภท */
+.project-table .edit {
+  background-color: #3b82f6;
+}
+.project-table .edit:hover {
+  background-color: #2563eb;
+}
+
+.project-table .view {
+  background-color: #fbbf24;
+  color: #000;
+}
+.project-table .view:hover {
+  background-color: #f59e0b;
+}
+
+.project-table .delete {
+  background-color: #f87171;
+}
+.project-table .delete:hover {
+  background-color: #ef4444;
+}
+
+.project-filter-area {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.project-filter-area label {
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.project-filter-area select {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  min-width: 130px;
+  background-color: #fff;
+  color: #374151;
+}
+
+.project-filter-area .searchInput {
+  flex: 1;
+  min-width: 260px;
+  max-width: 500px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #111827;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.project-filter-area .searchInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-filter-area {
+    flex-wrap: wrap;
+  }
+
+  .project-filter-area select,
+  .project-filter-area .searchInput {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.detail-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 600px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.2s ease;
+}
+
+.detail-item {
+  margin-bottom: 10px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  color: #333;
+  display: inline-block;
+  width: 140px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.form-grid input[name="advisor"] {
+  grid-column: span 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.form-actions button[type="button"] {
+  background: #e5e7eb;
+  color: #111;
+}
+
+.form-actions button[type="submit"] {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.form-actions button:hover {
+  opacity: 0.9;
+}
 
 .modal {
     visibility: hidden;        
@@ -967,8 +1281,13 @@ body {
     backdrop-filter: blur(5px); 
 }
 
+<<<<<<< HEAD
+.modal-content {
+    background-color: #e7e1e1;
+=======
 .modal-content-commit {
     background-color: #ffffff;
+>>>>>>> be3446462340a2e32415ee849f4b25e965727b07
     border-radius: 12px;
     padding: 30px 45px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);

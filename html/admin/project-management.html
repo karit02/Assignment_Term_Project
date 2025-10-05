@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>จัดการโครงงาน - ผู้ดูแลระบบ</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <style>
+    /* ปรับ modal รายละเอียดให้สวย */
+    .detail-modal-content {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      width: 600px;
+      max-width: 90%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 0.2s ease;
+    }
+    .detail-item { margin-bottom: 10px; }
+    .detail-item label { font-weight: 600; color: #333; display: inline-block; width: 140px; }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">A</div>
+                <div class="user-name">Admin</div>
+                <a href="../log_sing/login.html" class="logout-btn">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+         <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - ผู้ดูแลระบบ
+            </div>
+                <ul class="sidebar-menu">
+                    <li><a href="dashbroadadmin.html">
+                        <div class="icon"></div>
+                        แดชบอร์ดระบบ
+                        </a></li>
+                    <li><a href="user-management.html">
+                        <div class="icon"></div>
+                        จัดการผู้ใช้
+                    </a></li>
+                    <li><a href="project-management.html" class="active">
+                        <div class="icon"></div>
+                        จัดการโครงงาน
+                    </a></li>
+                    <li><a href="committee-assignment.html">
+                        <div class="icon"></div>
+                        จัดการกรรมการสอบ
+                    </a></li>
+                </ul>
+        </aside>
+        <main class="content">
+            <div class="content-header">
+                <h2>จัดการโครงงาน</h2>
+            </div>
+
+            <div class="content-body">
+                <!-- Filter -->
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area project-filter-area">
+                            <label class="filter-label-major">สาขา</label>
+                            <select id="filterProgram" class="major-select">
+                                <option value="">-- ทั้งหมด --</option>
+                                <option>IT</option>
+                                <option>ITI</option>
+                                <option>INET</option>
+                                <option>NET</option>
+                                <option>ITT</option>
+                            </select>
+
+                            <label class="filter-label-role">สถานะ</label>
+                            <select id="filterStatus" class="role-select">
+                                <option value="">-- ทั้งหมด --</option>
+                                <option value="เสนอหัวข้อ">เสนอหัวข้อ</option>
+                                <option value="อนุมัติแล้ว">อนุมัติแล้ว</option>
+                                <option value="อยู่ระหว่างดำเนินการ">อยู่ระหว่างดำเนินการ</option>
+                                <option value="สอบจบ">สอบจบ</option>
+                                <option value="เสร็จสิ้น">เสร็จสิ้น</option>
+                            </select>
+
+                            <label class="filter-label-find">ค้นหา</label>
+                            <input type="text" id="searchInput" class="searchInput" placeholder="ชื่อโครงงานหรือผู้จัดทำ">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="info-section">
+                    <h3>รายการโครงงาน</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>รหัสโครงงาน</th>
+                                <th>ชื่อโครงงาน</th>
+                                <th>ผู้จัดทำ</th>
+                                <th>อาจารย์ที่ปรึกษา</th>
+                                <th>สาขา</th>
+                                <th>สถานะ</th>
+                                <th>การทำงาน</th>
+                            </tr>
+                        </thead>
+                        <tbody id="projectTable">
+                            <tr>
+                                <td>T0001</td>
+                                <td>ระบบยืม-คืนคุรุภัณฑ์</td>
+                                <td>นางสาวไรบีนา มะเก๊ะ</td>
+                                <td>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</td>
+                                <td>IT</td>
+                                <td class="status อยู่ระหว่างดำเนินการ">อยู่ระหว่างดำเนินการ</td>
+                                <td class="actions">
+                                    <button class="edit" onclick="editProject(this)">แก้ไข</button>
+                                    <button class="view" onclick="viewProject(this)">ดูรายละเอียด</button>
+                                    <button class="delete" onclick="deleteProject(this)">ลบ</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T0002</td>
+                                <td>ระบบจองห้องเรียนออนไลน์</td>
+                                <td>นายกิตติพงษ์ มานพ</td>
+                                <td>ผศ.ดร.นิติการ นาคเจือทอง</td>
+                                <td>INET</td>
+                                <td class="status อยู่ระหว่างดำเนินการ">อยู่ระหว่างดำเนินการ</td>
+                                <td class="actions">
+                                    <button class="edit" onclick="editProject(this)">แก้ไข</button>
+                                    <button class="view" onclick="viewProject(this)">ดูรายละเอียด</button>
+                                    <button class="delete" onclick="deleteProject(this)">ลบ</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>T0003</td>
+                                <td>แอปพลิเคชันบริหารหอพัก</td>
+                                <td>น.ส.ชลธิชา พงษ์ดี</td>
+                                <td>รศ.ดร.อนิราช มิ่งขวัญ</td>
+                                <td>INET</td>
+                                <td class="status เสนอหัวข้อ">เสนอหัวข้อ</td>
+                                <td class="actions">
+                                    <button class="edit" onclick="editProject(this)">แก้ไข</button>
+                                    <button class="view" onclick="viewProject(this)">ดูรายละเอียด</button>
+                                    <button class="delete" onclick="deleteProject(this)">ลบ</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link">&lt;</a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link">4</a>
+                    <a href="#" class="page-link prev-next-link">&gt;</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal แก้ไข -->
+    <div id="projectModal" class="admin-modal">
+        <div class="admin-modal-content">
+            <h3>แก้ไขข้อมูลโครงงาน</h3>
+            <form id="projectForm">
+                <div class="form-grid">
+                    <input name="projectId" placeholder="รหัสโครงงาน" required />
+                    <input name="projectName" placeholder="ชื่อโครงงาน" required />
+                    <input name="student" placeholder="ชื่อผู้จัดทำ" required />
+                    <input name="advisor" placeholder="อาจารย์ที่ปรึกษา" required />
+                    <select name="program" required>
+                        <option>IT</option><option>ITI</option><option>INET</option><option>NET</option><option>ITT</option>
+                    </select>
+                    <select name="status" required>
+                        <option>เสนอหัวข้อ</option>
+                        <option>อนุมัติแล้ว</option>
+                        <option>อยู่ระหว่างดำเนินการ</option>
+                        <option>สอบจบ</option>
+                        <option>เสร็จสิ้น</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeProjectModal()">ยกเลิก</button>
+                    <button type="submit">บันทึก</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal รายละเอียด -->
+    <div id="detailModal" class="admin-modal">
+        <div class="detail-modal-content">
+            <h3>รายละเอียดโครงงาน</h3>
+            <div id="detailBody"></div>
+            <div class="form-actions">
+                <button onclick="closeDetailModal()">ปิด</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div id="confirmModal" class="confirm-modal">
+        <div class="confirm-modal-content">
+            <h3>ยืนยันการลบ</h3>
+            <p id="confirmMessage">คุณต้องการลบโครงงานนี้หรือไม่?</p>
+            <div class="confirm-actions">
+                <button class="btn-cancel" onclick="closeConfirmModal()">ยกเลิก</button>
+                <button class="btn-confirm" onclick="confirmDelete()">ยืนยัน</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="#">ช่วยเหลือ</a>
+            <a href="#">ติดต่อ</a>
+            <a href="#">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+
+    <script>
+        const table = document.getElementById('projectTable');
+        let editingRow = null;
+        let targetDeleteRow = null;
+
+        // ปิด modal ทั้งหมด
+        function closeProjectModal(){ document.getElementById('projectModal').style.display = 'none'; }
+        function closeDetailModal(){ document.getElementById('detailModal').style.display = 'none'; }
+        function closeConfirmModal(){ document.getElementById('confirmModal').style.display = 'none'; }
+
+        // เปิด modal แก้ไข
+        function editProject(btn){
+            editingRow = btn.closest('tr');
+            const c = editingRow.cells;
+            const form = document.getElementById('projectForm');
+            form.projectId.value = c[0].textContent;
+            form.projectName.value = c[1].textContent;
+            form.student.value = c[2].textContent;
+            form.advisor.value = c[3].textContent;
+            form.program.value = c[4].textContent;
+            form.status.value = c[5].textContent;
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+
+        // บันทึกแก้ไข
+        document.getElementById('projectForm').addEventListener('submit', e=>{
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target).entries());
+            if(editingRow){
+                editingRow.cells[0].textContent = data.projectId;
+                editingRow.cells[1].textContent = data.projectName;
+                editingRow.cells[2].textContent = data.student;
+                editingRow.cells[3].textContent = data.advisor;
+                editingRow.cells[4].textContent = data.program;
+                editingRow.cells[5].textContent = data.status;
+            }
+            closeProjectModal();
+        });
+
+        // ดูรายละเอียด
+        function viewProject(btn){
+            const row = btn.closest('tr').cells;
+            const detail = `
+                <div class="detail-item"><label>รหัสโครงงาน:</label> ${row[0].textContent}</div>
+                <div class="detail-item"><label>ชื่อโครงงาน:</label> ${row[1].textContent}</div>
+                <div class="detail-item"><label>ผู้จัดทำ:</label> ${row[2].textContent}</div>
+                <div class="detail-item"><label>อาจารย์ที่ปรึกษา:</label> ${row[3].textContent}</div>
+                <div class="detail-item"><label>สาขา:</label> ${row[4].textContent}</div>
+                <div class="detail-item"><label>สถานะ:</label> ${row[5].textContent}</div>
+            `;
+            document.getElementById('detailBody').innerHTML = detail;
+            document.getElementById('detailModal').style.display = 'flex';
+        }
+
+        // ลบโครงงาน
+        function deleteProject(btn){
+            targetDeleteRow = btn.closest('tr');
+            const name = targetDeleteRow.cells[1].textContent;
+            document.getElementById('confirmMessage').textContent = `คุณต้องการลบโครงงาน "${name}" หรือไม่?`;
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+        function confirmDelete(){
+            if (targetDeleteRow) targetDeleteRow.remove();
+            targetDeleteRow = null;
+            closeConfirmModal();
+        }
+
+        // ฟิลเตอร์ + ค้นหา
+        function filterTable(){
+            const program = document.getElementById('filterProgram').value;
+            const status = document.getElementById('filterStatus').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+
+            Array.from(table.rows).forEach(row=>{
+                const programCell = row.cells[4].textContent;
+                const statusCell = row.cells[5].textContent;
+                const name = row.cells[1].textContent.toLowerCase();
+                const student = row.cells[2].textContent.toLowerCase();
+
+                let show = true;
+                if(program && programCell !== program) show = false;
+                if(status && statusCell !== status) show = false;
+                if(search && !name.includes(search) && !student.includes(search)) show = false;
+
+                row.style.display = show ? "" : "none";
+            });
+        }
+
+        document.getElementById('filterProgram').addEventListener('change', filterTable);
+        document.getElementById('filterStatus').addEventListener('change', filterTable);
+        document.getElementById('searchInput').addEventListener('input', filterTable);
+    </script>
+</body>
+</html>
