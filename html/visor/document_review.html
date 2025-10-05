@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/visor.css">
     <title>ระบบจัดการโครงงาน - อาจารย์ที่ปรึกษา</title>
 </head>
 <body>
@@ -63,53 +64,110 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>โครงงานที่ปรึกษา - อาจารย์ที่ปรึกษา</h2>
-                <div class="breadcrumb">หน้าแรก > โครงงานที่ปรึกษาอาจารย์ที่ปรึกษา</div>
+                <h2>ตรวจเอกสาร - อาจารย์ที่ปรึกษา</h2>
+                <div class="breadcrumb">หน้าแรก > ตรวจเอกสาร</div>
             </div>
-            <div class="content-body">
-                <!-- Status Cards -->
-                <div class="status-cards">
-                    <div class="status-card">
-                        <div class="number">12</div>
-                        <div class="label">นักศึกษาที่ปรึกษา</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">8</div>
-                        <div class="label">โครงงานที่ต้องตรวจ</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="number">3</div>
-                        <div class="label">รอการอนุมัติ</div>
+            
+            <div class="schedule-container">
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">ทั้งหมด</option>
+                                <option value="2560">2568</option>
+                                <option value="2561">2567</option>
+                                <option value="2562">2566</option>
+                                <option value="2563">2565</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2563</option>
+                                <option value="2566">2562</option>
+                                <option value="2567">2561</option>
+                                <option value="2568">2560</option>
+                            </select>
+
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                                <option value="2560">ทั้งหมด</option>
+                                <option value="project-1">โครงงาน 1</option>
+                                <option value="project-2">โครงงาน 2</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Quick Actions -->
-                <div class="project-actions">
-                    <a href="/progress-review" class="btn">
-                        <span>📋</span>
-                        ตรวจความก้าวหน้า
-                    </a>
-                    <a href="/proposal-approval" class="btn">
-                        <span>✅</span>
-                        อนุมัติหัวข้อ
-                    </a>
-                    <a href="/document-review" class="btn">
-                        <span>📄</span>
-                        ตรวจเอกสาร
-                    </a>
-                </div>
+            <div class="table-content-wrapper"> 
+                <div class="card-container"> 
+                    <div class="project-card">
+                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2> 
+                        <div class="info-item">
+                            <span class="label">รหัสโครงงาน :</span>
+                            <span class="value">T0001</span>
+                        </div>
 
-                <!-- Information Section -->
-                <div class="info-section">
-                    <h3>ข้อมูลการปรึกษาโครงงาน</h3>
-                    <p>
-                        หน้านี้แสดงข้อมูลภาพรวมของการปรึกษาโครงงาน รวมถึงจำนวนนักศึกษาที่ปรึกษา 
-                        โครงงานที่ต้องตรวจสอบ และการอนุมัติต่างๆ ที่รอดำเนินการ คุณสามารถใช้เมนูด้านซ้าย
-                        เพื่อเข้าถึงฟังก์ชันต่างๆ เช่น การตรวจความก้าวหน้า การอนุมัติหัวข้อ 
-                        และการให้คำแนะนำแก่นักศึกษา
-                    </p>
+                        <div class="info-item">
+                            <span class="label">ชื่อนักศึกษา :</span>
+                            <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">รหัสนักศึกษา :</span>
+                            <span class="value">6806022510xxx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">สถานะ :</span>
+                            <span class="value">สอบหัวข้อ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ผลสอบ :</span>
+                            <span class="status pass">ผ่าน</span>
+                        </div>
+                        <div class="button-container">
+                            <a href="document_review_detail.html">
+                                <button class="detail-button">ดูรายละเอียด</button></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
+                            <div class="info-item">
+                                <span class="label">รหัสโครงงาน :</span>
+                                <span class="value">T0003</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">ชื่อนักศึกษา :</span>
+                                <span class="value">นายกฤษนัย โถมสันเทียะ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">รหัสนักศึกษา :</span>
+                                <span class="value">6806022510xxx</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">สถานะ :</span>
+                                <span class="value">สอบจบ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">ผลสอบ :</span>
+                                <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
+                            </div>
+                            <div class="button-container">
+                                <button class="detail-button">ดูรายละเอียด</button>
+                            </div>
+                    </div>
+
+                </div>
+            
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
                 </div>
             </div>
+            </main>
         </main>
     </div>
 

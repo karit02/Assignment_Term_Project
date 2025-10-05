@@ -42,11 +42,11 @@
                     <div class="icon"></div>
                     โครงงานที่ปรึกษา
                 </a></li>
-                <li><a href="progress_review.html" class="active">
+                <li><a href="progress_review.html">
                     <div class="icon"></div>
                     ตรวจสอบความก้าวหน้า
                 </a></li>
-                <li><a href="proposal_approval.html">
+                <li><a href="proposal_approval.html" class="active">
                     <div class="icon"></div>
                     ตรวจสอบการสอบหัวข้อ
                 </a></li>
@@ -64,14 +64,18 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>รายละเอียดความก้าวหน้า</h2>
+                <h2>ตรวจสอบการสอบหัวข้อ - อาจารย์ที่ปรึกษา</h2>
+                <div class="breadcrumb">หน้าแรก > ตรวจสอบการสอบหัวข้อ > รายละเอียด</div>
             </div>
             <div class="content-body">
-                <div class="detail-title">รายละเอียด</div>
+                <div class="detail-title">หัวข้อโครงงาน :</div>
                     <div class="project-description-box">
-                        รายละเอียดของโครงงาน
+                        ระบบยืม - คืนคุรุภัณฑ์
                     </div>
-
+                <div class="detail-title">รายละเอียดโครงงาน :</div>
+                    <div class="project-description-box">
+                        โครงงานนี้.....
+                    </div>
                         <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
                     <div class="file-link-section data-group">
                         <a href="ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
@@ -81,22 +85,14 @@
                             <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
                         </a>
                     </div>
-
                     <div class="comment-progress-row">
                         <!-- ช่องคอมเมนต์ (ซ้าย) -->
                         <div class="comment-col">
                             <div class="detail-title">คอมเมนต์จากอาจารย์</div>
                             <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
                         </div>
-                        <!-- ช่องเลือก % (ขวา) -->
-                        <div class="progress-col">
-                        <div class="detail-title">% ความก้าวหน้า</div>
-                        <div class="slider-with-label">
-                            <span id="progress-value" class="progress-value">100%</span>
-                            <input type="range" min="0" max="100" value="0" id="progress-slider">
-                        </div>
-                        </div>
                     </div>
+
                 <div class="ter-btn">
                     <button type="submit">บันทึก</button>
                     <button type="reset">ยกเลิก</button>
@@ -104,7 +100,6 @@
             </div>
         </main>
     </div>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -116,46 +111,5 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
-
-    <script>
-        function getProgressColor(percent) {
-            if (percent <= 0) return '#ef4444';
-            if (percent < 50) {
-                let r = 239 + Math.round((245-239)*(percent/50));
-                let g = 68 + Math.round((158-68)*(percent/50));
-                let b = 68 + Math.round((66-68)*(percent/50));
-                return `rgb(${r},${g},${b})`;
-            }
-            if (percent < 80) {
-                let r = 245 + Math.round((253-245)*((percent-50)/30));
-                let g = 158 + Math.round((224-158)*((percent-50)/30));
-                let b = 66 + Math.round((71-66)*((percent-50)/30));
-                return `rgb(${r},${g},${b})`;
-            }
-            let r = 253 + Math.round((34-253)*((percent-80)/20));
-            let g = 224 + Math.round((197-224)*((percent-80)/20));
-            let b = 71 + Math.round((94-71)*((percent-80)/20));
-            return `rgb(${r},${g},${b})`;
-        }
-
-        const slider = document.getElementById('progress-slider');
-        const value = document.getElementById('progress-value');
-        function updateProgressLabel() {
-            value.textContent = slider.value + '%';
-            value.style.color = getProgressColor(parseInt(slider.value, 10));
-            // คำนวณตำแหน่ง label ตามค่า slider
-            let percent = (slider.value - slider.min) / (slider.max - slider.min);
-            value.style.setProperty('--percent', percent);
-        }
-        slider.addEventListener('input', updateProgressLabel);
-        updateProgressLabel();
-
-        function updateProgressLabel() {
-            value.textContent = slider.value + '%';
-            const color = getProgressColor(parseInt(slider.value, 10));
-            value.style.color = color;
-            slider.style.setProperty('--slider-color', color);
-        }
-    </script>
 </body>
 </html>
