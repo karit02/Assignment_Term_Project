@@ -1692,7 +1692,7 @@ body:has(.modalde:target) {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    resize: vertical; /* อนุญาตให้ปรับขนาดในแนวตั้งเท่านั้น */
+    resize: vertical; 
     font-size: 14px;
     min-height: 150px;
     box-sizing: border-box;
@@ -1721,10 +1721,6 @@ body:has(.modalde:target) {
     color: #ff0000;
 }
 
-/* ===== ปรับเฉพาะหน้า project-proposal ===== */
-/* ================================
-    STYLE เฉพาะหน้า project-proposal.html
-   ================================ */
 
 .content-body {
     background: #fff;
@@ -1732,9 +1728,9 @@ body:has(.modalde:target) {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding-top: 10px;
+    margin-top: 40px;
 }
 
-/* จัด layout ของแถว dropdown */
 .proposal-row {
     display: flex;
     align-items: center;
@@ -1744,7 +1740,19 @@ body:has(.modalde:target) {
     margin-bottom: 24px;
 }
 
-/* Label */
+.proposal-row:has(#exam-type) {
+    justify-content: flex-start !important; 
+    gap: 8px; 
+}
+
+.proposal-row:has(#exam-type) label {
+    margin-right: 4px; 
+}
+
+#exam-type {
+    min-width: 200px; 
+}
+
 .proposal-row label,
 .content-body label {
     font-weight: 600;
@@ -1831,13 +1839,13 @@ textarea:focus {
 
 input[type="date"],
 input[type="time"] {
-  color: #6b7280; /* เทาอ่อน */
+  color: #6b7280;
   font-weight: 500;
 }
 
 input[type="date"]:focus,
 input[type="time"]:focus {
-  color: #374151; /* เทาเข้มขึ้นนิด */
+  color: #374151; 
 }
 
 .student-list {
@@ -1864,7 +1872,6 @@ input[type="time"]:focus {
     flex: 1;
 }
 
-/* File Upload */
 .file-input-wrapper {
     display: flex;
     align-items: center;
