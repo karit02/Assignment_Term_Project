@@ -64,76 +64,47 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>ตรวจสอบความก้าวหน้า</h2>
-                <div class="breadcrumb">หน้าแรก > ตรวจสอบความก้าวหน้า</div>
+                <h2>รายละเอียดความก้าวหน้า</h2>
             </div>
+            <div class="content-body">
+                <div class="detail-title">รายละเอียด :</div>
+                    <div class="project-description-box">
+                        รายละเอียดของโครงงาน
+                    </div>
 
-            <div class="schedule-container">
-            <div class="table-content-wrapper"> 
-                <div class="progress-card-container">
-                    <div class="progress-card">
-                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2>
-                        <div class="progress-percent">
-                            <span class="percent-value">100</span>
-                            <span class="percent-sign">%</span>
+                        <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
+                    <div class="file-link-section data-group">
+                        <a href="ไฟล์โปรแกรมแปลภาษาลิง.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-pdf"></i> ระบบยืม - คืนคุรุภัณฑ์.pdf
+                        </a>
+                        <a href="ไฟล์นำเสนอ.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
+                        </a>
+                    </div>
+
+                    <div class="comment-progress-row">
+                        <!-- ช่องคอมเมนต์ (ซ้าย) -->
+                        <div class="comment-col">
+                            <div class="detail-title">คอมเมนต์จากอาจารย์</div>
+                            <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
                         </div>
-                        <div class="progress-updated">
-                            อัปเดตล่าสุด: 5 ตุลาคม 2025
+                        <!-- ช่องเลือก % (ขวา) -->
+                        <div class="progress-col">
+                        <div class="detail-title">% ความก้าวหน้า</div>
+                        <div class="slider-with-label">
+                            <span id="progress-value" class="progress-value">100%</span>
+                            <input type="range" min="0" max="100" value="100" id="progress-slider">
                         </div>
-                        <div class="progress-info">
-                            <div class="info-item">
-                                <span class="label">รหัสโครงงาน :</span>
-                                <span class="value">T0001</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">จำนวนนักศึกษา :</span>
-                                <span class="value">3 คน</span>
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <a href="progress_review_detail.html">
-                                <button class="detail-button">ดูรายละเอียด</button>
-                            </a>
                         </div>
                     </div>
-                    <div class="progress-card">
-                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
-                        <div class="progress-percent">
-                            <span class="percent-value">68</span>
-                            <span class="percent-sign">%</span>
-                        </div>
-                        <div class="progress-updated">
-                            อัปเดตล่าสุด: 5 ตุลาคม 2025
-                        </div>
-                        <div class="progress-info">
-                            <div class="info-item">
-                                <span class="label">รหัสโครงงาน :</span>
-                                <span class="value">T0003</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">จำนวนนักศึกษา :</span>
-                                <span class="value">4 คน</span>
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <a href="progress_review_detail.html">
-                                <button class="detail-button">ดูรายละเอียด</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            
-            <div class="pagination-container">
-                <div class="pagination">
-                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
-                    <a href="#" class="page-link active" data-page="1">1</a>
-                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
+                <div class="ter-btn">
+                    <button type="submit">บันทึก</button>
+                    <button type="reset">ยกเลิก</button>
                 </div>
             </div>
         </main>
-
-        </div>
     </div>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -148,39 +119,43 @@
 
     <script>
         function getProgressColor(percent) {
-            // ไล่สีจากแดง (#ef4444) → ส้ม (#f59e42) → เหลือง (#fde047) → เขียว (#22c55e)
-            if (percent <= 0) return '#ef4444'; // แดง
+            if (percent <= 0) return '#ef4444';
             if (percent < 50) {
-                // ไล่สีแดงไปส้ม
                 let r = 239 + Math.round((245-239)*(percent/50));
                 let g = 68 + Math.round((158-68)*(percent/50));
                 let b = 68 + Math.round((66-68)*(percent/50));
                 return `rgb(${r},${g},${b})`;
             }
             if (percent < 80) {
-                // ไล่สีส้มไปเหลือง
                 let r = 245 + Math.round((253-245)*((percent-50)/30));
                 let g = 158 + Math.round((224-158)*((percent-50)/30));
                 let b = 66 + Math.round((71-66)*((percent-50)/30));
                 return `rgb(${r},${g},${b})`;
             }
-            // ไล่สีเหลืองไปเขียว
             let r = 253 + Math.round((34-253)*((percent-80)/20));
             let g = 224 + Math.round((197-224)*((percent-80)/20));
             let b = 71 + Math.round((94-71)*((percent-80)/20));
             return `rgb(${r},${g},${b})`;
         }
 
-        document.querySelectorAll('.progress-card').forEach(card => {
-            const percentEl = card.querySelector('.percent-value');
-            if (percentEl) {
-                let percent = parseInt(percentEl.textContent, 10);
-                percentEl.style.color = getProgressColor(percent);
-                // เปลี่ยน % ด้วย
-                const signEl = card.querySelector('.percent-sign');
-                if (signEl) signEl.style.color = getProgressColor(percent);
-            }
-        });
+        const slider = document.getElementById('progress-slider');
+        const value = document.getElementById('progress-value');
+        function updateProgressLabel() {
+            value.textContent = slider.value + '%';
+            value.style.color = getProgressColor(parseInt(slider.value, 10));
+            // คำนวณตำแหน่ง label ตามค่า slider
+            let percent = (slider.value - slider.min) / (slider.max - slider.min);
+            value.style.setProperty('--percent', percent);
+        }
+        slider.addEventListener('input', updateProgressLabel);
+        updateProgressLabel();
+
+        function updateProgressLabel() {
+            value.textContent = slider.value + '%';
+            const color = getProgressColor(parseInt(slider.value, 10));
+            value.style.color = color;
+            slider.style.setProperty('--slider-color', color);
+        }
     </script>
 </body>
 </html>
