@@ -373,7 +373,7 @@ body {
     border-right: none;
 }
 
-\.graduation-schedule-table tbody tr:nth-child(even) {
+.graduation-schedule-table tbody tr:nth-child(even) {
     background-color: #f7f9ff; 
 }
 .graduation-schedule-table tbody tr:hover {
@@ -542,7 +542,7 @@ body {
 
 .info-row {
     display: flex;
-    padding: 15px 25px; 
+    padding: 15px 20px; 
     border-bottom: 1px solid #e9e9e9; 
     align-items: center;
 }
@@ -552,8 +552,8 @@ body {
 }
 
 .info-label {
-    min-width: 200px; 
-    max-width: 200px; 
+    min-width: 150px; 
+    max-width: 150px; 
     font-weight: bold;
     color: #4a5568; 
     flex-shrink: 0;
@@ -563,6 +563,7 @@ body {
     flex-grow: 1; 
     color: #1e293b;
     align-self: center; 
+    text-align: left;
 }
 
 
@@ -675,7 +676,7 @@ body {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px 25px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     height: auto; /* ให้ปรับความสูงตามเนื้อหา */
 }
@@ -684,11 +685,6 @@ body {
     /* ให้ card รายงานมีพื้นที่ขยายตามแนวตั้งมากขึ้น ถ้าต้องการ */
     margin-top: 15px;
     flex-grow: 1; 
-}
-
-.comment-card {
-    /* อาจจะกำหนดสีพื้นหลังที่แตกต่างออกไปเพื่อเน้น สีฟ้าอ่อน ๆ เพื่อเน้นความคิดเห็น */
-    /* background-color: #eff6ff; */
 }
 
 .card-title-header {
@@ -950,6 +946,7 @@ body {
     visibility: visible;
     opacity: 1;
     background-color: rgba(0,0,0,0.5); /* พื้นหลังสีดำโปร่งแสง 50% เมื่อแสดง */
+    backdrop-filter: blur(5px); /* เบลอพื้นหลัง 5 พิกเซล */
 }
 
 /* กล่องเนื้อหา Modal: สถานะ 'ซ่อน' (เริ่มต้น) */
@@ -967,12 +964,13 @@ body {
     max-height: 80vh; /* ลดจาก 90vh เป็น 80vh (ความสูงไม่ยาวเกินไป) */
     overflow-y: auto; /* ยังคงให้เนื้อหาเลื่อนได้ถ้ายาวเกิน 80% ของหน้าจอ */
 
+    position: relative;
+
     /* การจัดกึ่งกลาง (โค้ดเดิมที่ถูกต้องแล้ว) */
-    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out; 
 }
 
 body:has(#project-details-modal:target) {
@@ -1183,18 +1181,19 @@ body:has(.modal:target) {
     display: flex; /* ทำให้ Modal แสดงขึ้นมา */
     justify-content: center; /* จัดให้อยู่กึ่งกลาง */
     align-items: center; /* จัดให้อยู่กึ่งกลาง */
+    backdrop-filter: blur(5px);
 }
 
 /* กล่องเนื้อหา Modal: สถานะ 'ซ่อน' (เริ่มต้น) */
 .modalde-content {
-    background-color: #ffffff;
     border-radius: 12px;
     padding: 28px 28px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     
     max-width: 1200px; 
     
-    position: fixed; 
+    position: relative; 
+
     top: 50%;
     left: 50%; 
     
@@ -1252,18 +1251,17 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .modal-grid-two-col {
-    display: flex; 
-    gap: 30px; 
-    margin-bottom: 20px; 
+    display: grid;
+    grid-template-columns: 2.8fr 1.8fr;
+    gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
+    align-items: stretch; /* สำคัญ: ทำให้ลูก (คอลัมน์) ยืดความสูงเท่ากัน */
 }
 
 .left-detail-col {
-    flex: 2.2; /* เปลี่ยนจาก flex: 3; เป็น 1 */
     min-width: 0;
     }
 
-    .right-detail-col {
-    flex: 1; 
+.right-detail-col {
     min-width: 0;
     display: flex; 
     flex-direction: column;
@@ -1339,8 +1337,8 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 /* ปุ่มปิด (X) */
 .close-btn {
     position: absolute;
-    top: 15px; 
-    right: 25px; 
+    top: 8px; 
+    right: 27px; 
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s;
@@ -1354,7 +1352,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     color: #aaa; 
     font-size: 35px; 
     font-weight: bold; 
-    }
+}
 
 .close-btn:hover {
     color: #667eea;
@@ -1386,22 +1384,47 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .modale-content {
-    /* ปรับขนาดให้แคบลง เน้นความเป็นฟอร์ม */
+     /* ... โค้ดเดิม ... */
     background-color: #fefefe;
-    margin: 5% auto; /* ชิดขอบบนมากขึ้น */
-    padding: 3px 40px; /* เพิ่ม Padding ด้านข้าง */
+    
+    /* 🔴 ลบ/เปลี่ยน: ลบ margin: auto; หรือ margin อื่นๆ ออก */
+    /* margin: auto; */ 
+    
+    padding: 3px 40px; 
     border: 1px solid #ddd;
-    width: 65%; /* กว้าง 65% ของจอ (เน้นพื้นที่ป้อนข้อมูล) */
-    max-width: 800px; /* จำกัดความกว้างสูงสุด */
+    width: 65%; 
+    max-width: 800px; 
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    animation: fadeIn 0.3s ease-out; /* เพิ่ม Animation */
+    
+    /* 💡 เพิ่ม: กำหนดความสูงสูงสุด (Max-Height) เพื่อไม่ให้ Modal ล้นจอ */
+    max-height: 90vh; 
+    overflow-y: auto; /* ให้มี Scrollbar หากเนื้อหาเยอะ */
+    
+    /* 💡 สำคัญ: จัดกึ่งกลางด้วย Position Fixed + Transform 💡 */
+    position: fixed; /* ใช้ fixed แทน absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ดึงกลับขึ้น/ซ้าย 50% ของขนาด Modal เอง */
+    
+    animation: fadeIn 0.3s ease-out; 
+    
+    /* 💡 เพิ่ม: position: relative; เพื่อให้ปุ่มกากบาทอยู่ถูกที่ */
+    position: relative; /* คงค่านี้ไว้สำหรับปุ่ม .close-btn */
 }
 
 /* Animation เพื่อความสวยงาม */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        /* 🔴 แก้ไข: ลบ Transform ออก เพื่อไม่ให้ Modal เลื่อนตำแหน่งตอนเริ่มต้น 🔴 */
+        /* transform: translateY(-20px); */ 
+    }
+    to { 
+        opacity: 1; 
+        /* 🔴 แก้ไข: ลบ Transform ออก 🔴 */
+        /* transform: translateY(0); */ 
+    }
 }
 
 /* 2. สไตล์หัวข้อหลักใน Modal ใหม่ */
