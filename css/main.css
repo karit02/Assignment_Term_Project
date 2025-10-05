@@ -652,7 +652,7 @@ body {
     display: block;
     margin-bottom: 8px;
     color: #2563eb;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 600;
     transition: color 0.2s;
 }
@@ -1677,6 +1677,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 16px;
     margin-bottom: 24px;
 }
@@ -1690,6 +1691,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 }
 
 .proposal-select,
+.exam-type-selector,
 .sec-selector,
 .year-selector,
 .term-selector,
@@ -1705,7 +1707,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     border-radius: 8px;
     padding: 10px 14px;
     font-size: 1rem;
-    color: #374151;
+    color: #60656e;
     min-width: 300px;
 
   /* เพิ่ม icon ลูกศร custom */
