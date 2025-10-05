@@ -901,7 +901,7 @@ body {
     margin-top: 40px; 
     margin-bottom: 0; 
     padding-bottom: 0;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .pagination {
@@ -1183,6 +1183,24 @@ body:has(.modal:target) {
     margin-bottom: 18px;
     color: #333;
     font-size: 1.3rem;
+}
+
+.dropdown-row-admin {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+
+.dropdown-row-admin > div {
+    flex: 1 1 100%;
+    min-width: 250px;
+}
+.controls-bar-admin {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0%;
 }
 
 .form-grid {
@@ -1743,6 +1761,15 @@ body:has(.modalde:target) {
     padding-top: 10px;
     margin-top: 40px;
 }
+
+/*------------------------------------------------*/
+.content-body-admin {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
 /*------------------------------------------------*/
 .content-body-commitone {
     background: #fff;
@@ -2495,7 +2522,7 @@ input[type="time"]:focus {
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    margin-top: 15px;
+    margin-top: 0%;
     border: 1px solid #e2e8f0; 
 }
 
