@@ -528,7 +528,7 @@ body {
     font-size: 1.35em;
     font-weight: 700;
     color: #1e293b; 
-    margin-top: 0; 
+    margin-top: 20px; 
     padding-bottom: 3px;
     border-bottom: 3px solid #667eea; /* เส้นแบ่งยังคงอยู่ */
     
@@ -1743,6 +1743,35 @@ body:has(.modalde:target) {
     padding-top: 10px;
     margin-top: 40px;
 }
+/*------------------------------------------------*/
+.content-body-commitone {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.content-body-committwo {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.content-body-commitpass {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.content-body-commitno {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+/*------------------------------------------------*/
 
 .proposal-row {
     display: flex;
