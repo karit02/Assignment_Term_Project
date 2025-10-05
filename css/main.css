@@ -2598,12 +2598,8 @@ input[type="time"]:focus {
     max-width: 800px; 
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-<<<<<<< HEAD
     
     max-height: 90vh;
-=======
-    padding-bottom: 40px;
->>>>>>> ea9a666d53326daa9bf5488b472c2957f2a99c07
     
     position: fixed;
     top: 50%;
@@ -2615,10 +2611,6 @@ input[type="time"]:focus {
     
     animation: fadeIn 0.3s ease-out; 
     
-<<<<<<< HEAD
-=======
-    /* คงค่านี้ไว้สำหรับปุ่ม .close-btn */
->>>>>>> ea9a666d53326daa9bf5488b472c2957f2a99c07
     position: relative;
 }
 
