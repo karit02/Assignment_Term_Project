@@ -52,26 +52,32 @@
         <main class="content">
             <div class="content-header">
                 <h2>กำหนดกรรมการสอบ</h2>
+                <div class="breadcrumb">หน้าแรก > จัดการกรรมการสอบ</div>
             </div>
 
             <div class="schedule-container">
-                <!-- Filter -->
                 <div class="dropdown-row">
                     <div class="controls-bar">
                         <div class="filter-area">
                             <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
                             <select id="committee-year" class="year-selector">
-                                <option>2570</option>
-                                <option>2569</option>
-                                <option>2568</option>
-                                <option>2567</option>
-                                <option>2566</option>
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
                             </select>
 
                             <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
                             <select id="project-type" class="project-selector">
-                                <option value="special">โครงงานพิเศษ</option>
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
                                 <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
                             </select>
                         </div>
                     </div>
@@ -86,37 +92,50 @@
                             <div class="info-item"><span class="label">นักศึกษา :</span><span class="value">นางสาวไรบีนา มะเก๊ะ</span></div>
                             <div class="info-item"><span class="label">สถานะ :</span><span class="value status-text">รอการกำหนดสอบ</span></div>
                             <div class="button-container">
-                                <a href="#committee-modal" class="detail-button">กำหนดกรรมการ/วันสอบ</a>
+                                <a href="#committee-modal" class="detail-button">แก้ไข</a>
                             </div>
+                        </div>
+                    </div>
+                    <div class="pagination-container">
+                        <div class="pagination">
+                            <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                            <a href="#" class="page-link active" data-page="1">1</a>
+                            <a href="#" class="page-link" data-page="2">2</a>
+                            <a href="#" class="page-link" data-page="3">3</a>
+                            <a href="#" class="page-link" data-page="4">4</a>
+                            <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+        
     </div>
 
     <!-- Modal -->
     <div id="committee-modal" class="modal-admin">
         <div class="modal-content-admin">
-            <a href="#" class="close-btn-admin">&times;</a>
+            <a href="#" class="close-btn">&times;</a>
             <h3 class="detail-title">กำหนดกรรมการและวันสอบ</h3>
 
             <div class="content-body">
-                <label for="exam-date">วันสอบ</label>
+                <label for="exam-date">วันสอบ :</label>
                 <input type="date" id="exam-date" name="exam-date" value="2025-09-11">
 
-                <label for="exam-time">เวลาสอบ</label>
+                <label for="exam-time">เวลาสอบ :</label>
                 <input type="time" id="exam-time" name="exam-time" value="09:30">
 
-                <label>สถานที่สอบ</label>
+                <label>สถานที่สอบ :</label>
                 <select name="advisor-plus" id="advisor-plus">
-                    <option value="B4-01">B4-01</option>
-                    <option value="B4-02">B4-02</option>
-                    <option value="B4-03">B4-03</option>
+                    <option value="default" disabled selected>-- เลือกสถานที่สอบ --</option>
+                    <option value="">ตึกคณะเทคโนฯ ห้อง B416</option>
+                    <option value="">ตึกคณะเทคโนฯ ห้อง B417</option>
+                    <option value="">ตึกคณะเทคโนฯ ห้อง B418</option>
                 </select>
 
-                <label>กรรมการท่านที่ 1 :</label>
+                <label>กรรมการ :</label>
                 <select name="advisor-plus" id="advisor-plus">
+                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 1 --</option>
                     <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -142,8 +161,8 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <label>กรรมการท่านที่ 2 :</label>
                 <select name="advisor-plus" id="advisor-plus">
+                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 2 --</option>
                     <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -169,8 +188,8 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <label for="committee3">กรรมการท่านที่ 3 :</label>
                 <select name="advisor-plus" id="advisor-plus">
+                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 3 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                     <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -196,9 +215,8 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <label for="committee4">กรรมการท่านที่ 4 :</label>
                 <select name="advisor-plus" id="advisor-plus">
-                    <option value="" disabled selected> </option>
+                    <option value="" disabled selected>-- เลือกกรรมการท่านที่ 4 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                     <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -225,8 +243,8 @@
                 </select>
 
                 <div class="ter-btn">
-                    <a href="#" class="ter-btn-back">ยกเลิก</a>
                     <a href="#" class="ter-btn-save">บันทึก</a>
+                    <a href="#" class="ter-btn-back">ยกเลิก</a>
                 </div>
             </div>
         </div>
@@ -236,6 +254,11 @@
     <footer class="footer">
         <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
         <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="/help">ช่วยเหลือ</a>
+            <a href="/contact">ติดต่อ</a>
+            <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
+        </div>
     </footer>
 
     <script>

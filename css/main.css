@@ -652,7 +652,7 @@ body {
     display: block;
     margin-bottom: 8px;
     color: #2563eb;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 600;
     transition: color 0.2s;
 }
@@ -807,7 +807,7 @@ body {
 }
 
 .dashboard-section {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .chart-container {
@@ -938,8 +938,8 @@ body {
     width: 100%;               
     height: 100%;              
     overflow-y: auto;          
-    background-color: rgba(0,0,0,0.0); /* เริ่มต้นพื้นหลังโปร่งใส */
-    transition: opacity 0.4s ease, background-color 0.4s ease; /* เพิ่ม Transition */
+    background-color: rgba(0,0,0,0.6); /* พื้นหลังทึบกว่าเดิมเล็กน้อย */
+    backdrop-filter: blur(3px); /* เพิ่มเอฟเฟกต์เบลอ */
 }
 
 .modal:target {
@@ -1171,8 +1171,8 @@ body:has(.modal:target) {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5); /* พื้นหลังทึบแสง (Overlay) */
-    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.6); /* พื้นหลังทึบกว่าเดิมเล็กน้อย */
+    backdrop-filter: blur(3px); /* เพิ่มเอฟเฟกต์เบลอ */
 }
 
 /* สั่งให้ Modal แสดงเมื่อ ID ถูกเรียกใช้ใน URL (ทำงานเมื่อคลิกปุ่ม) */
@@ -1386,9 +1386,6 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
 .modale-content {
      /* ... โค้ดเดิม ... */
     background-color: #fefefe;
-    
-    /* 🔴 ลบ/เปลี่ยน: ลบ margin: auto; หรือ margin อื่นๆ ออก */
-    /* margin: auto; */ 
     
     padding: 3px 40px; 
     border: 1px solid #ddd;
@@ -1673,6 +1670,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
 }
 
 /* จัด layout ของแถว dropdown */
@@ -1680,6 +1678,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 16px;
     margin-bottom: 24px;
 }
@@ -1690,9 +1689,11 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     font-weight: 600;
     color: #1e40af;
     margin-right: 6px;
+    
 }
 
 .proposal-select,
+.exam-type-selector,
 .sec-selector,
 .year-selector,
 .term-selector,
@@ -1708,7 +1709,7 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     border-radius: 8px;
     padding: 10px 14px;
     font-size: 1rem;
-    color: #374151;
+    color: #60656e;
     min-width: 300px;
 
   /* เพิ่ม icon ลูกศร custom */
@@ -2010,6 +2011,12 @@ textarea:focus {
     background: #f8fafc;
 }
 .info-section td button {
+    /* ป้องกันไม่ให้ปุ่มหดเมื่อพื้นที่คอลัมน์แคบ */
+    flex-shrink: 0; 
+    
+    /* ลบ margin-right ที่อาจเคยเพิ่มไว้ก่อนหน้า */
+    margin-right: 0 !important;
+
     background: #f3f4f6;
     border: 1px solid #d1d5db;
     padding: 4px 8px;
@@ -2027,6 +2034,7 @@ textarea:focus {
     border: none;
     transition: 0.2s;
 }
+
 .info-section td button:nth-child(1):hover {
     background-color: #2563eb;
 }
@@ -2049,6 +2057,59 @@ textarea:focus {
 }
 .info-section td button:nth-child(3):hover {
     background-color: #ef4444;
+}
+
+/* กำหนดความกว้างของแต่ละคอลัมน์ในตาราง */
+.info-section th:nth-child(1),
+.info-section td:nth-child(1) {
+    /* คอลัมน์ "รหัส" */
+    width: 10%; 
+}
+
+.info-section th:nth-child(2),
+.info-section td:nth-child(2) {
+    /* คอลัมน์ "ชื่อ-สกุล" (กว้างที่สุด) */
+    width: 25%; 
+}
+
+.info-section th:nth-child(3),
+.info-section td:nth-child(3) {
+    /* คอลัมน์ "ตำแหน่ง" */
+    width: 15%; 
+}
+
+.info-section th:nth-child(4),
+.info-section td:nth-child(4) {
+    /* คอลัมน์ "สาขา" */
+    width: 10%; 
+}
+
+.info-section th:nth-child(5),
+.info-section td:nth-child(5) {
+    /* คอลัมน์ "สถานะ" */
+    width: 15%; 
+}
+
+.info-section th:nth-child(6),
+.info-section td:nth-child(6) {
+    /* คอลัมน์ "การทำงาน" */
+    width: 25%;
+}
+
+/* ========================================= */
+/* 💡 สไตล์สำหรับสถานะ (Status) ในตาราง 💡 */
+/* ========================================= */
+
+/* 💡 สไตล์สำหรับสถานะ Active (สีเขียว) 💡 */
+.info-section td.status.active {
+    color: #10b981; /* ตัวอักษรสีขาว */
+    font-weight: bold; 
+}
+
+/* 💡 สไตล์สำหรับสถานะ Inactive/Disabled (ถ้ามี) 💡 */
+.info-section td.status.inactive {
+    color: #ef4444; /* ตัวอักษรสีแดง */
+    font-weight: bold; 
 }
 
 /* Modal */
@@ -2167,6 +2228,17 @@ textarea:focus {
     background-repeat: no-repeat;
     background-position: right 12px center;
     background-size: 12px 8px;
+}
+
+.system-logs .log-list li .log-time {
+    /* 🔴 ทำให้ตัวเลขเป็นตัวหนา 🔴 */
+    font-weight: bold;
+    
+    /* อาจเพิ่มสีเพื่อเน้นให้เด่นชัดขึ้น */
+    /* color: #1f2937; */ 
+    
+    /* อาจเพิ่มระยะห่างเล็กน้อยระหว่างตัวเลขกับข้อความถัดไป */
+    /* margin-right: 4px; */
 }
 
 /* ปุ่ม */
@@ -2443,15 +2515,26 @@ textarea:focus {
     font-weight: 500;
     padding-left: 5px;
 }
+
+/*
+=================================
+    MODAL (กรอบและพื้นหลัง)
+=================================
+*/
 .modal-admin {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    display: none;
-    z-index: 9999;
+    display: none; /* เริ่มต้นซ่อนไว้ */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    
+    /* 🔴 เพิ่ม: เอฟเฟกต์เบลอพื้นหลังที่ถูกซ้อนทับ (CSS Backdrop Filter) 🔴 */
+    background-color: rgba(0,0,0,0.6); /* พื้นหลังทึบกว่าเดิมเล็กน้อย */
+    backdrop-filter: blur(3px); /* เพิ่มเอฟเฟกต์เบลอ */
 }
 
 .modal-admin:target {
@@ -2459,17 +2542,28 @@ textarea:focus {
 }
 
 .modal-content-admin {
-    background: #fff;
-    width: 90%;
-    max-width: 800px;   /* 🔹 กว้างขึ้นเป็นผืนผ้า */
-    padding: 20px 28px; /* 🔹 ลด padding ให้เตี้ยลง */
+    background-color: #fefefe; 
+    padding: 20px 35px; 
+    border: 1px solid #ddd;
+    width: 65%; 
+    max-width: 800px; 
     border-radius: 10px;
-    position: absolute;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    padding-bottom: 40px;
+    
+    /* 💡 สำคัญ: จัดกึ่งกลางด้วย Position Fixed + Transform 💡 */
+    position: fixed; /* ใช้ fixed แทน absolute */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    animation: modalFadeInAdmin 0.3s ease;
+    transform: translate(-50%, -50%); /* ดึงกลับขึ้น/ซ้าย 50% ของขนาด Modal เอง */
+    
+    /* 💡 สำคัญ: จัดการเนื้อหาที่ล้น 💡 */
+    max-height: 80vh; /* กำหนดความสูงสูงสุด (90% ของความสูงหน้าจอ) */
+    
+    animation: fadeIn 0.3s ease-out; 
+    
+    /* คงค่านี้ไว้สำหรับปุ่ม .close-btn */
+    position: relative;
 }
 
 @keyframes modalFadeInAdmin {
@@ -2505,7 +2599,7 @@ textarea:focus {
 .modal-content-admin label {
     font-weight: 600;
     font-size: 0.9rem;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
     display: block;
 }
 
@@ -2515,11 +2609,11 @@ textarea:focus {
 .modal-content-admin select {
     width: 100%;
     padding: 10px 14px;
-    margin-bottom: 16px;
+    margin-bottom: 8px; 
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     font-size: 0.95rem;
-    color: #64748b;              /* << สีเทาอ่อน เหมือนหน้าอื่น */
+    color: #64748b;
     background-color: #fff;
     transition: border-color 0.2s, color 0.2s;
     appearance: none;
@@ -2547,7 +2641,7 @@ textarea:focus {
 .modal-content-admin .ter-btn {
     display: flex;
     justify-content: flex-end;
-    margin-top: 18px;
+    margin-top: 10px;
     gap: 10px;
 }
 
@@ -2572,11 +2666,11 @@ textarea:focus {
 }
 
 .modal-content-admin .ter-btn .ter-btn-back {
-    background-color: #ccc;
+    background-color: #e5e7eb;
     color: #000;
 }
 .modal-content-admin .ter-btn .ter-btn-back:hover {
-    background-color: #b0b0b0;
+    background-color: #cdcfd1;
 }
 
 /* ===== Responsive (มือถือกลับเป็น 1 คอลัมน์) ===== */
@@ -2590,6 +2684,27 @@ textarea:focus {
     }
 }
 
+/*
+=================================
+    CSS สำหรับลบเส้นขีดใต้ฟอร์ม
+=================================
+*/
+
+/* หากเส้นขีดมาจาก border-bottom ขององค์ประกอบที่อยู่เหนือปุ่ม */
+.modal-content-admin .content-body > *:last-child,
+.modal-content-admin .modal-grid > div:last-child {
+    border-bottom: none !important;
+}
+
+/* หากเส้นขีดมาจากปุ่มเอง (ไม่น่าใช่) */
+.ter-btn {
+    border-top: none !important;
+    padding-top: 15px; /* เพิ่มระยะห่างด้านบนปุ่ม */
+    /* ทำให้ปุ่มชิดขวา */
+    text-align: right; 
+    width: 100%;
+    margin-top: 20px; /* เพิ่มระยะห่างจากฟิลด์ด้านบน */
+}
 
 /* Footer */
 .footer {
@@ -2609,6 +2724,27 @@ textarea:focus {
 
 .footer-links a:hover {
     color: #ffffff;
+}
+
+/*
+=================================
+    CSS สำหรับการแสดงสถานะ (Status)
+=================================
+*/
+
+/* 1. สถานะเริ่มต้น: 'รอการกำหนดสอบ' */
+.project-card .status-text {
+    color: #ff9800; 
+    font-weight: bold;
+}
+
+/* 2. สถานะที่กำหนดแล้ว: 'รอสอบ' (สีน้ำเงิน/สีม่วง ที่เด่นชัด) */
+/* เมื่อสถานะถูกเปลี่ยนเป็น 'รอสอบ' ผ่าน JavaScript หรือ Server-side
+   ให้เพิ่มคลาสเฉพาะ (เช่น .status-scheduled) เข้าไปที่ <span> */
+.project-card .status-text.status-scheduled {
+    /* 🔴 สีใหม่สำหรับสถานะ 'รอสอบ' 🔴 */
+    color: #1d4ed8; /* สีน้ำเงินเข้ม */
+    font-weight: bold;
 }
 
 /* ======================= */

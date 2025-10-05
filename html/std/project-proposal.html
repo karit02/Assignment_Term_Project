@@ -48,11 +48,7 @@
                 </a></li>
                 <li><a href="topic-exam-request.html">
                     <div class="icon"></div>
-                    ยื่นสอบหัวข้อ
-                </a></li>
-                <li><a href="final-exam-request.html">
-                    <div class="icon"></div>
-                    ยื่นสอบจบ
+                    ยื่นสอบหัวข้อ / สอบจบ
                 </a></li>
                 <li><a href="document-upload.html">
                     <div class="icon"></div>
@@ -71,7 +67,6 @@
                 <div class="proposal-row">
                     <label for="sec" class="label-sec">ประเภทโครงงาน</label>
                             <select id="sec" class="sec-selector proposal-select">
-                                <option value="" disabled selected>-- กรุณาเลือกโครงงาน --</option>
                                 <option>โครงงานพิเศษ</option>
                                 <option>โครงงานสหกิจ</option>
                             </select>
@@ -96,41 +91,38 @@
                 <label for="topic">หัวข้อโครงงาน :</label>
                 <input type="text" name="topic" placeholder="ระบบยืม - คืนคุรุภัณฑ์">
 
-                <label for="details">รายละเอียดโครงงาน :</label>
-                <textarea name="details" rows="10"></textarea>
-
                 <!-- นักศึกษา -->
                 <label>สมาชิก</label>
                     <div class="student-list">
                         <div class="student-card">
                             <label>นักศึกษาคนที่ 1</label>
                             <div class="student-row">
-                                <input type="text" placeholder="รหัสนักศึกษา">
-                                <input type="text" placeholder="ชื่อ - สกุล">
+                                <input type="text" placeholder="6806022510122">
+                                <input type="text" placeholder="นางสาวไรบีนา มะเก๊ะ">
                             </div>
                         </div>
 
                         <div class="student-card">
                             <label>นักศึกษาคนที่ 2</label>
                             <div class="student-row">
-                                <input type="text" placeholder="รหัสนักศึกษา">
-                                <input type="text" placeholder="ชื่อ - สกุล">
+                                <input type="text" placeholder="68060225634">
+                                <input type="text" placeholder="นายคฤษฐ์ เสือเดช">
                             </div>
                         </div>
 
                         <div class="student-card">
                             <label>นักศึกษาคนที่ 3</label>
                             <div class="student-row">
-                                <input type="text" placeholder="รหัสนักศึกษา">
-                                <input type="text" placeholder="ชื่อ - สกุล">
+                                <input type="text" placeholder="68060225653">
+                                <input type="text" placeholder="นางสาวชาลิสส ยิ้มลำใย">
                             </div>
                         </div>
 
                         <div class="student-card">
                             <label>นักศึกษาคนที่ 4</label>
                             <div class="student-row">
-                                <input type="text" placeholder="รหัสนักศึกษา">
-                                <input type="text" placeholder="ชื่อ - สกุล">
+                                <input type="text" >
+                                <input type="text" >
                             </div>
                         </div>
                     </div>
@@ -139,7 +131,6 @@
                 <div class="proposal-row">
                     <label for="advisor">อาจารย์ที่ปรึกษา :</label>
                     <select name="advisor" id="advisor" class="proposal-select">
-                        <option value="" disabled selected>-- กรุณาเลือกอาจารย์ที่ปรึกษา --</option>
                         <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                         <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                         <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -167,7 +158,7 @@
                         
                     <label for="advisor-plus">อาจารย์ที่ปรึกษาร่วม :</label>
                     <select name="advisor-plus" id="advisor-plus" class="proposal-select">
-                        <option value="" disabled selected>-- กรุณาเลือกอาจารย์ที่ปรึกษา --</option>
+                        <option value="" disabled selected> - </option>
                         <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                         <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                         <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -195,7 +186,7 @@
 
                     <label for="subject-teacher">อาจารย์ประจำวิชา :</label>
                     <select name="subject-teacher" id="subject-teacher" class="proposal-select">
-                        <option value="" disabled selected>-- กรุณาเลือกอาจารย์ที่ปรึกษา --</option>
+                        <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
                         <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                         <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                         <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -204,7 +195,6 @@
                         <option value="กาญจน ณ ศรีธะ">อ.ดร.กาญจน ณ ศรีธะ</option>
                         <option value="นพดล บูรณ์กุศล">ผศ.นพดล บูรณ์กุศล</option>
                         <option value="นพเก้า ทองใบ">ผศ.จสต.นพเก้า ทองใบ</option>
-                        <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
                         <option value="นัฎฐพันธ์ นาคพงษ์">ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
                         <option value="นิมิต ศรีคำทา">ผศ.นิมิต ศรีคำทา</option>
                         <option value="พิทย์พิมล ชูรอด">อ.ดร.พิทย์พิมล ชูรอด</option>
@@ -226,11 +216,11 @@
                 <div class="file-input-wrapper">
                     <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
                     <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
-                    <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
+                    <div class="file-name" id="file-name">แบบเสนอหัวข้อ.pdf</div>
                 </div>
                 <div class="ter-btn">
-                    <button type="submit">บันทึก</button>
                     <button type="reset">ยกเลิก</button>
+                    <button type="submit">บันทึก</button>
                 </div>
             </div>
         </main>
