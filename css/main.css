@@ -255,9 +255,13 @@ body {
 .filter-area {
     display: flex; 
     align-items: center;
-    gap: 10px; 
+    gap: 5px; 
     margin-bottom: 17px;
-    padding: 12px 22px; 
+    padding: 12px 22px;
+}
+
+.filter-area .major-select, .role-select, .filter-label-find {
+    margin-right: 25px;
 }
 
 .filter-label-year{
@@ -881,10 +885,12 @@ body {
 .pagination-container {
     display: flex;
     justify-content: center; 
-    margin-top: auto; 
+    margin-top: 40px; 
     margin-bottom: 0; 
     padding-bottom: 0;
     padding-top: 50px;
+    
+
 }
 
 .pagination {
@@ -1012,7 +1018,6 @@ body:has(.modal:target) {
     justify-content: center;
     align-items: center;
 }
-
 
 .admin-modal-content {
     background: #fff;
@@ -1615,6 +1620,8 @@ body:has(.modalde:target) { /* ใช้ .modal:target แทน #project-detail
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.2s;
+    align-items: center;
+    margin: 0;
 }
 
 .content-body input[type="text"]:focus,
