@@ -25,7 +25,6 @@
         </div>
     </div>
 
-
     <!-- Main Container -->
     <div class="main-container">
         <!-- Sidebar -->
@@ -49,11 +48,7 @@
                 </a></li>
                 <li><a href="topic-exam-request.html" class="active">
                     <div class="icon"></div>
-                    ยื่นสอบหัวข้อ
-                </a></li>
-                <li><a href="final-exam-request.html">
-                    <div class="icon"></div>
-                    ยื่นสอบจบ
+                    ยื่นสอบหัวข้อ / สอบจบ
                 </a></li>
                 <li><a href="document-upload.html">
                     <div class="icon"></div>
@@ -65,22 +60,54 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>ยื่นสอบหัวข้อ</h2>
+                <h2>ยื่นสอบหัวข้อ / สอบจบ</h2>
             </div>
+
             <div class="content-body">
-                <label for="topic">หัวข้อโครงงาน : </label>
-                <input type="text" name="topic" placeholder="ระบบยืม - คืนคุรุภัณฑ์">
-                <label for="details">รายละเอียดโครงงาน : </label>
-                <textarea name="details" rows="10"></textarea>
-                <label for="ter-file">แนบไฟล์เอกสาร :</label>
-                <div class="file-input-wrapper">
-                    <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
-                    <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
-                    <div class="file-name" id="file-name">ยังไม่ได้เลือกไฟล์</div>
+                <!-- Dropdown เลือกประเภทการสอบ -->
+                <div class="proposal-row">
+                    <label for="exam-type">เลือกประเภทการสอบ :</label>
+                    <select id="exam-type" class="proposal-select" onchange="toggleExamForm()">
+                        <option value="topic">สอบหัวข้อ</option>
+                        <option value="final">สอบจบ</option>
+                    </select>
                 </div>
-                <div class="ter-btn">
-                    <button type="submit">บันทึก</button>
-                    <button type="reset">ยกเลิก</button>
+
+                <!-- ฟอร์มยื่นสอบหัวข้อ -->
+                <div id="topic-exam-form">
+                    <label for="ter-file">แนบไฟล์เอกสารสอบหัวข้อ :</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name1').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                        <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
+                        <div class="file-name" id="file-name1">แบบเสนอสอบหัวข้อ.pdf</div>
+                    </div>
+
+                    <div class="ter-btn">
+                        <button type="submit">บันทึก</button>
+                        <button type="reset">ยกเลิก</button>
+                    </div>
+                </div>
+
+                <!-- ฟอร์มยื่นสอบจบ -->
+                <div id="final-exam-form" style="display: none;">
+                    <label for="fer-file">แนบไฟล์เล่มโปรเจค :</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="fer-file" name="fer-file" onchange="document.getElementById('file-name2').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                        <button type="button" onclick="document.getElementById('fer-file').click()">เลือกไฟล์</button>
+                        <div class="file-name" id="file-name2">ระบบยืม-คืนคุรุภัณฑ์.pdf</div>
+                    </div>
+
+                    <label for="present-file">แนบไฟล์นำเสนอ :</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="present-file" name="present-file" onchange="document.getElementById('file-name3').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                        <button type="button" onclick="document.getElementById('present-file').click()">เลือกไฟล์</button>
+                        <div class="file-name" id="file-name3">ไฟล์นำเสนอ.pdf</div>
+                    </div>
+
+                    <div class="ter-btn">
+                        <button type="submit">บันทึก</button>
+                        <button type="reset">ยกเลิก</button>
+                    </div>
                 </div>
             </div>
         </main>
@@ -96,5 +123,13 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+
+    <script>
+        function toggleExamForm() {
+            const examType = document.getElementById('exam-type').value;
+            document.getElementById('topic-exam-form').style.display = examType === 'topic' ? 'block' : 'none';
+            document.getElementById('final-exam-form').style.display = examType === 'final' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
