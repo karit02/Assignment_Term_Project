@@ -21,7 +21,7 @@
             <div class="banner-user">
                 <div class="user-avatar">F</div>
                 <div class="user-name">Final Devil</div>
-                <a href="login.html" class="logout-btn">ออกจากระบบ</a>
+                <a href="../log_sing/login.html" class="logout-btn">ออกจากระบบ</a>
             </div>
         </div>
     </div>
@@ -58,6 +58,10 @@
                     <div class="icon"></div>
                     ตรวจเอกสาร
                 </a></li>
+                <li><a href="visor_name.html">
+                    <div class="icon"></div>
+                    ลงนามอนุมัติ
+                </a></li>
             </ul>
         </aside>
 
@@ -75,26 +79,19 @@
                             <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
                             <select id="committee-year" class="year-selector">
                                 <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
-                                <option value="2560">ทั้งหมด</option>
-                                <option value="2560">2568</option>
-                                <option value="2561">2567</option>
-                                <option value="2562">2566</option>
-                                <option value="2563">2565</option>
-                                <option value="2564">2564</option>
-                                <option value="2565">2563</option>
-                                <option value="2566">2562</option>
-                                <option value="2567">2561</option>
-                                <option value="2568">2560</option>
+                                    <option>ทุกปี</option>
+                                    <option>2567</option>
+                                    <option>2566</option>
                             </select>
 
                             <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
                             <select id="project-type" class="project-selector">
                                 <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
-                                <option value="2560">ทั้งหมด</option>
-                                <option value="project-1">โครงงาน 1</option>
-                                <option value="project-2">โครงงาน 2</option>
-                                <option value="coop">โครงงานสหกิจ</option>
-                                <option value="coop">โครงงานพิเศษ</option>
+                                    <option>ทั้งหมด</option>
+                                    <option>รอสอบหัวข้อ</option>
+                                    <option>สอบหัวข้อ</option>
+                                    <option>ผ่าน</option>
+                                    <option>ไม่ผ่าน</option>
                             </select>
                         </div>
                     </div>
@@ -123,53 +120,22 @@
                         </div>
                         <div class="info-item">
                             <span class="label">ผลสอบ :</span>
-                            <span class="status pass">ผ่าน</span>
+                            <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
                         </div>
-                        <div class="button-container-visor">
+                        <div class="button-container">
                             <a href="proposal_approval_detail.html">
                                 <button class="detail-button">ดูรายละเอียด</button></a>
                         </div>
                     </div>
-
-                    <div class="project-card">
-                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
-                            <div class="info-item">
-                                <span class="label">รหัสโครงงาน :</span>
-                                <span class="value">T0003</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">ชื่อนักศึกษา :</span>
-                                <span class="value">นายกฤษนัย โถมสันเทียะ</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">รหัสนักศึกษา :</span>
-                                <span class="value">6806022510xxx</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">สถานะ :</span>
-                                <span class="value">สอบจบ</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">ผลสอบ :</span>
-                                <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
-                            </div>
-                            <div class="button-container-visor">
-                                <button class="detail-button">ดูรายละเอียด</button>
-                            </div>
-                    </div>
-
                 </div>
             
-                <div class="pagination-container">
-                    <div class="pagination">
-                        <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
-                        <a href="#" class="page-link active" data-page="1">1</a>
-                        <a href="#" class="page-link" data-page="2">2</a>
-                        <a href="#" class="page-link" data-page="3">3</a>
-                        <a href="#" class="page-link" data-page="4">4</a>
-                        <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
-                    </div>
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
                 </div>
+            </div>
         </main>
     </div>
 

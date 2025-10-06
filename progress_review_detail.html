@@ -21,7 +21,7 @@
             <div class="banner-user">
                 <div class="user-avatar">F</div>
                 <div class="user-name">Final Devil</div>
-                <a href="login.html" class="logout-btn">ออกจากระบบ</a>
+                <a href="../log_sing/login.html" class="logout-btn">ออกจากระบบ</a>
             </div>
         </div>
     </div>
@@ -58,21 +58,87 @@
                     <div class="icon"></div>
                     ตรวจเอกสาร
                 </a></li>
+                <li><a href="visor_name.html">
+                    <div class="icon"></div>
+                    ลงนามอนุมัติ
+                </a></li>
             </ul>
         </aside>
 
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>รายละเอียดความก้าวหน้า</h2>
+                <h2>ตรวจสอบความก้าวหน้า</h2>
+                <div class="breadcrumb">หน้าแรก > ตรวจสอบความก้าวหน้า > รายละเอียด</div>
             </div>
-            <div class="content-body">
-                <div class="detail-title">รายละเอียด</div>
+<div class="dropdown-row">
+    <div class="controls-bar">
+        <div class="filter-area">
+            <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
+            <select id="week-select" class="year-selector" onchange="goToWeek(this)">
+                <option value="progress_review_detail_1.html">1</option>
+                <option value="progress_review_detail_1.html">2</option>
+                <option value="progress_review_detail_1.html">3</option>
+                <option value="progress_review_detail.html" selected>4</option>
+            </select>
+        </div>
+    </div>
+</div>
+<script>
+    function goToWeek(sel) {
+        if (sel.value) window.location.href = sel.value;
+    }
+</script>
+
+            <div class="content-body-commitone">
+                <div class="detail-container">
+
+                    <h3 class="detail-title">รายละเอียดโครงการ</h3>
+                    
+                    <div class="data-group info-block">
+                        <div class="info-row">
+                            <div class="info-label">ชื่อโครงการ :</div>
+                            <div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">ประเภทโครงงาน :</div>
+                            <div class="info-value">โครงงานสหกิจ</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">ปีการศึกษา :</div>
+                            <div class="info-value">2568 ภาคเรียนที่ 1</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">วัน / เวลา / สถานที่สอบ :</div>
+                            <div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div>
+                        </div>
+                    </div>
+                    
                     <div class="project-description-box">
-                        รายละเอียดของโครงงาน
+                        <p>ระบบนี้ถูกออกแบบมาเพื่อจัดการกระบวนการยืมและคืนครุภัณฑ์ของภาควิชา IT โดยใช้เทคโนโลยี QR Code สำหรับการยืนยันตัวตนและการติดตามสถานะ ช่วยลดขั้นตอนเอกสารและเพิ่มความแม่นยำในการจัดการทรัพย์สิน</p>
                     </div>
 
-                        <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
+
+                    <h3 class="detail-title person-title">รายชื่อผู้จัดทำโครงการ</h3>
+                    <div class="person-list data-group">
+                        <p>
+                            นางสาวไรบีนา มะเก๊ะ <span class="id-code">6806022510xxx</span>
+                        </p>
+                        <p>
+                            นายคฤษฐ์ เสือเดช <span class="id-code">6806022510xxx</span> 
+                        </p>
+                        <p>
+                            นางสาวชาลิสา ยิ้มลำใย <span class="id-code">6806022510xxx</span> 
+                        </p>
+                    </div>
+
+                    <h3 class="detail-title person-title">อาจารย์ที่ปรึกษา</h3>
+                    <div class="person-list data-group">
+                        <p>ผศ.ดร.นิติการ นาคเจือทอง<span class="role-text">อาจารย์ที่ปรึกษา</span></p>
+                        <p>รศ.ดร.อนิราช มิ่งขวัญ<span class="role-text">อาจารย์ที่ปรึกษาร่วม</span></p>
+                    </div>
+
+                    <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
                     <div class="file-link-section data-group">
                         <a href="ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
                             <i class="fas fa-file-pdf"></i> ระบบยืม - คืนคุรุภัณฑ์.pdf
@@ -81,30 +147,44 @@
                             <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
                         </a>
                     </div>
-
-                    <div class="comment-progress-row">
-                        <!-- ช่องคอมเมนต์ (ซ้าย) -->
-                        <div class="comment-col">
-                            <div class="detail-title">คอมเมนต์จากอาจารย์</div>
-                            <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
+                </div>
+                <div style="width:100%; margin: 32px 0 18px 0;">
+                    <hr style="border: none; border-top: 5px solid #a9a9a9; width: 100%;">
+                </div>
+                <div class="comment-progress-row" style="display: flex; gap: 40px;">
+                    <!-- ฝั่งซ้าย: คอมเมนต์ -->
+                    <div class="comment-col" style="flex:1;">
+                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
+                            ความคิดเห็นของอาจารย์ที่ปรึกษา
                         </div>
-                        <!-- ช่องเลือก % (ขวา) -->
-                        <div class="progress-col">
-                        <div class="detail-title">% ความก้าวหน้า</div>
+                        <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
+                    </div>
+                    <!-- ฝั่งขวา: % ความก้าวหน้า -->
+                    <div class="progress-col" style="flex:1;">
+                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
+                            % ความก้าวหน้า
+                        </div>
                         <div class="slider-with-label">
-                            <span id="progress-value" class="progress-value">100%</span>
-                            <input type="range" min="0" max="100" value="0" id="progress-slider">
-                        </div>
+                            <span id="progress-value" style="display:block; text-align:center; font-size:2.2em; font-weight:bold; color:#ff9800;">40%</span>
+                            <input type="range" id="progress-slider" min="0" max="100" step="10" value="40" style="width:220px; accent-color:#ff9800;">
                         </div>
                     </div>
+                </div>
+                <div class="comment-status-check">
+                        <label>
+                            <input type="checkbox" id="send-notification" name="send-notification">
+                            ลงชื่อรับทราบ
+                        </label>
+                    </div>
                 <div class="ter-btn">
-                    <button type="submit">บันทึก</button>
-                    <button type="reset">ยกเลิก</button>
+                    <a href="progress_review_detail_1.html">
+                    <button type="solve">บันทึก</button></a>
+                    <a href="progress_review.html">
+                    <button type="back">ย้อนกลับ</button></a>
                 </div>
             </div>
         </main>
-    </div>
-
+    </div> 
 
     <!-- Footer -->
     <footer class="footer">

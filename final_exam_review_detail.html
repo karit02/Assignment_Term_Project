@@ -21,7 +21,7 @@
             <div class="banner-user">
                 <div class="user-avatar">F</div>
                 <div class="user-name">Final Devil</div>
-                <a href="login.html" class="logout-btn">ออกจากระบบ</a>
+                <a href="../log_sing/login.html" class="logout-btn">ออกจากระบบ</a>
             </div>
         </div>
     </div>
@@ -58,6 +58,10 @@
                     <div class="icon"></div>
                     ตรวจเอกสาร
                 </a></li>
+                <li><a href="visor_name.html">
+                    <div class="icon"></div>
+                    ลงนามอนุมัติ
+                </a></li>
             </ul>
         </aside>
 
@@ -80,17 +84,23 @@
                         <i class="fas fa-file-pdf"></i> นำเสนอ.pdf
                     </a>
                 </div>
-                <div class="comment-progress-row">
-                    <!-- ช่องคอมเมนต์ (ซ้าย) -->
-                    <div class="comment-col">
-                        <div class="detail-title">คอมเมนต์จากอาจารย์</div>
+                <div style="width:100%; margin: 32px 0 18px 0;">
+                <hr style="border: none; border-top: 5px solid #a9a9a9; width: 100%;">
+                </div>
+                <div class="comment-progress-row" style="display: flex; gap: 40px;">
+                    <div class="comment-col" style="flex:1;">
+                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
+                            ความคิดเห็นของอาจารย์ที่ปรึกษา
+                        </div>
                         <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
                     </div>
                 </div>
 
                 <div class="ter-btn">
-                    <button type="submit">บันทึก</button>
-                    <button type="reset">ยกเลิก</button>
+                    <a href="final_exam_review_detail_1.html">
+                    <button type="solve">บันทึก</button></a>
+                    <a href="final_exam_review.html">
+                    <button type="back">ย้อนกลับ</button></a>
                 </div>
             </div>
         </main>
