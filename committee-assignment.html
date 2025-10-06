@@ -56,6 +56,7 @@
         <main class="content">
             <div class="content-header">
                 <h2>กำหนดกรรมการสอบ</h2>
+                <div class="breadcrumb">หน้าแรก > กำหนดกรรมการสอบ</div>
             </div>
 
             <div class="schedule-container">
@@ -103,13 +104,14 @@
                     <!-- Pagination -->
                     <div class="pagination-container">
                         <div class="pagination">
-                            <a href="#" class="page-link prev-next-link">&lt;</a>
-                            <a href="#" class="page-link active">1</a>
-                            <a href="#" class="page-link">2</a>
-                            <a href="#" class="page-link prev-next-link">&gt;</a>
+                            <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                            <a href="#" class="page-link active" data-page="1">1</a>
+                            <a href="#" class="page-link" data-page="2">2</a>
+                            <a href="#" class="page-link" data-page="3">3</a>
+                            <a href="#" class="page-link" data-page="4">4</a>
+                            <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
                         </div>
                     </div>
-                </div>
             </div>
         </main>
         
@@ -119,20 +121,20 @@
     <div id="committee-modal" class="modal-committee">
         <div class="modal-content-committee">
             <a href="#" class="close-btn">&times;</a>
-            <h3 class="detail-title">กำหนดกรรมการ</h3>
+            <h3 class="detail-title">กำหนดกรรมการ :</h3>
 
             <div class="content-body">
-                <label for="exam-type">ประเภทการสอบ</label>
-                <input type="text" id="exam-type" name="exam-type" placeholder="สอบหัวข้อ">
+                <label for="exam-type">ประเภทการสอบ :</label>
+                <input type="text" id="exam-type" name="exam-type" placeholder="สอบหัวข้อ" required>
 
-                <label for="exam-date">วันสอบ</label>
-                <input type="date" id="exam-date" name="exam-date" value="2025-09-11">
+                <label for="exam-date">วันสอบ :</label>
+                <input type="date" id="exam-date" name="exam-date" value="2025-09-11" required>
 
                 <label for="exam-time">เวลาสอบ :</label>
-                <input type="time" id="exam-time" name="exam-time" value="09:30">
+                <input type="time" id="exam-time" name="exam-time" value="09:30" required>
 
                 <label>สถานที่สอบ :</label>
-                <select name="advisor-plus" id="advisor-plus">
+                <select name="advisor-plus" id="advisor-plus" required>
                     <option value="default" disabled selected>-- เลือกสถานที่สอบ --</option>
                     <option value="">ตึกคณะเทคโนฯ ห้อง B416</option>
                     <option value="">ตึกคณะเทคโนฯ ห้อง B417</option>
@@ -140,7 +142,7 @@
                 </select>
 
                 <label>กรรมการ :</label>
-                <select name="advisor-plus" id="advisor-plus">
+                <select name="advisor-plus" id="advisor-plus" required>
                     <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 1 --</option>
                     <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
@@ -167,7 +169,7 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <select name="advisor-plus" id="advisor-plus">
+                <select name="advisor-plus" id="advisor-plus" required>
                     <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 2 --</option>
                     <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
@@ -194,7 +196,7 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <select name="advisor-plus" id="advisor-plus">
+                <select name="advisor-plus" id="advisor-plus" required>
                     <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 3 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -221,7 +223,7 @@
                     <option value="ยุพิน สรรพคุณ">รศ.ดร.ยุพิน สรรพคุณ</option>
                 </select>
 
-                <select name="advisor-plus" id="advisor-plus">
+                <select name="advisor-plus" id="advisor-plus" required>
                     <option value="" disabled selected>-- เลือกกรรมการท่านที่ 4 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>

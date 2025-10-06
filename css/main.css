@@ -276,7 +276,7 @@ body {
 }
 
 .filter-area .major-select, .role-select, .filter-label-find {
-    margin-right: 25px;
+    margin-right: 15px;
 }
 
 .filter-label-year{
@@ -562,6 +562,7 @@ body {
     padding: 15px 20px; 
     border-bottom: 1px solid #e9e9e9; 
     align-items: center;
+    gap: 60px; 
 }
 
 .info-row:last-child {
@@ -569,8 +570,8 @@ body {
 }
 
 .info-label {
-    min-width: 150px; 
-    max-width: 150px; 
+    min-width: 180px; 
+    max-width: 180px; 
     font-weight: bold;
     color: #4a5568; 
     flex-shrink: 0;
@@ -824,7 +825,7 @@ body {
 }
 
 .dashboard-section {
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .chart-container {
@@ -901,7 +902,6 @@ body {
     margin-top: 40px; 
     margin-bottom: 0; 
     padding-bottom: 0;
-    padding-top: 50px;
 }
 
 .pagination {
@@ -1030,7 +1030,7 @@ body {
 .project-table td {
   padding: 8px 10px;
   text-align: left;
-  font-size: 14px;
+  font-size: 15px;
   border-bottom: 1px solid #e5e7eb;
   vertical-align: middle;
 }
@@ -2008,7 +2008,6 @@ body:has(.modalde:target) {
 
 .content-body label {
     display: block;
-    margin: 15px 0 6px;
     font-weight: 600;
     color: #1e40af; /* น้ำเงิน */
 }
@@ -2073,7 +2072,6 @@ body:has(.modalde:target) {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding-top: 10px;
-    margin-top: 40px;
 }
 
 /*------------------------------------------------*/
@@ -2082,6 +2080,7 @@ body:has(.modalde:target) {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding-top: 10px;
 }
 
 /*------------------------------------------------*/
@@ -3363,7 +3362,7 @@ body:has(.modal:target) {
 }
 
 /* 4. Modal Content (กล่องขาวด้านใน) */
-.modal-content {
+.modal-content-name {
     background: #fff;
     width: 90%;
     max-width: 900px; /* เพิ่ม max-width ให้ใหญ่ขึ้นสำหรับ Modal รายละเอียดที่มี 2 คอลัมน์ */
@@ -3436,3 +3435,32 @@ body:has(.modal:target) {
     transform: translateY(-1px);
 }
 
+.filter-label-major, 
+.filter-label-role {
+    /* เพิ่มระยะห่างด้านขวา 5px เพื่อให้แยกออกจากกล่องดรอปดาวน์ */
+    margin-right: 7px; 
+}
+
+/* ใช้สำหรับทุกเซลล์ข้อมูลในคอลัมน์สถานะ */
+.project-table td:nth-child(6) { 
+    font-weight: bold;
+}
+
+.modal-content-list {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    max-width: 950px; 
+    width: 90%; 
+    
+    max-height: 90vh;
+
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -75%); 
+    transition: transform 0.4s ease-out; 
+}
