@@ -71,19 +71,21 @@
                 <h2>ตรวจสอบความก้าวหน้า</h2>
                 <div class="breadcrumb">หน้าแรก > ตรวจสอบความก้าวหน้า > รายละเอียด</div>
             </div>
-<div class="dropdown-row">
-    <div class="controls-bar">
-        <div class="filter-area">
-            <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
-            <select id="week-select" class="year-selector" onchange="goToWeek(this)">
-                <option value="progress_review_detail_1.html">1</option>
-                <option value="progress_review_detail_1.html">2</option>
-                <option value="progress_review_detail_1.html">3</option>
-                <option value="progress_review_detail.html" selected>4</option>
-            </select>
+        <div class="dropdown-row">
+            <div class="controls-bar">
+                <div class="filter-area">
+                    <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
+                    <select id="week-select" class="year-selector" onchange="goToWeek(this)">
+                        <option value="default" disabled selected>-- เลือกสัปดาห์ที่ที่ต้องการค้นหา --</option>
+                        <option value="progress_review_detail_1.html">1</option>
+                        <option value="progress_review_detail_1.html">2</option>
+                        <option value="progress_review_detail_1.html">3</option>
+                        <option value="progress_review_detail.html">4</option>
+                    </select>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
 <script>
     function goToWeek(sel) {
         if (sel.value) window.location.href = sel.value;
@@ -140,11 +142,8 @@
 
                     <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
                     <div class="file-link-section data-group">
-                        <a href="ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
-                            <i class="fas fa-file-pdf"></i> ระบบยืม - คืนคุรุภัณฑ์.pdf
-                        </a>
-                        <a href="ไฟล์นำเสนอ.pdf" target="_blank" class="file-link">
-                            <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
+                        <a href="ทก.01.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-pdf"></i>ทก.01.pdf
                         </a>
                     </div>
                 </div>
@@ -177,7 +176,7 @@
                         </label>
                     </div>
                 <div class="ter-btn">
-                    <a href="progress_review_detail_1.html">
+                    <a href="progress_review.html">
                     <button type="solve">บันทึก</button></a>
                     <a href="progress_review.html">
                     <button type="back">ย้อนกลับ</button></a>

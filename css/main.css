@@ -3464,3 +3464,22 @@ body:has(.modal:target) {
     transform: translate(-100%, -75%); 
     transition: transform 0.4s ease-out; 
 }
+
+/* กำหนดสไตล์สำหรับคลาส namema เพื่อแสดงเป็นแถบสีเขียว */
+.namemapass {
+    /* สีข้อความ: ควรเป็นสีขาวเพื่อให้ตัดกับพื้นหลัง */
+    color: #27ae60;
+}
+
+.button-container-prop {
+    display: flex; /* 1. เปิดใช้งาน Flexbox */
+    
+    /* 2. สั่งให้เนื้อหา (ปุ่ม) ถูกจัดเรียงไปทางซ้ายสุด */
+    justify-content: flex-start; 
+    
+    /* เพิ่มระยะห่างด้านบนของปุ่ม (เพื่อความสวยงาม) */
+    margin-top: 15px; 
+    
+    /* ตรวจสอบให้แน่ใจว่ามันใช้พื้นที่เต็มความกว้างของการ์ด */
+    width: 100%; 
+}
