@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>ระบบจัดการโครงงาน - กรรมการ</title>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">F</div>
+                <div class="user-name">Final Devil</div>
+                <a href="../log_sing/login.html" class="logout-btn">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - อาจารย์ที่ปรึกษา
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashbroadadvisor.html">
+                    <div class="icon"></div>
+                    แดชบอร์ด
+                </a></li>
+                <li><a href="project_advisor.html">
+                    <div class="icon"></div>
+                    โครงงานที่ปรึกษา
+                </a></li>
+                <li><a href="progress_review.html">
+                    <div class="icon"></div>
+                    ตรวจสอบความก้าวหน้า
+                </a></li>
+                <li><a href="proposal_approval.html">
+                    <div class="icon"></div>
+                    ตรวจสอบการสอบหัวข้อ
+                </a></li>
+                <li><a href="final_exam_review.html">
+                    <div class="icon"></div>
+                    ตรวจการสอบจบ
+                </a></li>
+                <li><a href="document_review.html">
+                    <div class="icon"></div>
+                    ตรวจเอกสาร
+                </a></li>
+                <li><a href="#" class="active">
+                    <div class="icon"></div>
+                    ลงนามอนุมัติ
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="content-header">
+                <h2>ลงนามอนุมัติ</h2>
+            </div>
+
+            <div class="schedule-container">
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="committee-year" class="filter-label-year">ปีการศึกษา</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีที่ต้องการค้นหา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                            </select>
+
+                            <label for="project-type" class="filter-label-se">ประเภทโครงงาน</label>
+                            <select id="project-type" class="project-selector">
+                                <option value="default" disabled selected>-- เลือกประเภทที่ต้องการค้นหา --</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="table-content-wrapper"> 
+                <div class="card-container"> 
+                    <div class="project-card">
+                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2> 
+                        <div class="info-item">
+                            <span class="label">รหัสโครงงาน :</span>
+                            <span class="value">T0001</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="label">ชื่อนักศึกษา :</span>
+                            <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">รหัสนักศึกษา :</span>
+                            <span class="value">6806022510xxx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">สถานะ :</span>
+                            <span class="value">สอบหัวข้อ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ผลสอบ :</span>
+                            <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ลงนามอนุมัติ :</span>
+                            <span class="status namema">ยังไม่ได้ลงนามอนุมัติ</span>
+                        </div>
+                        <div class="button-container">
+                            <a href="#project-details-modal"
+                            class="detail-button">ดูรายละเอียด</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2> 
+                        <div class="info-item">
+                            <span class="label">รหัสโครงงาน :</span>
+                            <span class="value">T0003</span>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="label">ชื่อนักศึกษา :</span>
+                            <span class="value">นายกฤษนัย โถมสันเทียะ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">รหัสนักศึกษา :</span>
+                            <span class="value">6806022510xxx</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">สถานะ :</span>
+                            <span class="value">สอบจบ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ผลสอบ :</span>
+                            <span class="status pending">อยู่ระหว่างการตรวจสอบ</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">ลงนามอนุมัติ :</span>
+                            <span class="status namema">ยังไม่ได้ลงนามอนุมัติ</span>
+                        </div>
+                        <div class="button-container">
+                            <a href="#project-details-modal"
+                            class="detail-button">ดูรายละเอียด</a>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#" class="page-link prev-next-link" data-page="prev">&lt;</a>
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                    <a href="#" class="page-link" data-page="2">2</a>
+                    <a href="#" class="page-link" data-page="3">3</a>
+                    <a href="#" class="page-link" data-page="4">4</a>
+                    <a href="#" class="page-link prev-next-link" data-page="next">&gt;</a>
+                </div>
+            </div>
+        </main>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="/help">ช่วยเหลือ</a>
+            <a href="/contact">ติดต่อ</a>
+            <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+
+            <div id="project-details-modal" class="modal">
+                <div class="modal-content-commit">
+                    <a href="#" class="close-btn">&times;</a>
+
+                    <div class="modal-body-commit">
+                        <h3 class="detail-title">รายละเอียดโครงการ</h3>
+                        <div class="data-grouplo info-block">
+                            <div class="info-row"><div class="info-label">ชื่อโครงการ :</div><div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+
+                            <div class="info-row"><div class="info-label">ประเภทโครงงาน :</div><div class="info-value">โครงงานสหกิจ</div></div>
+
+                            <div class="info-row"><div class="info-label">ปีการศึกษา :</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+
+                            <div class="info-row"><div class="info-label">วัน / เวลา / สถานที่สอบ :</div><div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div></div>
+
+                            <div class="info-row"><div class="info-label">สถานะ :</div><div class="info-value">สอบหัวข้อ</div></div>
+
+                            <div class="info-row">
+                                <div class="info-label">ผู้จัดทำ : </div>
+                                
+                                <div class="person-list-detail">
+                                    <div class="person-name">นางสาวไรบีนา มะเก๊ะ 6806022510122</div>
+                                    <div class="person-name">นายคฤษฐ์ เสือเดช 6806022510634</div>
+                                    <div class="person-name">นางสาวชาลิสา ยิ้มลำใย 6806022510653</div>
+                                </div>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">อาจารย์ที่ปรึกษา :</div>
+                                
+                                <div class="person-list-detail">
+                                    <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง อาจารย์ที่ปรึกษา</div>
+                                    <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ อาจารย์ที่ปรึกษาร่วม</div>
+                                </div>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">ไฟล์แนบ :</div>
+                                <a href="ไฟล์ปริญญานิพนธ์.pdf" target="_blank" class="file-link">
+                                    <i class="fas fa-file-pdf"></i>ไฟล์ปริญญานิพนธ์.pdf
+                                </a>
+                            </div>
+
+                            <div class="info-row">
+                                <div class="info-label">ลงนามอนุมัติ :</div>
+                                
+                                <div class="info-content-checkbox">
+                                    <input type="checkbox" id="signApproval" name="status" value="อนุมัติ">
+                                    <label for="signApproval">ลงนามเพื่ออนุมัติ</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="ter-btn">
+                            <a href="visor_name.html">
+                                <button type="save">บันทึก</button>
+                                <a href="#" class="ter-btn-back">ปิด</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+</body>
+</html>

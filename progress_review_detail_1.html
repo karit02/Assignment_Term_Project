@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/visor.css">
     <title>ระบบจัดการโครงงาน - อาจารย์ที่ปรึกษา</title>
 </head>
 <body>
@@ -37,11 +38,11 @@
                     <div class="icon"></div>
                     แดชบอร์ด
                 </a></li>
-                <li><a href="project_advisor.html" class="active">
+                <li><a href="project_advisor.html">
                     <div class="icon"></div>
                     โครงงานที่ปรึกษา
                 </a></li>
-                <li><a href="progress_review.html">
+                <li><a href="progress_review.html" class="active">
                     <div class="icon"></div>
                     ตรวจสอบความก้าวหน้า
                 </a></li>
@@ -67,11 +68,29 @@
         <!-- Main Content -->
         <main class="content">
             <div class="content-header">
-                <h2>โครงงานที่ปรึกษา</h2>
-                <div class="breadcrumb">หน้าแรก > โครงงานที่ปรึกษา > รายละเอียด</div>
+                <h2>ตรวจสอบความก้าวหน้า</h2>
+                <div class="breadcrumb">หน้าแรก > ตรวจสอบความก้าวหน้า > รายละเอียด</div>
             </div>
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
+                            <select id="week-select" class="year-selector" onchange="goToWeek(this)">
+                                <option value="progress_review_detail_1.html" selected>1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="progress_review_detail.html">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function goToWeek(sel) {
+                        if (sel.value) window.location.href = sel.value;
+                    }
+                </script>
 
-            <div class="content-body">
+            <div class="content-body-commitone">
                 <div class="detail-container">
 
                     <h3 class="detail-title">รายละเอียดโครงการ</h3>
@@ -87,19 +106,11 @@
                         </div>
                         <div class="info-row">
                             <div class="info-label">ปีการศึกษา :</div>
-                            <div class="info-value">2568</div>
+                            <div class="info-value">2568 ภาคเรียนที่ 1</div>
                         </div>
                         <div class="info-row">
-                            <div class="info-label">ภาคเรียน :</div>
-                            <div class="info-value">ภาคเรียนที่ 1</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">สถานะ :</div>
-                            <div class="info-value">สอบหัวข้อ</div>
-                        </div>
-                        <div class="info-row status-row">
-                            <div class="info-label">ผลสอบหัวข้อ :</div>
-                            <div class="info-value"><span class="status-badge pending">อยู่ระหว่างการตรวจสอบ</span></div>
+                            <div class="info-label">วัน / เวลา / สถานที่สอบ :</div>
+                            <div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div>
                         </div>
                     </div>
                     
@@ -129,21 +140,32 @@
 
                     <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
                     <div class="file-link-section data-group">
-                        <a href="ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
-                            <i class="fas fa-file-pdf"></i> ไฟล์ระบบยืม - คืนคุรุภัณฑ์.pdf
+                        <a href="ระบบยืม - คืนคุรุภัณฑ์.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-pdf"></i> ระบบยืม - คืนคุรุภัณฑ์.pdf
                         </a>
                         <a href="ไฟล์นำเสนอ.pdf" target="_blank" class="file-link">
                             <i class="fas fa-file-powerpoint"></i> ไฟล์นำเสนอ.pdf
                         </a>
                     </div>
                 </div>
+                <div style="width:100%; margin: 32px 0 18px 0;">
+                    <hr style="border: none; border-top: 5px solid #a9a9a9; width: 100%;">
+                </div>
+                <div class="comment-section-title">ความคิดเห็นอาจารย์ที่ปรึกษา</div>
+                <div class="comment-input-area">
+                    <div class="comment-box">
+                        ดำเนินการได้ดี มีความก้าวหน้าในสัปดาห์นี้
+                    </div>
+                </div>
                 <div class="ter-btn">
-                    <a href="project_advisor.html">
+                    <a href="progress_review_detail_1_edit.html">
+                    <button type="solve">แก้ไข</button></a>
+                    <a href="progress_review.html">
                     <button type="back">ย้อนกลับ</button></a>
                 </div>
             </div>
-            </main>
-    </div>
+        </main>
+    </div> 
 
     <!-- Footer -->
     <footer class="footer">
@@ -155,5 +177,46 @@
             <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
         </div>
     </footer>
+
+    <script>
+        function getProgressColor(percent) {
+            if (percent <= 0) return '#ef4444';
+            if (percent < 50) {
+                let r = 239 + Math.round((245-239)*(percent/50));
+                let g = 68 + Math.round((158-68)*(percent/50));
+                let b = 68 + Math.round((66-68)*(percent/50));
+                return `rgb(${r},${g},${b})`;
+            }
+            if (percent < 80) {
+                let r = 245 + Math.round((253-245)*((percent-50)/30));
+                let g = 158 + Math.round((224-158)*((percent-50)/30));
+                let b = 66 + Math.round((71-66)*((percent-50)/30));
+                return `rgb(${r},${g},${b})`;
+            }
+            let r = 253 + Math.round((34-253)*((percent-80)/20));
+            let g = 224 + Math.round((197-224)*((percent-80)/20));
+            let b = 71 + Math.round((94-71)*((percent-80)/20));
+            return `rgb(${r},${g},${b})`;
+        }
+
+        const slider = document.getElementById('progress-slider');
+        const value = document.getElementById('progress-value');
+        function updateProgressLabel() {
+            value.textContent = slider.value + '%';
+            value.style.color = getProgressColor(parseInt(slider.value, 10));
+            // คำนวณตำแหน่ง label ตามค่า slider
+            let percent = (slider.value - slider.min) / (slider.max - slider.min);
+            value.style.setProperty('--percent', percent);
+        }
+        slider.addEventListener('input', updateProgressLabel);
+        updateProgressLabel();
+
+        function updateProgressLabel() {
+            value.textContent = slider.value + '%';
+            const color = getProgressColor(parseInt(slider.value, 10));
+            value.style.color = color;
+            slider.style.setProperty('--slider-color', color);
+        }
+    </script>
 </body>
 </html>

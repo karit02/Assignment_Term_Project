@@ -157,8 +157,8 @@ body {
     padding: 0;
     position: sticky;
     top: 134px;
-    height: calc(78vh - 140px);
-    max-height: calc(78vh - 140px);
+    height: calc(83vh - 140px);
+    max-height: calc(83vh - 140px);
     overflow-y: auto;
 }
 
@@ -3435,4 +3435,3 @@ body:has(.modal:target) {
     background-color: #cdcfd1;
     transform: translateY(-1px);
 }
-
