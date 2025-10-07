@@ -1460,8 +1460,6 @@ body:has(.modal:target) {
     color: #004b9a;
 }
 
-
-
 .modal-content-committee .close-btn {
     position: absolute;
     right: 18px;
