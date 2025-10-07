@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>ข้อเสนอแนะจากอาจารย์ - นักศึกษา</title>
+</head>
+<body>
+    <!-- Banner Header -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-left">
+                <div class="logo">IT</div>
+                <div class="banner-text">
+                    <h1>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</h1>
+                    <p>ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+                </div>
+            </div>
+            <div class="banner-user">
+                <div class="user-avatar">F</div>
+                <div class="user-name">Final Devil</div>
+                <a href="login.html" class="logout-btn">ออกจากระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                เมนู - นักศึกษา
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashbroadstd.html" class="active">
+                    <div class="icon"></div>
+                    แดชบอร์ด
+                </a></li>
+                <li><a href="project-proposal.html">
+                    <div class="icon"></div>
+                    เสนอ / แก้ไข 
+                    <br>รายละเอียดโครงงาน
+                </a></li>
+                <li><a href="weekly-progress.html">
+                    <div class="icon"></div>
+                    รายงานความก้าวหน้า
+                </a></li>
+                <li><a href="topic-exam-request.html">
+                    <div class="icon"></div>
+                    ยื่นสอบหัวข้อ / สอบจบ
+                </a></li>
+                <li><a href="feedback.html">
+                    <div class="icon"></div>
+                    ความคิดเห็นจากอาจารย์
+                </a></li>
+                <li><a href="document-upload.html">
+                    <div class="icon"></div>
+                    อัปโหลดเอกสาร
+                </a></li>
+            </ul>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="content-header">
+                <h2>ความคิดเห็นจากอาจารย์</h2>
+            </div>
+            <div class="feedback-container">
+                <!-- รอบรายงานครั้งที่ 1 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div>
+                            <h3>รายงานความก้าวหน้าครั้งที่ 1</h3>
+                            <p>วันที่ 1 ตุลาคม 2568</p>
+                        </div>
+                        <button onclick="toggleFeedback(1, this)">ดูรายละเอียด</button>
+                    </div>
+
+                    <div class="feedback-details" id="details-1">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"><div style="width: 40%;">40%</div></div>
+                        </div>
+                        <p><strong>อาจารย์ที่ปรึกษา:</strong> ปรับหัวข้อให้ชัดเจนมากขึ้น และเพิ่มเนื้อหาในส่วนของวัตถุประสงค์</p>
+                        <p><strong>อาจารย์ประจำวิชา:</strong> รูปแบบรายงานถูกต้องแล้ว แต่ควรเพิ่มแผนการดำเนินงานในภาคผนวก</p>
+                    </div>
+                </div>
+
+                <!-- รอบรายงานครั้งที่ 2 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div>
+                            <h3>รายงานความก้าวหน้าครั้งที่ 2</h3>
+                            <p>วันที่ 3 ตุลาคม 2568</p>
+                        </div>
+                        <button onclick="toggleFeedback(2, this)">ดูรายละเอียด</button>
+                    </div>
+
+                    <div class="feedback-details" id="details-2">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"><div style="width: 75%;">75%</div></div>
+                        </div>
+                        <p><strong>อาจารย์ที่ปรึกษา:</strong> โครงการมีความก้าวหน้าในส่วนของผลการทดลองและเก็บผลการทดสอบ</p>
+                        <p><strong>อาจารย์ประจำวิชา:</strong> ปรับรูปแบบรายงานให้เป็นไปตามมาตรฐานรูปแบบ APA</p>
+                    </div>
+                </div>
+
+                <!-- รอบรายงานครั้งที่ 3 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div>
+                            <h3>รายงานความก้าวหน้าครั้งที่ 3</h3>
+                            <p>วันที่ 7 ตุลาคม 2568</p>
+                        </div>
+                        <button onclick="toggleFeedback(3, this)">ดูรายละเอียด</button>
+                    </div>
+
+                    <div class="feedback-details" id="details-3">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"><div style="width: 90%;">90%</div></div>
+                        </div>
+                        <p><strong>อาจารย์ที่ปรึกษา:</strong> ผลการพัฒนาใกล้เสร็จสมบูรณ์ เหลือทดสอบระบบจริง</p>
+                        <p><strong>อาจารย์ประจำวิชา:</strong> เตรียมเอกสารสำหรับการสอบหัวข้อและตรวจสอบรูปแบบก่อนส่ง</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 ภาควิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+        <p>ระบบจัดการโครงงานพิเศษและสหกิจศึกษา</p>
+        <div class="footer-links">
+            <a href="#">ช่วยเหลือ</a>
+            <a href="#">ติดต่อ</a>
+            <a href="#">นโยบายความเป็นส่วนตัว</a>
+        </div>
+    </footer>
+
+    <!-- ===== JS ไว้ตรงนี้ ===== -->
+    <script>
+        function toggleFeedback(id, btn) {
+            const detail = document.getElementById("details-" + id);
+            const isOpen = detail.classList.toggle("show");
+            btn.textContent = isOpen ? "ซ่อนรายละเอียด" : "ดูรายละเอียด";
+        }
+    </script>
+</body>
+</html>
