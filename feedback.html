@@ -80,7 +80,7 @@
 
                     <div class="feedback-details" id="details-1">
                         <div class="progress-bar-container">
-                            <div class="progress-bar"><div style="width: 40%;">40%</div></div>
+                            <div class="progress-bar"><div data-width="40%">40%</div></div>
                         </div>
                         <p><strong>อาจารย์ที่ปรึกษา:</strong> ปรับหัวข้อให้ชัดเจนมากขึ้น และเพิ่มเนื้อหาในส่วนของวัตถุประสงค์</p>
                         <p><strong>อาจารย์ประจำวิชา:</strong> รูปแบบรายงานถูกต้องแล้ว แต่ควรเพิ่มแผนการดำเนินงานในภาคผนวก</p>
@@ -99,7 +99,7 @@
 
                     <div class="feedback-details" id="details-2">
                         <div class="progress-bar-container">
-                            <div class="progress-bar"><div style="width: 75%;">75%</div></div>
+                            <div class="progress-bar"><div data-width="75%">75%</div></div>
                         </div>
                         <p><strong>อาจารย์ที่ปรึกษา:</strong> โครงการมีความก้าวหน้าในส่วนของผลการทดลองและเก็บผลการทดสอบ</p>
                         <p><strong>อาจารย์ประจำวิชา:</strong> ปรับรูปแบบรายงานให้เป็นไปตามมาตรฐานรูปแบบ APA</p>
@@ -118,7 +118,7 @@
 
                     <div class="feedback-details" id="details-3">
                         <div class="progress-bar-container">
-                            <div class="progress-bar"><div style="width: 90%;">90%</div></div>
+                            <div class="progress-bar"><div data-width="90%">90%</div></div>
                         </div>
                         <p><strong>อาจารย์ที่ปรึกษา:</strong> ผลการพัฒนาใกล้เสร็จสมบูรณ์ เหลือทดสอบระบบจริง</p>
                         <p><strong>อาจารย์ประจำวิชา:</strong> เตรียมเอกสารสำหรับการสอบหัวข้อและตรวจสอบรูปแบบก่อนส่ง</p>
@@ -139,12 +139,30 @@
         </div>
     </footer>
 
-    <!-- ===== JS ไว้ตรงนี้ ===== -->
     <script>
         function toggleFeedback(id, btn) {
             const detail = document.getElementById("details-" + id);
             const isOpen = detail.classList.toggle("show");
             btn.textContent = isOpen ? "ซ่อนรายละเอียด" : "ดูรายละเอียด";
+        }
+
+        function toggleFeedback(id, btn) {
+            const detail = document.getElementById("details-" + id);
+            const progress = detail.querySelector(".progress-bar div");
+            const isOpen = detail.classList.toggle("show");
+
+            btn.textContent = isOpen ? "ซ่อนรายละเอียด" : "ดูรายละเอียด";
+
+            if(isOpen) {
+                // รอให้ transition ของ parent เริ่มก่อน แล้วค่อยขยาย progress
+                const width = progress.getAttribute("data-width");
+                setTimeout(() => {
+                    progress.style.width = width;
+                }, 50);
+            } else {
+                // ปิด progress bar
+                progress.style.width = "0";
+            }
         }
     </script>
 </body>
