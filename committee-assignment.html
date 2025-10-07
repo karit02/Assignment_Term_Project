@@ -56,7 +56,6 @@
         <main class="content">
             <div class="content-header">
                 <h2>กำหนดกรรมการสอบ</h2>
-                <div class="breadcrumb">หน้าแรก > กำหนดกรรมการสอบ</div>
             </div>
 
             <div class="schedule-container">
@@ -128,14 +127,13 @@
                 <input type="text" id="exam-type" name="exam-type" placeholder="สอบหัวข้อ" required>
 
                 <label for="exam-date">วันสอบ :</label>
-                <input type="date" id="exam-date" name="exam-date" value="2025-09-11" required>
+                <input type="date" id="exam-date" name="exam-date" value="2025-11-24" required>
 
                 <label for="exam-time">เวลาสอบ :</label>
-                <input type="time" id="exam-time" name="exam-time" value="09:30" required>
+                <input type="time" id="exam-time" name="exam-time" value="08:00" required>
 
                 <label>สถานที่สอบ :</label>
                 <select name="advisor-plus" id="advisor-plus" required>
-                    <option value="default" disabled selected>-- เลือกสถานที่สอบ --</option>
                     <option value="">ตึกคณะเทคโนฯ ห้อง B416</option>
                     <option value="">ตึกคณะเทคโนฯ ห้อง B417</option>
                     <option value="">ตึกคณะเทคโนฯ ห้อง B418</option>
@@ -143,7 +141,6 @@
 
                 <label>กรรมการ :</label>
                 <select name="advisor-plus" id="advisor-plus" required>
-                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 1 --</option>
                     <option value="สุพาภรณ์ ซิ้มเจริญ">ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -170,7 +167,6 @@
                 </select>
 
                 <select name="advisor-plus" id="advisor-plus" required>
-                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 2 --</option>
                     <option value="นิติการ นาคเจือทอง">ผศ.ดร.นิติการ นาคเจือทอง</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
@@ -197,7 +193,6 @@
                 </select>
 
                 <select name="advisor-plus" id="advisor-plus" required>
-                    <option value="default" disabled selected>-- เลือกกรรมการท่านที่ 3 --</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                     <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -224,7 +219,7 @@
                 </select>
 
                 <select name="advisor-plus" id="advisor-plus" required>
-                    <option value="" disabled selected>-- เลือกกรรมการท่านที่ 4 --</option>
+                    <option value="" disabled selected>-</option>
                     <option value="อนิราช มิ่งขวัญ">รศ.ดร.อนิราช มิ่งขวัญ</option>
                     <option value="อรบุษป์ วุฒิกมลชัย">ผศ.อรบุษป์ วุฒิกมลชัย</option>
                     <option value="บีสุดา ดาวเรือง">ผศ.ดร.บีสุดา ดาวเรือง</option>
@@ -279,17 +274,24 @@
         });
 
         document.querySelector('.ter-btn-save').addEventListener('click', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // ป้องกัน default action
+
             if (currentCard) {
-            const statusElement = currentCard.querySelector('.status-text');
-            if (statusElement) {
-                statusElement.textContent = 'รอสอบ';
-                statusElement.style.color = '#2563eb';
-                statusElement.style.fontWeight = 'bold';
+                const statusElement = currentCard.querySelector('.status-text');
+                if (statusElement) {
+                    statusElement.textContent = 'รอสอบ';
+                    statusElement.style.color = '#2563eb';
+                    statusElement.style.fontWeight = 'bold';
+                }
             }
-            }
+
+            // ลบ hash ปัจจุบัน
             window.location.hash = ''; 
+
+            // เด้งไปหน้า dashbroadstd.html
+            window.location.href = 'dashbroadstd.html';
         });
+
 
         document.querySelector('.ter-btn-back').addEventListener('click', function(e) {
             e.preventDefault();

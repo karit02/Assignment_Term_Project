@@ -1348,8 +1348,120 @@ body:has(.modal:target) {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* ปุ่มปิด */
-/* ปุ่มปิด */
+/* ===== Feedback Container ===== */
+.feedback-container {
+    padding: 40px 60px;
+    border-radius: 16px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.feedback-container h2 {
+    color: #1b3c7a;
+    margin-bottom: 25px;
+}
+
+/* ===== Feedback Card ===== */
+.feedback-card {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* ===== Header Section ===== */
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #f3f6ff, #e9f0ff);
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.feedback-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #222;
+}
+
+.feedback-header p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* ===== View Button ===== */
+.feedback-header button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.feedback-header button:hover {
+    background: #0066d6;
+}
+
+/* ===== Progress Bar ===== */
+.progress-bar-container {
+    padding: 15px 25px;
+}
+
+.progress-bar {
+    background: #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 22px;
+}
+
+.progress-bar div {
+    background: linear-gradient(90deg, #007bff, #33b2ff);
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+/* ===== Feedback Details ===== */
+.feedback-details {
+    padding: 20px 25px 25px 25px;
+    border-top: 1px solid #ddd;
+    background: none; /* เอาพื้นหลังออก */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* แสดงเมื่อเปิด */
+.feedback-details.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.feedback-details p {
+    margin: 10px 0;
+}
+
+.feedback-details strong {
+    color: #004b9a;
+}
+
+
+
 .modal-content-committee .close-btn {
     position: absolute;
     right: 18px;
@@ -2064,11 +2176,10 @@ body:has(.modalde:target) {
 }
 
 
+
 .content-body {
-    background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding-top: px;
 }
 
