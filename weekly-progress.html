@@ -67,18 +67,29 @@
             <div class="content-header">
                 <h2>รายงานความก้าวหน้า</h2>
             </div>
-            <div class="content-body">
-                <label for="ter-file">แนบไฟล์เอกสาร :</label>
-                <div class="file-input-wrapper">
-                    <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
-                    <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
-                    <div class="file-name" id="file-name">รายงานความก้าวหน้า.pdf</div>
+                <div class="content-body">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
+                            <select id="week-select" class="year-selector" onchange="goToWeek(this)">
+                                <option value="progress_review_detail_1.html">1</option>
+                                <option value="progress_review_detail_1.html">2</option>
+                                <option value="progress_review_detail_1.html">3</option>
+                                <option value="progress_review_detail.html" disabled selected>4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label for="ter-file">แนบไฟล์เอกสาร :</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="ter-file" name="ter-file" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'ยังไม่ได้เลือกไฟล์'">
+                        <button type="button" onclick="document.getElementById('ter-file').click()">เลือกไฟล์</button>
+                        <div class="file-name" id="file-name">รายงานความก้าวหน้า.pdf</div>
+                    </div>
+                    <div class="ter-btn">
+                        <button type="button" onclick="location.href='progress_review.html'">บันทึก</button>
+                        <button type="reset">ยกเลิก</button>
+                    </div>
                 </div>
-                <div class="ter-btn">
-                    <button type="submit">บันทึก</button>
-                    <button type="reset">ยกเลิก</button>
-                </div>
-            </div>
         </main>
     </div>
 
