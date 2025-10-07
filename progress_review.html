@@ -73,72 +73,93 @@
             </div>
 
             <div class="schedule-container">
-            <div class="table-content-wrapper"> 
-                <div class="progress-card-container">
-                    <div class="progress-card">
-                        <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2>
-                        <div class="progress-percent">
-                            <span class="percent-value">30</span>
-                            <span class="percent-sign">%</span>
-                        </div>
-                        <div class="progress-updated">
-                            สัปดาห์ที่: 4
-                        </div>
-                        <div class="progress-info">
-                            <div class="info-item">
-                                <span class="label">รหัสโครงงาน :</span>
-                                <span class="value">T0001</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">ชื่อนักศึกษา :</span>
-                                <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">รหัสนักศึกษา :</span>
-                                <span class="value">6806022510xxx</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">สถานะ :</span>
-                                <span class="status namema">รอตรวจสอบ</span>
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <a href="progress_review_detail.html">
-                                <button class="detail-button">ดูรายละเอียด</button>
-                            </a>
+                <div class="dropdown-row">
+                    <div class="controls-bar">
+                        <div class="filter-area">
+                            <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
+                            <select id="week-select" class="year-selector" onchange="goToWeek(this)">
+                                <option value="default" disabled selected>-- เลือกสัปดาห์ที่ต้องการค้นหา --</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                                <option value="">6</option>
+                                <option value="">7</option>
+                                <option value="">8</option>
+                                <option value="">9</option>
+                                <option value="">10</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="progress-card">
-                        <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
-                        <div class="progress-percent">
-                            <span class="percent-value">60</span>
-                            <span class="percent-sign">%</span>
+                </div>
+
+                    <div class="progress-card-container">
+                        <div class="progress-card">
+                            <h2 class="card-title">ระบบยืม - คืนคุรุภัณฑ์</h2>
+                            <div class="progress-percent">
+                                <span class="percent-value">30</span>
+                                <span class="percent-sign">%</span>
+                            </div>
+                            <div class="progress-updated">
+                                สัปดาห์ที่ : 3
+                            </div>
+                            <div class="progress-info">
+                                <div class="info-item">
+                                    <span class="label">รหัสโครงงาน :</span>
+                                    <span class="value">T0001</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">ชื่อนักศึกษา :</span>
+                                    <span class="value">นางสาวไรบีนา มะเก๊ะ</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">รหัสนักศึกษา :</span>
+                                    <span class="value">6806022510xxx</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">สถานะ :</span>
+                                    <span class="status namema">รอตรวจสอบ</span>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <a href="progress_review_detail.html">
+                                    <button class="detail-button">ดูรายละเอียด</button>
+                                </a>
+                            </div>
                         </div>
-                        <div class="progress-updated">
-                            สัปดาห์ที่: 6
-                        </div>
-                        <div class="progress-info">
-                            <div class="info-item">
-                                <span class="label">รหัสโครงงาน :</span>
-                                <span class="value">T0003</span>
+                        <div class="progress-card">
+                            <h2 class="card-title">โปรแกรมแปลภาษาลิง</h2>
+                            <div class="progress-percent">
+                                <span class="percent-value">60</span>
+                                <span class="percent-sign">%</span>
                             </div>
-                            <div class="info-item">
-                                <span class="label">ชื่อนักศึกษา :</span>
-                                <span class="value">นายกฤษนัย โถมสันเทียะ</span>
+                            <div class="progress-updated">
+                                สัปดาห์ที่ : 6
                             </div>
-                            <div class="info-item">
-                                <span class="label">รหัสนักศึกษา :</span>
-                                <span class="value">6806022510xxx</span>
+                            <div class="progress-info">
+                                <div class="info-item">
+                                    <span class="label">รหัสโครงงาน :</span>
+                                    <span class="value">T0003</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">ชื่อนักศึกษา :</span>
+                                    <span class="value">นายกฤษนัย โถมสันเทียะ</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">รหัสนักศึกษา :</span>
+                                    <span class="value">6806022510xxx</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">สถานะ :</span>
+                                    <span class="status pass">ตรวจสอบแล้ว</span>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <span class="label">สถานะ :</span>
-                                <span class="status pass">ตรวจสอบแล้ว</span>
+                            <div class="button-container">
+                                <a href="">
+                                    <button class="detail-button">ดูรายละเอียด</button>
+                                </a>
                             </div>
-                        </div>
-                        <div class="button-container">
-                            <a href="progress_review_detail.html">
-                                <button class="detail-button">ดูรายละเอียด</button>
-                            </a>
                         </div>
                     </div>
                 </div>

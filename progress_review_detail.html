@@ -71,26 +71,12 @@
                 <h2>ตรวจสอบความก้าวหน้า</h2>
                 <div class="breadcrumb">หน้าแรก > ตรวจสอบความก้าวหน้า > รายละเอียด</div>
             </div>
-        <div class="dropdown-row">
-            <div class="controls-bar">
-                <div class="filter-area">
-                    <label for="week-select" class="filter-label-year">สัปดาห์ที่</label>
-                    <select id="week-select" class="year-selector" onchange="goToWeek(this)">
-                        <option value="default" disabled selected>-- เลือกสัปดาห์ที่ที่ต้องการค้นหา --</option>
-                        <option value="progress_review_detail_1.html">1</option>
-                        <option value="progress_review_detail_1.html">2</option>
-                        <option value="progress_review_detail_1.html">3</option>
-                        <option value="progress_review_detail.html">4</option>
-                    </select>
-                </div>
-            </div>
-        </div>
 
-<script>
-    function goToWeek(sel) {
-        if (sel.value) window.location.href = sel.value;
-    }
-</script>
+        <script>
+            function goToWeek(sel) {
+                if (sel.value) window.location.href = sel.value;
+            }
+        </script>
 
             <div class="content-body-commitone">
                 <div class="detail-container">
@@ -147,43 +133,90 @@
                         </a>
                     </div>
                 </div>
-                <div style="width:100%; margin: 32px 0 18px 0;">
-                    <hr style="border: none; border-top: 5px solid #a9a9a9; width: 100%;">
-                </div>
-                <div class="comment-progress-row" style="display: flex; gap: 40px;">
-                    <!-- ฝั่งซ้าย: คอมเมนต์ -->
-                    <div class="comment-col" style="flex:1;">
-                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
-                            ความคิดเห็นของอาจารย์ที่ปรึกษา
-                        </div>
-                        <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
-                    </div>
-                    <!-- ฝั่งขวา: % ความก้าวหน้า -->
-                    <div class="progress-col" style="flex:1;">
-                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
-                            % ความก้าวหน้า
-                        </div>
-                        <div class="slider-with-label">
-                            <span id="progress-value" style="display:block; text-align:center; font-size:2.2em; font-weight:bold; color:#ff9800;">40%</span>
-                            <input type="range" id="progress-slider" min="0" max="100" step="10" value="40" style="width:220px; accent-color:#ff9800;">
-                        </div>
-                    </div>
-                </div>
-                <div class="comment-status-check">
-                        <label>
-                            <input type="checkbox" id="send-notification" name="send-notification">
-                            ลงชื่อรับทราบ
-                        </label>
-                    </div>
+
                 <div class="ter-btn">
-                    <a href="progress_review.html">
-                    <button type="solve">บันทึก</button></a>
+                    <a href="#project-details-percen">
+                    <button type="solve">แก้ไข</button></a>
                     <a href="progress_review.html">
                     <button type="back">ย้อนกลับ</button></a>
                 </div>
             </div>
         </main>
-    </div> 
+    </div>
+
+    <div id="project-details-percen" class="modale">
+        <div class="modale-content">
+            <a href="#close" class="close-btn" aria-label="Close">&times;</a> 
+            
+            <h3 class="detail-modale-title comment-section-title">รายละเอียดโครงการ</h3>
+            
+            <div class="modal-form-view"> 
+                
+                <div class="left-detail-col-form info-block-card">
+                    <!-- <h3 class="card-title-header">ข้อมูลโครงงาน</h3> -->
+                    <div class="data-grouplo">
+                        <div class="info-row"><div class="info-label">ชื่อโครงการ :</div><div class="info-value project-name-text">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+                        <div class="info-row"><div class="info-label">ประเภทโครงงาน :</div><div class="info-value">โครงงานสหกิจ</div></div>
+                        <div class="info-row"><div class="info-label">ปีการศึกษา :</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">ผู้จัดทำ : </div>
+                            <div class="person-list-detail">
+                                <div class="person-name">นางสาวไรบีนา มะเก๊ะ <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นายคฤษฐ์ เสือเดช <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นางสาวชาลิสา ยิ้มลำใย <span class="student-id">6806022510xxx</span></div>
+                            </div>
+                        </div>
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">อาจารย์ที่ปรึกษา :</div>
+                            <div class="person-list-detail">
+                                <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง (อาจารย์ที่ปรึกษา)</div>
+                                <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ (อาจารย์ที่ปรึกษาร่วม)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-row info-row-section last-row">
+                            <div class="info-label label-section-header">ไฟล์แนบ :</div>
+                            <a href="ทก.01.pdf" target="_blank" class="file-link">
+                                <i class="fas fa-file-pdf"></i> ทก.01.pdf
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h3 class="card-idea-header">แสดงความคิดเห็น</h3>
+                    <div class="comment-input-area">
+                        <!-- <label for="comment-text" class="input-label">กรอกความคิดเห็นของคุณ:</label> -->
+                        <textarea id="comment-text" placeholder="ระบุข้อเสนอแนะ หรือคำแนะนำสำหรับนักศึกษา..." rows="5" class="comment-textarea"></textarea>
+                    </div>
+
+                    <h3 class="card-idea-header">ความคืบหน้าของโครงงาน</h3> 
+                        <div class="progress-section-inline">
+                            <div class="progress-bar-container">
+                                <div id="progress-bar" class="progress-bar" style="width: 30%;"></div> 
+                            </div>
+                            <span id="progress-percent" class="progress-percent-value">30%</span>
+                        </div>
+
+                        <div class="progress-action-buttons">
+                            <button id="decrease-button" class="detail-button update-button decrease-btn">ลด (-10%)</button>
+                            <button id="update-button" class="detail-button update-button">เพิ่ม (+10%)</button>
+                            <div class="acknowledge-check">
+                                <label>
+                                    <input type="checkbox" id="sign-acknowledge" name="sign-acknowledge">
+                                    ลงชื่อรับทราบ
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modale-footer-actions">
+                            <a href="progress_review.html">
+                            <button class="pri-btn" type="submit">บันทึก</button></a>
+                            <a href="progress_review_detail.html" class="ter-btn-back-link close-btn-action">
+                            <button class="ter-btn-back">ยกเลิก</button></a>
+                        </div>
+                </div> 
+            </div>
+
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -196,45 +229,125 @@
         </div>
     </footer>
 
-    <script>
+        <script>
+            function getProgressColor(percent) {
+                if (percent <= 0) return '#ef4444';
+                if (percent < 50) {
+                    let r = 239 + Math.round((245-239)*(percent/50));
+                    let g = 68 + Math.round((158-68)*(percent/50));
+                    let b = 68 + Math.round((66-68)*(percent/50));
+                    return `rgb(${r},${g},${b})`;
+                }
+                if (percent < 80) {
+                    let r = 245 + Math.round((253-245)*((percent-50)/30));
+                    let g = 158 + Math.round((224-158)*((percent-50)/30));
+                    let b = 66 + Math.round((71-66)*((percent-50)/30));
+                    return `rgb(${r},${g},${b})`;
+                }
+                let r = 253 + Math.round((34-253)*((percent-80)/20));
+                let g = 224 + Math.round((197-224)*((percent-80)/20));
+                let b = 71 + Math.round((94-71)*((percent-80)/20));
+                return `rgb(${r},${g},${b})`;
+            }
+
+            const slider = document.getElementById('progress-slider');
+            const value = document.getElementById('progress-value');
+            function updateProgressLabel() {
+                value.textContent = slider.value + '%';
+                value.style.color = getProgressColor(parseInt(slider.value, 10));
+                // คำนวณตำแหน่ง label ตามค่า slider
+                let percent = (slider.value - slider.min) / (slider.max - slider.min);
+                value.style.setProperty('--percent', percent);
+            }
+            slider.addEventListener('input', updateProgressLabel);
+            updateProgressLabel();
+
+            function updateProgressLabel() {
+                value.textContent = slider.value + '%';
+                const color = getProgressColor(parseInt(slider.value, 10));
+                value.style.color = color;
+                slider.style.setProperty('--slider-color', color);
+            }
+        </script>
+
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. รับค่า Element ที่เกี่ยวข้อง (เพิ่ม decreaseButton)
+        const updateButton = document.getElementById('update-button');
+        const decreaseButton = document.getElementById('decrease-button'); // <--- NEW
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercent = document.getElementById('progress-percent');
+        const increment = 10; // ค่าที่ต้องการเพิ่ม/ลดแต่ละครั้ง
+        const maxProgress = 100; // ค่าสูงสุด
+        const minProgress = 0;   // <--- NEW: ค่าต่ำสุด
+
+        // ฟังก์ชันสำหรับคำนวณสี (คงเดิม)
         function getProgressColor(percent) {
-            if (percent <= 0) return '#ef4444';
-            if (percent < 50) {
-                let r = 239 + Math.round((245-239)*(percent/50));
-                let g = 68 + Math.round((158-68)*(percent/50));
-                let b = 68 + Math.round((66-68)*(percent/50));
-                return `rgb(${r},${g},${b})`;
-            }
-            if (percent < 80) {
-                let r = 245 + Math.round((253-245)*((percent-50)/30));
-                let g = 158 + Math.round((224-158)*((percent-50)/30));
-                let b = 66 + Math.round((71-66)*((percent-50)/30));
-                return `rgb(${r},${g},${b})`;
-            }
-            let r = 253 + Math.round((34-253)*((percent-80)/20));
-            let g = 224 + Math.round((197-224)*((percent-80)/20));
-            let b = 71 + Math.round((94-71)*((percent-80)/20));
-            return `rgb(${r},${g},${b})`;
+            let p = Math.max(0, Math.min(100, percent));
+            let hue = (p * 1.2); 
+            return `hsl(${hue}, 80%, 40%)`;
         }
 
-        const slider = document.getElementById('progress-slider');
-        const value = document.getElementById('progress-value');
-        function updateProgressLabel() {
-            value.textContent = slider.value + '%';
-            value.style.color = getProgressColor(parseInt(slider.value, 10));
-            // คำนวณตำแหน่ง label ตามค่า slider
-            let percent = (slider.value - slider.min) / (slider.max - slider.min);
-            value.style.setProperty('--percent', percent);
+        // ฟังก์ชันสำหรับดึงค่าเปอร์เซ็นต์ปัจจุบัน (คงเดิม)
+        function getCurrentProgress() {
+            const currentWidthStyle = progressBar.style.width || "0%"; 
+            return parseInt(currentWidthStyle, 10);
         }
-        slider.addEventListener('input', updateProgressLabel);
-        updateProgressLabel();
 
-        function updateProgressLabel() {
-            value.textContent = slider.value + '%';
-            const color = getProgressColor(parseInt(slider.value, 10));
-            value.style.color = color;
-            slider.style.setProperty('--slider-color', color);
+        // ฟังก์ชันอัพเดต UI (รวมการตั้งค่าแถบความคืบหน้า)
+        function updateUI(newProgress) {
+            const newColor = getProgressColor(newProgress);
+            
+            progressBar.style.width = newProgress + '%';
+            progressBar.style.backgroundColor = newColor; 
+            
+            progressPercent.textContent = newProgress + '%';
+            progressPercent.style.color = newColor; 
+            
+            // จัดการสถานะปุ่ม เพิ่ม/ลด
+            if (updateButton) updateButton.disabled = (newProgress >= maxProgress);
+            if (decreaseButton) decreaseButton.disabled = (newProgress <= minProgress);
+
+            console.log('Progress set to: ' + newProgress + '%');
         }
-    </script>
+        
+        // ==========================================================
+        // 2. จัดการ Event Listener สำหรับปุ่มเพิ่ม (+10%) (ปรับปรุง)
+        // ==========================================================
+        if (updateButton) {
+            updateButton.addEventListener('click', function() {
+                let currentProgress = getCurrentProgress();
+                let newProgress = currentProgress + increment;
+
+                if (newProgress > maxProgress) {
+                    newProgress = maxProgress;
+                }
+                
+                updateUI(newProgress);
+            });
+        }
+        
+        // ==========================================================
+        // 3. จัดการ Event Listener สำหรับปุ่มลด (-10%) <--- NEW
+        // ==========================================================
+        if (decreaseButton) {
+            decreaseButton.addEventListener('click', function() {
+                let currentProgress = getCurrentProgress();
+                let newProgress = currentProgress - increment; // เปลี่ยนเป็นการลบ
+
+                if (newProgress < minProgress) {
+                    newProgress = minProgress; // จำกัดไม่ให้ต่ำกว่า 0
+                }
+                
+                updateUI(newProgress);
+            });
+        }
+        
+        // 4. ตั้งค่าเริ่มต้นเมื่อโหลดหน้า
+        const initialProgress = getCurrentProgress();
+        updateUI(initialProgress); // ใช้ updateUI เพื่อกำหนดสีและสถานะปุ่มเริ่มต้น
+    });
+</script>
+
 </body>
 </html>

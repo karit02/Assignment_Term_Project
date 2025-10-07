@@ -1,25 +1,8 @@
 /* Progress Card */
 .progress-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
-    padding: 22px 20px 18px 20px;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-    flex: 1 1 320px;
-    max-width: 320px;
-    min-width: 260px;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease-in-out;
 }
 
 .progress-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .progress-card-container {
@@ -27,8 +10,7 @@
     flex-wrap: wrap;
     gap: 40px;
     justify-content: flex-start;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-left: 10px;
 }
 
 .progress-card .card-title {
@@ -362,3 +344,4 @@
         justify-content: flex-start;
     }
 }
+

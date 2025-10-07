@@ -553,7 +553,7 @@ body {
 .data-grouplo {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    margin-top: 36px;
+    margin-top: 22px;
     overflow: hidden;
 }
 
@@ -750,7 +750,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, box-shadow 0.2s;
     text-decoration: none;
-    
 }
 
 .detail-button:hover {
@@ -1820,8 +1819,8 @@ body:has(.modalde:target) {
     
     padding: 3px 40px; 
     border: 1px solid #ddd;
-    width: 65%; 
-    max-width: 800px; 
+    width: 70%; 
+    max-width: 850px; 
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     
@@ -1883,7 +1882,7 @@ body:has(.modalde:target) {
 }
 
 .comment-input-area {
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .input-label {
@@ -1904,9 +1903,9 @@ body:has(.modalde:target) {
     font-size: 1.1rem;
     font-weight: 700;
     color: #1d4ed8;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-bottom: none; 
-    padding-top: 16px;
+    padding-top: 10px;
     padding-left: 15px;
 }
 
@@ -1959,10 +1958,9 @@ body:has(.modalde:target) {
 .comment-section-title {
     font-size: 1.5rem; 
     color: #1a202c; 
-    margin-top: 30px; 
+    margin-top: 24px; 
     margin-bottom: 15px;
-    border-bottom: 2px solid #e2e8f0; 
-    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
 }
 
 .comment-input-area {
@@ -1977,6 +1975,7 @@ body:has(.modalde:target) {
     font-size: 1em;
     resize: vertical; 
     box-sizing: border-box;
+    margin-bottom: 0
 }
 
 .person-list-detail {
@@ -3492,6 +3491,25 @@ body:has(.modal:target) {
     transition: transform 0.4s ease-out; 
 }
 
+.modal-content-proposal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    max-width: 950px; 
+    width: 90%; 
+    
+    max-height: 90vh;
+
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-101%, -75%); 
+    transition: transform 0.4s ease-out; 
+}
+
 /* กำหนดสไตล์สำหรับคลาส namema เพื่อแสดงเป็นแถบสีเขียว */
 .namemapass {
     /* สีข้อความ: ควรเป็นสีขาวเพื่อให้ตัดกับพื้นหลัง */
@@ -3509,4 +3527,145 @@ body:has(.modal:target) {
     
     /* ตรวจสอบให้แน่ใจว่ามันใช้พื้นที่เต็มความกว้างของการ์ด */
     width: 100%; 
+}
+
+/* ส่วน Progress Header */
+.card-title-header {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    border-bottom: 2px solid #eee; /* เส้นแบ่งใต้หัวข้อ */
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* ส่วน Progress Bar และ Percentage */
+.progress-section-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.progress-bar-container {
+    flex: 1; /* ให้ Progress Bar ขยายเต็มพื้นที่ */
+    height: 8px;
+    background-color: #e5e7eb; /* สีเทาอ่อนด้านหลัง */
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    /* ใช้สีส้ม/แดงตามรูปภาพ */
+    background-color: #ff4500; 
+    border-radius: 4px 0 0 4px;
+}
+.progress-percent-value {
+    font-size: 1em;
+    font-weight: 700;
+    color: #333; /* สีตัวเลขเปอร์เซ็นต์ */
+    white-space: nowrap;
+}
+
+/* ส่วนปุ่มและ Checkbox */
+.progress-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ปุ่ม "เพิ่ม (+10%)" */
+.progress-action-buttons .update-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #000000;
+    background-color: #bdbebd; /* สีเทาเข้ม */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.progress-action-buttons .update-button:hover {
+    background-color: #5a5a5a;
+}
+
+/* ปุ่ม "ลด (-10%)" */
+.progress-action-buttons .decrease-btn {
+    background-color: #ddd; 
+    color: #000000;
+    padding: 8px 15px; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-action-buttons .decrease-btn:hover {
+    background-color: #ccc;
+}
+
+/* Checkbox "ลงชื่อรับทราบ" (จัดให้อยู่ในกล่องสไตล์ปุ่ม) */
+.acknowledge-check {
+    padding: 8px 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    white-space: nowrap;
+}
+.acknowledge-check label {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+.acknowledge-check input[type="checkbox"] {
+    margin-right: 8px;
+    /* ปรับขนาด Checkbox ให้ชัดเจน */
+    width: 18px;
+    height: 18px;
+    accent-color: #000000; /* สีเมื่อถูกเลือก */
+}
+
+/* (ถ้าคุณเพิ่มวันที่ด้วย) */
+.date-display {
+    margin-left: auto; 
+    font-size: 0.9em;
+    color: #6b7280;
+}
+
+/* Checkbox "ลงชื่อรับทราบ" (จัดให้อยู่ในกล่องสไตล์ปุ่ม) */
+.acknowledge-check-prop {
+    padding: 8px 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    white-space: nowrap;
+    margin-bottom: 23px;
+
+}
+
+.acknowledge-check-prop label {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.acknowledge-check-prop input[type="checkbox"] {
+    margin-right: 8px;
+    /* ปรับขนาด Checkbox ให้ชัดเจน */
+    width: 18px;
+    height: 18px;
+    accent-color: #000000; /* สีเมื่อถูกเลือก */
 }

@@ -71,33 +71,149 @@
                 <h2>ตรวจสอบการสอบหัวข้อ - อาจารย์ที่ปรึกษา</h2>
                 <div class="breadcrumb">หน้าแรก > ตรวจสอบการสอบหัวข้อ > รายละเอียด</div>
             </div>
-            <div class="content-body">
-                <h3 class="detail-title person-title file-title">ไฟล์เอกสารสอบหัวข้อ</h3>
-                <div class="file-link-section data-group">
-                    <a href="ทก.01.pdf" target="_blank" class="file-link">
-                        <i class="fas fa-file-pdf"></i>ทก.01.pdf
-                    </a>
-                </div>
-                <div style="width:100%; margin: 32px 0 18px 0;">
-                <hr style="border: none; border-top: 5px solid #a9a9a9; width: 100%;">
-                </div>
-                <div class="comment-progress-row" style="display: flex; gap: 40px;">
-                    <div class="comment-col" style="flex:1;">
-                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
-                            ความคิดเห็นของอาจารย์ที่ปรึกษา
+
+             <div class="content-body-commitone">
+                <div class="detail-container">
+
+                    <h3 class="detail-title">รายละเอียดโครงการ</h3>
+                    
+                    <div class="data-group info-block">
+                        <div class="info-row">
+                            <div class="info-label">ชื่อโครงการ :</div>
+                            <div class="info-value">ระบบยืม - คืนคุรุภัณฑ์</div>
                         </div>
-                        <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
+                        <div class="info-row">
+                            <div class="info-label">ประเภทโครงงาน :</div>
+                            <div class="info-value">โครงงานสหกิจ</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">ปีการศึกษา :</div>
+                            <div class="info-value">2568 ภาคเรียนที่ 1</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">วัน / เวลา / สถานที่สอบ :</div>
+                            <div class="info-value">24 กันยายน 2568 / เวลา 08:00 / ตึกคณะเทคโนฯ ห้อง B416</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-description-box">
+                        <p>ระบบนี้ถูกออกแบบมาเพื่อจัดการกระบวนการยืมและคืนครุภัณฑ์ของภาควิชา IT โดยใช้เทคโนโลยี QR Code สำหรับการยืนยันตัวตนและการติดตามสถานะ ช่วยลดขั้นตอนเอกสารและเพิ่มความแม่นยำในการจัดการทรัพย์สิน</p>
+                    </div>
+
+
+                    <h3 class="detail-title person-title">รายชื่อผู้จัดทำโครงการ</h3>
+                    <div class="person-list data-group">
+                        <p>
+                            นางสาวไรบีนา มะเก๊ะ <span class="id-code">6806022510xxx</span>
+                        </p>
+                        <p>
+                            นายคฤษฐ์ เสือเดช <span class="id-code">6806022510xxx</span> 
+                        </p>
+                        <p>
+                            นางสาวชาลิสา ยิ้มลำใย <span class="id-code">6806022510xxx</span> 
+                        </p>
+                    </div>
+
+                    <h3 class="detail-title person-title">อาจารย์ที่ปรึกษา</h3>
+                    <div class="person-list data-group">
+                        <p>ผศ.ดร.นิติการ นาคเจือทอง<span class="role-text">อาจารย์ที่ปรึกษา</span></p>
+                        <p>รศ.ดร.อนิราช มิ่งขวัญ<span class="role-text">อาจารย์ที่ปรึกษาร่วม</span></p>
+                    </div>
+
+                    <h3 class="detail-title person-title file-title">ไฟล์แนบ</h3>
+                    <div class="file-link-section data-group">
+                        <a href="ทก.01.pdf" target="_blank" class="file-link">
+                            <i class="fas fa-file-pdf"></i>ทก.01.pdf
+                        </a>
                     </div>
                 </div>
 
                 <div class="ter-btn">
-                    <a href="proposal_approval.html">
-                    <button type="solve">บันทึก</button></a>
+                    <a href="#project-details-modal">
+                    <button type="solve">แก้ไข</button></a>
                     <a href="proposal_approval.html">
                     <button type="back">ย้อนกลับ</button></a>
                 </div>
             </div>
         </main>
+    </div>
+
+    <div id="project-details-modal" class="modal">
+        <div class="modal-content-proposal">
+            <a href="#close" class="close-btn" aria-label="Close">&times;</a> 
+            
+            <h2 class="detail-main-title">รายละเอียดโครงการ</h2>
+        
+            <div class="modal-grid-two-col">
+                
+                <div class="left-detail-col info-block-card">
+                    <div class="data-group">
+                        <div class="info-row"><div class="info-label">ชื่อโครงการ :</div><div class="info-value project-name-text">ระบบยืม - คืนคุรุภัณฑ์</div></div>
+                        <div class="info-row"><div class="info-label">ประเภทโครงงาน :</div><div class="info-value">โครงงานสหกิจ</div></div>
+                        <div class="info-row"><div class="info-label">ปีการศึกษา :</div><div class="info-value">2568 ภาคเรียนที่ 1</div></div>
+                        
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">ผู้จัดทำ : </div>
+                            <div class="person-list-detail">
+                                <div class="person-name">นางสาวไรบีนา มะเก๊ะ <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นายคฤษฐ์ เสือเดช <span class="student-id">6806022510xxx</span></div>
+                                <div class="person-name">นางสาวชาลิสา ยิ้มลำใย <span class="student-id">6806022510xxx</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-row info-row-section">
+                            <div class="info-label label-section-header">อาจารย์ที่ปรึกษา :</div>
+                            <div class="person-list-detail">
+                                <div class="person-name">ผศ.ดร.นิติการ นาคเจือทอง (อาจารย์ที่ปรึกษา)</div>
+                                <div class="person-name">รศ.ดร.อนิราช มิ่งขวัญ (อาจารย์ที่ปรึกษาร่วม)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-row info-row-section last-row">
+                            <div class="info-label label-section-header">ไฟล์แนบ :</div>
+                            <a href="ทก.01.pdf" target="_blank" class="file-link">
+                                <i class="fas fa-file-pdf"></i> ทก.01.pdf
+                            </a>
+                        </div>
+                    </div>
+                </div> 
+                
+                <div class="right-detail-col">
+                    
+                    <div class="progress-card">
+                        <h4 class="card-title-header">รายงานความคืบหน้า</h4>
+                        <div class="progress-content scrollable">
+                            <div class="report-item"><span class="report-week">สัปดาห์ที่ 1 :</span> ดำเนินการรวบรวมข้อมูลและวิเคราะห์ระบบเสร็จสมบูรณ์</div>
+                            <div class="report-item"><span class="report-week">สัปดาห์ที่ 2 :</span> เริ่มเขียนโค้ดโมดูล A</div>
+                            <div class="report-item"><span class="report-week">สัปดาห์ที่ 3 :</span> พบปัญหาในการเชื่อมต่อฐานข้อมูล</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment-card">
+                        <h4 class="card-title-header comment-header">ความคิดเห็นของอาจารย์ประจำวิชา</h4>
+                        <div class="comment-content">
+                            นักศึกษามีความรับผิดชอบในการส่งรายงาน แต่ควรเพิ่มรายละเอียดการวิเคราะห์ผลให้ชัดเจนกว่านี้
+                        </div>
+                    </div>
+                    
+                    <div class="progress-action-buttons"> 
+                        <div class="acknowledge-check-prop"> 
+                            <label> 
+                            <input type="checkbox" id="sign-acknowledge" name="sign-acknowledge">ลงชื่อรับทราบ
+                            </label> 
+                        </div>
+
+                        <div class="modale-footer-actions"> <a href="proposal_approval.html"> 
+                            <button class="pri-btn" type="submit">บันทึก</button></a> 
+                            <a href="proposal_approval_detail.html" class="ter-btn-back-link close-btn-action"> 
+                            <button class="ter-btn-back">ยกเลิก</button></a> 
+                        </div>
+
+                </div> 
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
     <!-- Footer -->
