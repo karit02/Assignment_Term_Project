@@ -65,23 +65,30 @@
             
             <div class="content-body">
                 <div class="proposal-row">
-                    <label for="sec" class="label-sec">ประเภทโครงงาน</label>
+                    <label for="sec" class="label-sec">ประเภทโครงงาน :</label>
                             <select id="sec" class="sec-selector proposal-select">
-                                <option>โครงงานพิเศษ</option>
-                                <option>โครงงานสหกิจ</option>
+                                <option value="default" disabled selected>-- เลือกประเภทโครงงาน --</option>
+                                <option value="coop">โครงงานสหกิจ</option>
+                                <option value="coop">โครงงานพิเศษ</option>
                             </select>
 
-                    <label for="year" class="label-year">ปีการศึกษา</label>
-                            <select id="year" class="year-selector proposal-select">
-                                <option>2570</option>
-                                <option>2569</option>
-                                <option>2578</option>
-                                <option>2567</option>
-                                <option>2566</option>
+                    <label for="year" class="label-year">ปีการศึกษา :</label>
+                            <select id="committee-year" class="year-selector">
+                                <option value="default" disabled selected>-- เลือกปีการศึกษา --</option>
+                                <option value="2560">2560</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
                             </select>
 
-                    <label for="term" class="label-term">ภาคเรียน</label>
+                    <label for="term" class="label-term">ภาคเรียน :</label>
                             <select id="term" class="term-selector proposal-select">
+                                <option value="default" disabled selected>-- เลือกภาคเรียน --</option>
                                 <option>ภาคเรียนที่ 1</option>
                                 <option>ภาคเรียนที่ 2</option>
                             </select>
@@ -92,10 +99,10 @@
                 <input type="text" name="topic" placeholder="ระบบยืม - คืนคุรุภัณฑ์">
 
                 <!-- นักศึกษา -->
-                <label>สมาชิก</label>
+                <label>สมาชิก :</label>
                     <div class="student-list">
                         <div class="student-card">
-                            <label>นักศึกษาคนที่ 1</label>
+                            <label>นักศึกษาคนที่ 1 :</label>
                             <div class="student-row">
                                 <input type="text" placeholder="6806022510122">
                                 <input type="text" placeholder="นางสาวไรบีนา มะเก๊ะ">
@@ -103,7 +110,7 @@
                         </div>
 
                         <div class="student-card">
-                            <label>นักศึกษาคนที่ 2</label>
+                            <label>นักศึกษาคนที่ 2 :</label>
                             <div class="student-row">
                                 <input type="text" placeholder="68060225634">
                                 <input type="text" placeholder="นายคฤษฐ์ เสือเดช">
@@ -111,15 +118,15 @@
                         </div>
 
                         <div class="student-card">
-                            <label>นักศึกษาคนที่ 3</label>
+                            <label>นักศึกษาคนที่ 3 :</label>
                             <div class="student-row">
                                 <input type="text" placeholder="68060225653">
-                                <input type="text" placeholder="นางสาวชาลิสส ยิ้มลำใย">
+                                <input type="text" placeholder="นางสาวชาลิสา ยิ้มลำใย">
                             </div>
                         </div>
 
                         <div class="student-card">
-                            <label>นักศึกษาคนที่ 4</label>
+                            <label>นักศึกษาคนที่ 4 :</label>
                             <div class="student-row">
                                 <input type="text" >
                                 <input type="text" >
