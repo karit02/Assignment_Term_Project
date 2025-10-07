@@ -1,6 +1,6 @@
 // เก็บข้อมูลผู้ใช้ไว้ใน localStorage (เพื่อ demo)
 const DEFAULT_USERS = [
-    { username: 'stu',     password: '1234', role: 'student', redirect: 'dashbroadstd.html' },
+    { username: 'std',     password: '1234', role: 'student', redirect: 'dashbroadstd.html' },
     { username: 'teacher', password: '1234', role: 'teacher', redirect: 'dashbroadteacher.html' },
     { username: 'visor',   password: '1234', role: 'visor',   redirect: 'dashbroadadvisor.html' },
     { username: 'commit',  password: '1234', role: 'commit',  redirect: 'dashbroadcommit.html' },
