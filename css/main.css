@@ -3780,3 +3780,183 @@ body:has(.modal:target) {
     height: 18px;
     accent-color: #000000; /* สีเมื่อถูกเลือก */
 }
+
+/* ========================================================== */
+/* สไตล์สำหรับหน้า ตรวจเอกสาร (Document Review) */
+/* ========================================================== */
+
+.document-review-area {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-section {
+    padding: 20px 0;
+}
+
+/* ------------------ Header และ Divider ------------------ */
+
+.section-header {
+    font-size: 1.25em; 
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-left: 5px solid; /* เตรียมไว้สำหรับใส่สีเฉพาะส่วน */
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+/* สไตล์เฉพาะ Header ไฟล์ */
+.file-header {
+    color: #4338ca; /* สีม่วงน้ำเงินเข้ม */
+    border-left-color: #6366f1; /* แถบสีด้านซ้ายสีน้ำเงิน */
+}
+
+/* สไตล์เฉพาะ Header ความคิดเห็น */
+.comment-header {
+    color: #1f2937; /* สีเทาเข้ม */
+    border-left-color: #f59e0b; /* แถบสีด้านซ้ายสีส้ม/เหลือง */
+}
+
+.section-divider {
+    border-top: 1px solid #e5e7eb; 
+    margin: 20px 0;
+}
+
+/* ------------------ ส่วนไฟล์แนบ ------------------ */
+
+.file-link-wrapper {
+    background-color: #f8fafc; 
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e7ff;
+}
+
+.file-download-link.pdf-link {
+    font-size: 1.1em;
+    color: #1e40af; /* สีน้ำเงินเข้ม */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.file-download-link.pdf-link i {
+    margin-right: 8px;
+    color: #ef4444; /* ไอคอน PDF สีแดง */
+}
+
+.file-download-link.pdf-link:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+/* ------------------ ส่วนความคิดเห็น (Textarea) ------------------ */
+
+.comment-input-wrapper {
+    /* ใช้เพื่อจัดการ margin ภายนอกถ้าจำเป็น */
+}
+
+.advisor-comment-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1em;
+    min-height: 120px;
+    resize: vertical;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.advisor-comment-textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    outline: none;
+}
+
+/* ------------------ ส่วนปุ่ม Actions (Footer) ------------------ */
+
+.action-buttons-container {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px;
+    padding-top: 25px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 20px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* สไตล์ปุ่มหลัก (บันทึก) */
+.primary-save-btn {
+    background-color: #10b981; /* สีเขียว */
+    color: white;
+}
+
+.primary-save-btn:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+
+/* สไตล์ปุ่มรอง (ย้อนกลับ) */
+.secondary-back-btn {
+    border: 1px solid #9ca3af;
+    background-color: #f9fafb;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.secondary-back-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.modale-footer-actions-doc {
+    border-top: none; 
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-bottom: 20px;
+    padding-top: 80px;
+}
+
+.pri-btn-doc {
+    background-color: #3f51b5; 
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    min-width: 80px; 
+}
+
+.pri-btn-doc:hover {
+    background-color: #303f9f; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.ter-btn-back-doc {
+    padding: 12px 26px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    background: #e5e7eb; 
+    color: #374151;
+    text-decoration: none; 
+    display: inline-block;
+}
+
+.ter-btn-back-doc:hover {
+    background-color: #cdcfd1;
+}

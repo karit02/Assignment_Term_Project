@@ -65,35 +65,38 @@
             </ul>
         </aside>
 
-        <!-- Main Content -->
         <main class="content">
             <div class="content-header">
                 <h2>ตรวจเอกสาร - อาจารย์ที่ปรึกษา</h2>
             </div>
-                <div class="content-body">
-                    <h3 class="detail-title person-title file-title">ไฟล์เล่มโปรเจค (ฉบับสมบูรณ์)</h3>
-                <div class="file-link-section data-group">
-                    <a href="ไฟล์ปริญญานิพนธ์.pdf" target="_blank" class="file-link">
-                        <i class="fas fa-file-pdf"></i>ไฟล์ปริญญานิพนธ์.pdf
-                    </a>
-                </div>
-                <div style="width:100%; margin: 32px 0 18px 0;">
-                <hr style="border: none; border-top: 5px solid #a9a9a9; width: 100%;">
-                </div>
-                <div class="comment-progress-row" style="display: flex; gap: 40px;">
-                    <div class="comment-col" style="flex:1;">
-                        <div style="font-size:1.35em; font-weight:700; color:#1a202c; margin-bottom:8px; border-bottom:2px solid #667eea;">
-                            ความคิดเห็นของอาจารย์ที่ปรึกษา
-                        </div>
-                        <textarea class="comment-box" name="advisor_comment" rows="4" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะ..."></textarea>
+            
+            <div class="content-body document-review-area">
+                
+                <div class="review-section file-section">
+                    <h3 class="section-header file-header">ไฟล์เล่มโปรเจค (ฉบับสมบูรณ์)</h3>
+                    <div class="file-link-wrapper">
+                        <a href="ไฟล์ปริญญานิพนธ์.pdf" target="_blank" class="file-download-link pdf-link">
+                            <i class="fas fa-file-pdf"></i> ไฟล์ปริญญานิพนธ์.pdf
+                        </a>
                     </div>
                 </div>
+                
+                <div class="section-divider"></div>
 
-                <div class="ter-btn">
-                    <a href="document_review.html">
-                    <button type="solve">บันทึก</button></a>
-                    <a href="document_review.html">
-                    <button type="back">ย้อนกลับ</button></a>
+                <div class="review-section comment-action-section">
+                    
+                    <h3 class="section-header comment-header">ความคิดเห็นของอาจารย์ที่ปรึกษา</h3>
+                    
+                    <div class="comment-input-wrapper">
+                        <textarea class="advisor-comment-textarea" name="advisor_comment" rows="6" placeholder="กรอกความคิดเห็นหรือข้อเสนอแนะสำหรับการปรับแก้เอกสาร..."></textarea>
+                    </div>
+
+                    <div class="modale-footer-actions-doc">
+                            <a href="document_review.html">
+                            <button class="pri-btn-doc" type="submit">บันทึก</button></a>
+                            <a href="document_review.html" class="ter-btn-back-link close-btn-action">
+                            <button class="ter-btn-back-doc">ยกเลิก</button></a>
+                    </div>
                 </div>
             </div>
         </main>
