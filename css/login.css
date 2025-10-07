@@ -13,9 +13,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #FF7800;
+    background-color: #667eea;
     /* พื้นหลังไล่ระดับสีตามภาพ (Neon Gradient) */
-    background: linear-gradient(135deg, #FF7800, #ffa53e, #FF7800, #ffa53e);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-size: 400% 400%;
     animation: gradientShift 5s ease infinite; /* เพิ่มแอนิเมชันให้พื้นหลังเคลื่อนไหว */
 }
@@ -147,7 +147,7 @@ body {
     font-weight: 520;
     color: white;
     cursor: pointer;
-    background-color: #FF7800;
+    background-color: #667eea;
 }
 
 .gradient-button:hover {
