@@ -6,7 +6,6 @@
   <title>จัดการโครงงาน - ผู้ดูแลระบบ</title>
   <link rel="stylesheet" href="css/main.css">
   <style>
-    /* ปรับ modal รายละเอียดให้สวย */
     .detail-modal-content {
       background: #fff;
       border-radius: 12px;
@@ -242,12 +241,10 @@
         let editingRow = null;
         let targetDeleteRow = null;
 
-        // ปิด modal ทั้งหมด
         function closeProjectModal(){ document.getElementById('projectModal').style.display = 'none'; }
         function closeDetailModal(){ document.getElementById('detailModal').style.display = 'none'; }
         function closeConfirmModal(){ document.getElementById('confirmModal').style.display = 'none'; }
 
-        // เปิด modal แก้ไข
         function editProject(btn){
             editingRow = btn.closest('tr');
             const c = editingRow.cells;
@@ -261,7 +258,6 @@
             document.getElementById('projectModal').style.display = 'flex';
         }
 
-        // บันทึกแก้ไข
         document.getElementById('projectForm').addEventListener('submit', e=>{
             e.preventDefault();
             const data = Object.fromEntries(new FormData(e.target).entries());
@@ -276,7 +272,6 @@
             closeProjectModal();
         });
 
-        // ดูรายละเอียด
         function viewProject(btn){
             const row = btn.closest('tr').cells;
             const detail = `
@@ -291,7 +286,6 @@
             document.getElementById('detailModal').style.display = 'flex';
         }
 
-        // ลบโครงงาน
         function deleteProject(btn){
             targetDeleteRow = btn.closest('tr');
             const name = targetDeleteRow.cells[1].textContent;
@@ -304,7 +298,6 @@
             closeConfirmModal();
         }
 
-        // ฟิลเตอร์ + ค้นหา
         function filterTable(){
             const program = document.getElementById('filterProgram').value;
             const status = document.getElementById('filterStatus').value;

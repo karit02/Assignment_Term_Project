@@ -154,13 +154,11 @@
             btn.textContent = isOpen ? "ซ่อนรายละเอียด" : "ดูรายละเอียด";
 
             if(isOpen) {
-                // รอให้ transition ของ parent เริ่มก่อน แล้วค่อยขยาย progress
                 const width = progress.getAttribute("data-width");
                 setTimeout(() => {
                     progress.style.width = width;
                 }, 50);
             } else {
-                // ปิด progress bar
                 progress.style.width = "0";
             }
         }

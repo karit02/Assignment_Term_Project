@@ -1,10 +1,3 @@
-/* Progress Card */
-.progress-card {
-}
-
-.progress-card:hover {
-}
-
 .progress-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -142,21 +135,19 @@
 
 #progress-slider {
     width: 180px;
-    accent-color: #22c55e; /* สำหรับเบราว์เซอร์ที่รองรับ */
+    accent-color: #22c55e;
     height: 4px;
     margin-top: 40px;
     margin-bottom: 10px;
     z-index: 1;
-    /* ซ่อน default appearance */
     -webkit-appearance: none;
     appearance: none;
-    background: var(--slider-color, #22c55e); /* ใช้ตัวแปรสี */
+    background: var(--slider-color, #22c55e); 
     border-radius: 4px;
     outline: none;
     transition: background 0.2s;
 }
 
-/* สำหรับ Chrome, Safari */
 #progress-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -170,7 +161,6 @@
     transition: background 0.2s;
 }
 
-/* สำหรับ Firefox */
 #progress-slider::-moz-range-thumb {
     width: 22px;
     height: 22px;
@@ -182,7 +172,6 @@
     transition: background 0.2s;
 }
 
-/* สำหรับ IE */
 #progress-slider::-ms-thumb {
     width: 22px;
     height: 22px;
@@ -194,18 +183,15 @@
     transition: background 0.2s;
 }
 
-/* ซ่อนขอบ slider ใน Firefox */
 #progress-slider::-moz-focus-outer {
     border: 0;
 }
 
-/* ปรับสีแถบ slider ใน Firefox */
 #progress-slider::-moz-range-track {
     background: var(--slider-color, #22c55e);
     border-radius: 4px;
 }
 
-/* ปรับสีแถบ slider ใน IE */
 #progress-slider::-ms-fill-lower {
     background: var(--slider-color, #22c55e);
     border-radius: 4px;
@@ -318,7 +304,6 @@
     margin-left: 10px;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .progress-card-container {
         flex-wrap: wrap;

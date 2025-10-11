@@ -274,7 +274,7 @@
         });
 
         document.querySelector('.ter-btn-save').addEventListener('click', function(e) {
-            e.preventDefault(); // ป้องกัน default action
+            e.preventDefault(); 
 
             if (currentCard) {
                 const statusElement = currentCard.querySelector('.status-text');
@@ -285,10 +285,8 @@
                 }
             }
 
-            // ลบ hash ปัจจุบัน
             window.location.hash = ''; 
 
-            // เด้งไปหน้า dashbroadstd.html
             window.location.href = 'dashbroadstd.html';
         });
 

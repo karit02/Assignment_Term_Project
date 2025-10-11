@@ -1,4 +1,3 @@
-// เก็บข้อมูลผู้ใช้ไว้ใน localStorage (เพื่อ demo)
 const DEFAULT_USERS = [
     { username: 'std',     password: '1234', role: 'student', redirect: 'dashbroadstd.html' },
     { username: 'teacher', password: '1234', role: 'teacher', redirect: 'dashbroadteacher.html' },
@@ -17,7 +16,6 @@ const ROLE_REDIRECT = {
 
 function loadUsers() {
     const saved = JSON.parse(localStorage.getItem('users') || '[]');
-  // seed ผู้ใช้เริ่มต้น ถ้ายังไม่มี
     DEFAULT_USERS.forEach(def => {
     if (!saved.some(u => u.username === def.username)) {
         saved.push(def);
@@ -52,10 +50,8 @@ function redirectByRole(role) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // เตรียม users เริ่มต้น
 loadUsers();
 
-// 1) จัดการหน้า Login
 const loginForm = document.querySelector('form#login-form');
 if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
@@ -73,14 +69,11 @@ if (loginForm) {
         return;
     }
 
-    // เก็บสถานะล็อกอิน (demo)
     localStorage.setItem('currentUser', JSON.stringify({ username: user.username, role: user.role }));
-    // ไปหน้า dashboard ตาม role
     redirectByRole(user.role);
     });
     }
 
-  // 2) จัดการหน้า Signup
     const signupForm = document.querySelector('form#signup-form');
     if (signupForm) {
         signupForm.addEventListener('submit', (e) => {
@@ -90,7 +83,6 @@ if (loginForm) {
     const password = (document.getElementById('password')?.value || '').trim();
     const confirm  = (document.getElementById('confirm-password')?.value || '').trim();
 
-      // อ่านสถานะจาก dropdown (เอาข้อความที่ผู้ใช้เลือก)
     const statusDropdown = document.querySelector('.status-dropdown');
     const statusText = statusDropdown?.options[statusDropdown.selectedIndex]?.text || '';
     const role = getRoleFromText(statusText);

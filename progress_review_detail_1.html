@@ -200,7 +200,6 @@
         function updateProgressLabel() {
             value.textContent = slider.value + '%';
             value.style.color = getProgressColor(parseInt(slider.value, 10));
-            // คำนวณตำแหน่ง label ตามค่า slider
             let percent = (slider.value - slider.min) / (slider.max - slider.min);
             value.style.setProperty('--percent', percent);
         }

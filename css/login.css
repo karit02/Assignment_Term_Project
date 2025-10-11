@@ -1,6 +1,3 @@
-/*
- * Base Styles & Font
- */
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +11,9 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #667eea;
-    /* พื้นหลังไล่ระดับสีตามภาพ (Neon Gradient) */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-size: 400% 400%;
-    animation: gradientShift 5s ease infinite; /* เพิ่มแอนิเมชันให้พื้นหลังเคลื่อนไหว */
+    animation: gradientShift 5s ease infinite; 
 }
 
 @keyframes gradientShift {
@@ -26,9 +22,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* * Login Container และ Box
- * * ปรับใช้ CSS Grid เพื่อแบ่ง Section ซ้าย-ขวา
- */
 .login-container {
     padding: 20px;  
 }
@@ -38,25 +31,20 @@ body {
     padding: 100px 50px;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    width: 900px; /* ความกว้างรวมของ Box */
+    width: 900px; 
     text-align: right;
     padding-right: 60px;
-
-    /* โครงสร้างแบ่ง 2 คอลัมน์ (ภาพ/ฟอร์ม) ด้วย Grid */
     display: grid;
-    /* กำหนดให้ซ้าย (image-side) กว้าง 4 ส่วน, ขวา (form-content) กว้าง 6 ส่วน */
-    grid-template-columns: 4fr 6fr; 
     align-items: center;
 }
 
-/* * 1. ส่วนซ้าย: ภาพประกอบ (Image Section) */
 .image-side {
     height: 100%;
-    background-color: white; /* พื้นหลังสีขาวสำหรับ Section รูปภาพ */
+    background-color: white; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* จัดกึ่งกลางแนวตั้ง */
-    align-items: center; /* จัดกึ่งกลางแนวนอน */
+    justify-content: center; 
+    align-items: center;
     padding: 10px;
 }
 
@@ -75,12 +63,10 @@ body {
     padding-right: 110px;
 }
 
-/* * Input Fields
- * * ปรับ Input ให้เหมาะสมกับพื้นที่ 100% ของ form-content */
 .input-group {
     text-align: left;
     margin-bottom: 25px;
-    padding-left: 120px; /* ลบ padding-left ที่ทำให้ฟอร์มเลื่อนไปทางขวา */
+    padding-left: 120px; 
 }
 
 .input-group label {
@@ -94,8 +80,8 @@ body {
 .input-field {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc; /* เส้นขีดด้านล่าง Input */
-    border-radius: 10px; /* ขอบมน */
+    border-bottom: 1px solid #ccc; 
+    border-radius: 10px;
     background-color: #ffffff;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
@@ -121,7 +107,6 @@ body {
     font-size: 14px;
 }
 
-/* Forgot Password Link */
 .forgot-password {
     display: block;
     text-align: right;
@@ -136,8 +121,6 @@ body {
     color: #ff0000;
 }
 
-/* * Gradient Button (ปุ่มหลัก LOGIN)
- * * ให้ปุ่มเต็มความกว้าง (75%) ของ Form Section */
 .gradient-button {
     width: 74%;
     padding: 12px;
@@ -151,11 +134,9 @@ body {
 }
 
 .gradient-button:hover {
-    transform: translateY(-2px); /* ยกขึ้นเล็กน้อยเมื่อ Hover */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/*  Separator */
 .separator {
     margin: 30px 0 20px 0;
     font-size: 14px;
@@ -164,7 +145,6 @@ body {
     padding-right: 3px;
 }
 
-/* Sign Up Link (ด้านล่างสุด) */
 .sign-up-text {
     margin-top: 0;
     margin-bottom: 10px;
@@ -184,17 +164,16 @@ body {
     text-decoration: underline;
 }
 
-/* * Responsive สำหรับจอเล็ก */
 @media (max-width: 950px) {
     .login-box {
-        grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์ซ้อนกัน */
+        grid-template-columns: 1fr; 
         width: 400px;
         height: auto;
     }
     .image-side {
-        display: none; /* ซ่อนรูปภาพในจอเล็ก */
+        display: none; 
     }
     .form-content {
-        padding: 40px 40px; /* ปรับ padding ให้เล็กลงในจอเล็ก */
+        padding: 40px 40px; 
     }
 }

@@ -170,23 +170,19 @@
 
     <script>
         function getProgressColor(percent) {
-            // ไล่สีจากแดง (#ef4444) → ส้ม (#f59e42) → เหลือง (#fde047) → เขียว (#22c55e)
-            if (percent <= 0) return '#ef4444'; // แดง
+            if (percent <= 0) return '#ef4444'; 
             if (percent < 50) {
-                // ไล่สีแดงไปส้ม
                 let r = 239 + Math.round((245-239)*(percent/50));
                 let g = 68 + Math.round((158-68)*(percent/50));
                 let b = 68 + Math.round((66-68)*(percent/50));
                 return `rgb(${r},${g},${b})`;
             }
             if (percent < 80) {
-                // ไล่สีส้มไปเหลือง
                 let r = 245 + Math.round((253-245)*((percent-50)/30));
                 let g = 158 + Math.round((224-158)*((percent-50)/30));
                 let b = 66 + Math.round((71-66)*((percent-50)/30));
                 return `rgb(${r},${g},${b})`;
             }
-            // ไล่สีเหลืองไปเขียว
             let r = 253 + Math.round((34-253)*((percent-80)/20));
             let g = 224 + Math.round((197-224)*((percent-80)/20));
             let b = 71 + Math.round((94-71)*((percent-80)/20));
@@ -198,7 +194,6 @@
             if (percentEl) {
                 let percent = parseInt(percentEl.textContent, 10);
                 percentEl.style.color = getProgressColor(percent);
-                // เปลี่ยน % ด้วย
                 const signEl = card.querySelector('.percent-sign');
                 if (signEl) signEl.style.color = getProgressColor(percent);
             }

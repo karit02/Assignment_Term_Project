@@ -101,12 +101,10 @@
     </footer>
     <script>
         document.getElementById('card-dropdown').addEventListener('click', function(e) {
-            // ป้องกันการคลิกปุ่มใน dropdown ไม่ให้ปิดเมนู
             if (e.target.classList.contains('dropdown-btn')) return;
             this.classList.toggle('active');
         });
 
-        // ปิด dropdown เมื่อคลิกนอกเมนู
         document.addEventListener('click', function(e) {
             const card = document.getElementById('card-dropdown');
             if (!card.contains(e.target)) {

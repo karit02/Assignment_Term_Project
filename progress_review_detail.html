@@ -165,7 +165,6 @@
             <div class="modal-form-view"> 
                 
                 <div class="left-detail-col-form info-block-card">
-                    <!-- <h3 class="card-title-header">ข้อมูลโครงงาน</h3> -->
                     <div class="data-grouplo">
                         <div class="info-row"><div class="info-label">ชื่อโครงการ :</div><div class="info-value project-name-text">ระบบยืม - คืนคุรุภัณฑ์</div></div>
                         <div class="info-row"><div class="info-label">ประเภทโครงงาน :</div><div class="info-value">โครงงานสหกิจ</div></div>
@@ -196,7 +195,6 @@
                     
                     <h3 class="card-idea-header">แสดงความคิดเห็น</h3>
                     <div class="comment-input-area">
-                        <!-- <label for="comment-text" class="input-label">กรอกความคิดเห็นของคุณ:</label> -->
                         <textarea id="comment-text" placeholder="ระบุข้อเสนอแนะ หรือคำแนะนำสำหรับนักศึกษา..." rows="5" class="comment-textarea"></textarea>
                     </div>
 
@@ -267,7 +265,6 @@
             function updateProgressLabel() {
                 value.textContent = slider.value + '%';
                 value.style.color = getProgressColor(parseInt(slider.value, 10));
-                // คำนวณตำแหน่ง label ตามค่า slider
                 let percent = (slider.value - slider.min) / (slider.max - slider.min);
                 value.style.setProperty('--percent', percent);
             }
@@ -284,29 +281,25 @@
 
         <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 1. รับค่า Element ที่เกี่ยวข้อง (เพิ่ม decreaseButton)
         const updateButton = document.getElementById('update-button');
-        const decreaseButton = document.getElementById('decrease-button'); // <--- NEW
+        const decreaseButton = document.getElementById('decrease-button'); 
         const progressBar = document.getElementById('progress-bar');
         const progressPercent = document.getElementById('progress-percent');
-        const increment = 10; // ค่าที่ต้องการเพิ่ม/ลดแต่ละครั้ง
-        const maxProgress = 100; // ค่าสูงสุด
-        const minProgress = 0;   // <--- NEW: ค่าต่ำสุด
+        const increment = 10;
+        const maxProgress = 100; 
+        const minProgress = 0;  
 
-        // ฟังก์ชันสำหรับคำนวณสี (คงเดิม)
         function getProgressColor(percent) {
             let p = Math.max(0, Math.min(100, percent));
             let hue = (p * 1.2); 
             return `hsl(${hue}, 80%, 40%)`;
         }
 
-        // ฟังก์ชันสำหรับดึงค่าเปอร์เซ็นต์ปัจจุบัน (คงเดิม)
         function getCurrentProgress() {
             const currentWidthStyle = progressBar.style.width || "0%"; 
             return parseInt(currentWidthStyle, 10);
         }
 
-        // ฟังก์ชันอัพเดต UI (รวมการตั้งค่าแถบความคืบหน้า)
         function updateUI(newProgress) {
             const newColor = getProgressColor(newProgress);
             
@@ -316,16 +309,12 @@
             progressPercent.textContent = newProgress + '%';
             progressPercent.style.color = newColor; 
             
-            // จัดการสถานะปุ่ม เพิ่ม/ลด
             if (updateButton) updateButton.disabled = (newProgress >= maxProgress);
             if (decreaseButton) decreaseButton.disabled = (newProgress <= minProgress);
 
             console.log('Progress set to: ' + newProgress + '%');
         }
-        
-        // ==========================================================
-        // 2. จัดการ Event Listener สำหรับปุ่มเพิ่ม (+10%) (ปรับปรุง)
-        // ==========================================================
+
         if (updateButton) {
             updateButton.addEventListener('click', function() {
                 let currentProgress = getCurrentProgress();
@@ -339,25 +328,21 @@
             });
         }
         
-        // ==========================================================
-        // 3. จัดการ Event Listener สำหรับปุ่มลด (-10%) <--- NEW
-        // ==========================================================
         if (decreaseButton) {
             decreaseButton.addEventListener('click', function() {
                 let currentProgress = getCurrentProgress();
-                let newProgress = currentProgress - increment; // เปลี่ยนเป็นการลบ
+                let newProgress = currentProgress - increment; 
 
                 if (newProgress < minProgress) {
-                    newProgress = minProgress; // จำกัดไม่ให้ต่ำกว่า 0
+                    newProgress = minProgress; 
                 }
                 
                 updateUI(newProgress);
             });
         }
         
-        // 4. ตั้งค่าเริ่มต้นเมื่อโหลดหน้า
         const initialProgress = getCurrentProgress();
-        updateUI(initialProgress); // ใช้ updateUI เพื่อกำหนดสีและสถานะปุ่มเริ่มต้น
+        updateUI(initialProgress); 
     });
 </script>
 

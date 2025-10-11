@@ -207,7 +207,7 @@
     <script>
         const userTable = document.getElementById('userTable');
         let editingRow = null;
-        let targetDeleteRow = null; // เก็บแถวที่รอลบ
+        let targetDeleteRow = null; 
 
         function roleText(role){
             if(role === "student") return "นักศึกษา";
@@ -259,10 +259,9 @@
             }
         }
 
-        // ---------- ส่วนยืนยันการลบ ----------
         function deleteUser(btn){
             targetDeleteRow = btn.closest('tr');
-            const name = targetDeleteRow.cells[1].textContent; // ดึงชื่อผู้ใช้
+            const name = targetDeleteRow.cells[1].textContent; 
             document.getElementById('confirmMessage').textContent = `คุณต้องการลบผู้ใช้ "${name}" หรือไม่?`;
             document.getElementById('confirmModal').style.display = 'flex';
         }
@@ -278,7 +277,6 @@
         function closeConfirmModal(){
             document.getElementById('confirmModal').style.display = 'none';
         }
-        // ------------------------------------
 
         function filterTable(){
             const program = document.getElementById('filterProgram').value;
